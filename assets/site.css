@@ -1,0 +1,31 @@
+/* Study site — 自用学习站 · 与就活 /work 分离 */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#f4f6f8;--card:#fff;--accent:#3d6b4f;--accent-light:#e8f0eb;
+  --text:#1e2a24;--sub:#5a6b62;--border:#d5e0d8;--radius:12px;
+}
+body{font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Noto Sans SC",sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.7;padding-bottom:3rem}
+.site-nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.site-nav-inner{max-width:880px;margin:0 auto;padding:.55rem 1rem;display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.site-nav .brand{font-weight:700;color:var(--accent);text-decoration:none;margin-right:auto;font-size:.9rem}
+.site-nav a{font-size:.78rem;color:var(--sub);text-decoration:none;padding:.25rem .5rem;border-radius:6px}
+.site-nav a:hover,.site-nav a.active{color:var(--accent);background:var(--accent-light)}
+.hero{background:linear-gradient(160deg,#2a4034,#3d6b4f);color:#fff;padding:2rem 1.2rem;text-align:center}
+.hero h1{font-size:1.4rem;margin-bottom:.4rem}
+.hero .lead{font-size:.88rem;opacity:.9;max-width:28rem;margin:0 auto}
+.hero .note{font-size:.72rem;opacity:.75;margin-top:.75rem}
+main{max-width:880px;margin:0 auto;padding:1rem}
+section.block{background:var(--card);border-radius:var(--radius);padding:1.1rem;margin-bottom:1rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+section.block h2{font-size:1rem;color:var(--accent);margin-bottom:.6rem;border-left:4px solid var(--accent);padding-left:.55rem}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem}
+.summary-card{border:1px solid var(--border);border-radius:10px;padding:.85rem;text-decoration:none;color:inherit;display:block}
+.summary-card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(61,107,79,.12)}
+.summary-card .title{font-weight:700;font-size:.9rem}
+.summary-card .sub{font-size:.78rem;color:var(--sub);margin-top:.25rem}
+.link-list{list-style:none;padding:0}
+.link-list li{border-bottom:1px solid var(--border);padding:.45rem 0}
+.link-list a{color:var(--accent);text-decoration:none;font-size:.88rem}
+.link-list a:hover{text-decoration:underline}
+.site-footer{text-align:center;color:var(--sub);font-size:.75rem;margin-top:2rem;padding:0 1rem}
+.site-footer a{color:var(--accent)}

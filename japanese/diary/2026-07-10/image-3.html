@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- 07_日记 image-3 · 口语表达 -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>日语口说 · 2026-07-10 图3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1080px; height: 1440px; overflow: hidden; }
+    body { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans JP", sans-serif; -webkit-font-smoothing: antialiased; }
+    .canvas {
+      width: 1080px; height: 1440px; position: relative;
+      background-color: #F3EDE4;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 55px, rgba(180,165,145,0.08) 55px, rgba(180,165,145,0.08) 56px);
+      padding: 88px 68px 80px 80px; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .canvas::before {
+      content: ""; position: absolute; left: 0; top: 56px; bottom: 80px; width: 6px;
+      background: linear-gradient(180deg, #D4C4AE 0%, #C9B8A0 50%, #D4C4AE 100%);
+      border-radius: 0 3px 3px 0;
+    }
+    .lead {
+      font-size: 40px; font-weight: 700; color: #3D3832;
+      margin-bottom: 36px; line-height: 1.45;
+      letter-spacing: 0.04em;
+    }
+    .list { flex: 1; min-height: 0; overflow: hidden; }
+    .item { margin-bottom: 28px; }
+    .item:last-child { margin-bottom: 0; }
+    .ja { font-size: 38px; font-weight: 600; color: #1a2744; line-height: 1.35; font-family: "Noto Sans JP", sans-serif; }
+    .ja ruby rt { font-size: 0.40em; font-weight: 400; color: #7A756E; }
+    .zh { font-size: 34px; color: #5c6478; line-height: 1.4; margin-top: 6px; }
+    .star { color: #e65100; font-size: 32px; margin-left: 6px; }
+    .list.fit-sm .ja { font-size: 34px; }
+    .list.fit-sm .zh { font-size: 30px; }
+    .list.fit-sm .item { margin-bottom: 22px; }
+    .list.fit-md .ja { font-size: 30px; }
+    .list.fit-md .zh { font-size: 27px; }
+    .list.fit-md .item { margin-bottom: 18px; }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <p class="lead">今天学到的几个口语表达（建议背下来）</p>
+    <div class="list" id="list">
+      <div class="item">
+        <div class="ja"><ruby>発表<rt>はっぴょう</rt></ruby>が<ruby>終<rt>お</rt></ruby>わった。</div>
+        <div class="zh">发表结束了。</div>
+      </div>
+      <div class="item">
+        <div class="ja">うれしかった。</div>
+        <div class="zh">很开心。</div>
+      </div>
+      <div class="item">
+        <div class="ja"><ruby>少<rt>すこ</rt></ruby>し<ruby>緊張<rt>きんちょう</rt></ruby>した。</div>
+        <div class="zh">有一点紧张。</div>
+      </div>
+      <div class="item">
+        <div class="ja"><ruby>無事<rt>ぶじ</rt></ruby>に<ruby>終<rt>お</rt></ruby>わった。</div>
+        <div class="zh">顺利结束了。</div>
+      </div>
+      <div class="item">
+        <div class="ja">ほっとした。<span class="star">⭐⭐⭐</span>（非常常用）</div>
+        <div class="zh">终于松了一口气。</div>
+      </div>
+      <div class="item">
+        <div class="ja">やっと<ruby>終<rt>お</rt></ruby>わった。<span class="star">⭐⭐⭐</span></div>
+        <div class="zh">终于结束了。</div>
+      </div>
+      <div class="item">
+        <div class="ja"><ruby>楽<rt>たの</rt></ruby>しかった。</div>
+        <div class="zh">很开心，很有意思。</div>
+      </div>
+      <div class="item">
+        <div class="ja">いい<ruby>経験<rt>けいけん</rt></ruby>になった。<span class="star">⭐⭐⭐</span></div>
+        <div class="zh">这是一次很好的经历。</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const el = document.getElementById("list");
+      const canvas = document.querySelector(".canvas");
+      for (const cls of ["", "fit-sm", "fit-md"]) {
+        el.className = "list" + (cls ? " " + cls : "");
+        if (el.scrollHeight <= canvas.clientHeight - 140) return;
+      }
+      el.className = "list fit-md";
+    })();
+  </script>
+</body>
+</html>

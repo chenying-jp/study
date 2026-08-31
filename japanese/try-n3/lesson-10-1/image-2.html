@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<!-- lesson-10-1 image-2 · 7 行 -->
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>文法拆解 — Lesson 10-1</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 1080px; height: 1440px; overflow: hidden; font-family: "Noto Sans JP", "PingFang SC", "Microsoft YaHei", sans-serif; background: #FDFDF4; color: #000; }
+    .canvas { width: 1080px; height: 1440px; display: flex; flex-direction: column; background: #FDFDF4; }
+    .title-bar { background: #F3D2C2; text-align: center; font-size: 38px; font-weight: 700; color: #D56332; padding: 14px 16px 12px; flex-shrink: 0; }
+    .table-wrap { flex: 1; min-height: 0; padding: 0 10px 8px; }
+    table.grammar-table { width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed; --thead-h: 52px; --grammar-rows: 7; }
+    thead th { background: #5DB1B5; color: #FDFDF4; font-size: 26px; font-weight: 700; padding: 8px 5px; border: 1px solid #B8D8DA; text-align: center; }
+    tbody tr { height: calc((100% - var(--thead-h)) / var(--grammar-rows)); }
+    tbody td { border: 1px solid #E0C8BE; padding: 5px 8px; vertical-align: middle; overflow: hidden; }
+    col.col-no { width: 44px; } col.col-grammar { width: 248px; } col.col-meaning { width: 128px; }
+    .num { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #F3D2C2; color: #D56332; font-weight: 700; font-size: 22px; }
+    .grammar { font-weight: 700; font-size: 28px; line-height: 1.28; }
+    .meaning { font-size: 26px; line-height: 1.3; color: #222; }
+    .dual-cell { display: flex; flex-direction: column; justify-content: center; height: 100%; gap: 4px; }
+    .story-line { font-size: 28px; line-height: 1.32; }
+    .theater-line { font-size: 26px; line-height: 1.32; color: #444; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .grammar, .meaning, .story-line, .theater-line { white-space: normal; overflow-wrap: anywhere; }
+    ruby rt { font-size: 0.4em; }
+    .hl-yellow { background-color: color-mix(in srgb, #FFEB3B 50%, #FFF 50%); font-weight: 700; padding: 0 2px; box-decoration-break: clone; }
+</style>
+</head>
+<body>
+<div class="canvas">
+<div class="title-bar no-ruby">文法拆解（N3）</div>
+<div class="table-wrap">
+<table class="grammar-table">
+<colgroup><col class="col-no"/><col class="col-grammar"/><col class="col-meaning"/><col/></colgroup>
+<thead><tr><th>No</th><th class="no-ruby">文法</th><th class="no-ruby">意思</th><th class="no-ruby">故事句 · 脑内小剧场</th></tr></thead>
+<tbody>
+<tr><td class="col-no"><span class="num">1</span></td><td class="grammar">～わけがない</td><td class="meaning no-ruby">不可能</td><td><div class="dual-cell"><div class="story-line"><span class="hl-yellow"><ruby>合格<rt>ごうかく</rt></ruby>するわけがない</span>、と<ruby>一瞬<rt>いっしゅん</rt></ruby><ruby>思っ<rt>おもっ</rt></ruby>た。</div><div class="theater-line no-ruby">听力30分 → <span class="hl-yellow">不可能合格</span></div></div></td></tr>
+<tr><td class="col-no"><span class="num">2</span></td><td class="grammar">～しかない</td><td class="meaning no-ruby">只能</td><td><div class="dual-cell"><div class="story-line"><ruby>今<rt>いま</rt></ruby>からでも<ruby>遅く<rt>おそく</rt></ruby>ない。<span class="hl-yellow">やるしかない</span>。</div><div class="theater-line no-ruby">老师说：只能<span class="hl-yellow">继续干</span></div></div></td></tr>
+<tr><td class="col-no"><span class="num">3</span></td><td class="grammar">～からこそ</td><td class="meaning no-ruby">正因为</td><td><div class="dual-cell"><div class="story-line"><ruby>毎日<rt>まいにち</rt></ruby><ruby>続け<rt>つづけ</rt></ruby>てきた<span class="hl-yellow">からこそ</span>、<ruby>文法<rt>ぶんぽう</rt></ruby>はまあまあ。</div><div class="theater-line no-ruby"><span class="hl-yellow">正因为</span>坚持，文法还行</div></div></td></tr>
+<tr><td class="col-no"><span class="num">4</span></td><td class="grammar">～なんか</td><td class="meaning no-ruby">比起……</td><td><div class="dual-cell"><div class="story-line"><span class="hl-yellow"><ruby>読解<rt>どっかい</rt></ruby>なんかより</span>、<ruby>聴解<rt>ちょうかい</rt></ruby>を<ruby>先<rt>さき</rt></ruby>に。</div><div class="theater-line no-ruby"><span class="hl-yellow">比起读解</span>先攻听力</div></div></td></tr>
+<tr><td class="col-no"><span class="num">5</span></td><td class="grammar">～っこない</td><td class="meaning no-ruby">不可能（口语）</td><td><div class="dual-cell"><div class="story-line"><ruby>全部<rt>ぜんぶ</rt></ruby><ruby>覚える<rt>おぼえる</rt></ruby>なんて、<span class="hl-yellow">できっこない</span>。</div><div class="theater-line no-ruby">全记住？<span class="hl-yellow">不可能吧</span></div></div></td></tr>
+<tr><td class="col-no"><span class="num">6</span></td><td class="grammar">～からといって</td><td class="meaning no-ruby">虽说……但</td><td><div class="dual-cell"><div class="story-line"><ruby>三<rt>さん</rt></ruby><ruby>時間<rt>じかん</rt></ruby><ruby>勉強<rt>べんきょう</rt></ruby>した<span class="hl-yellow">からといって</span>、<ruby>必ず<rt>かならず</rt></ruby>……</div><div class="theater-line no-ruby"><span class="hl-yellow">虽说</span>学了三小时</div></div></td></tr>
+<tr><td class="col-no"><span class="num">7</span></td><td class="grammar">～とは<ruby>限ら<rt>かぎら</rt></ruby>ない</td><td class="meaning no-ruby">不一定</td><td><div class="dual-cell"><div class="story-line"><ruby>必ず<rt>かならず</rt></ruby><ruby>合格<rt>ごうかく</rt></ruby>する<span class="hl-yellow">とは<ruby>限ら<rt>かぎら</rt></ruby>ない</span>。</div><div class="theater-line no-ruby">但<span class="hl-yellow">不一定</span>能过</div></div></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<script>
+function fitGrammarRows(){var t=document.querySelector('.grammar-table'),tb=t&&t.querySelector('tbody');if(!t||!tb)return;var r=tb.querySelectorAll('tr').length,th=t.querySelector('thead');t.style.setProperty('--grammar-rows',String(r));t.style.setProperty('--thead-h',((th&&th.offsetHeight)||52)+'px');}
+function rowCellsFit(){var rows=document.querySelectorAll('.grammar-table tbody tr');for(var i=0;i<rows.length;i++){var c=rows[i].querySelectorAll('td');for(var j=0;j<c.length;j++)if(c[j].scrollHeight>c[j].clientHeight+2)return false;}return true;}
+function applyGrammarFonts(g,m,s,t,gap){document.querySelectorAll('.grammar').forEach(function(e){e.style.fontSize=g+'px';});document.querySelectorAll('.meaning').forEach(function(e){e.style.fontSize=m+'px';});document.querySelectorAll('.story-line').forEach(function(e){e.style.fontSize=s+'px';});document.querySelectorAll('.theater-line').forEach(function(e){e.style.fontSize=t+'px';});document.querySelectorAll('.dual-cell').forEach(function(e){e.style.gap=gap+'px';});}
+function fitGrammarFonts(){var GAPS=[4,3,2,1];fitGrammarRows();for(var g=28;g>=20;g--)for(var m=Math.min(26,g-2);m>=18;m--)for(var s=Math.min(28,g);s>=20;s--)for(var t=Math.min(26,s-2);t>=18;t--)for(var gi=0;gi<GAPS.length;gi++){applyGrammarFonts(g,m,s,t,GAPS[gi]);if(rowCellsFit())return;}applyGrammarFonts(20,18,20,18,1);}
+fitGrammarFonts();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitGrammarFonts);
+</script>
+</body>
+</html>

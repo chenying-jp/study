@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<title>2026-08-16 富士口说 · A4 口袋卡</title>
+<style>
+@page { size: A4 portrait; margin: 6mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Yu Gothic UI", "Meiryo", "Noto Sans JP", sans-serif;
+  color: #111;
+  background: #ddd;
+}
+.no-print {
+  max-width: 210mm;
+  margin: 12px auto;
+  padding: 12px 16px;
+  background: #fff8e6;
+  border: 1px solid #d4c4a0;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.no-print h2 { font-size: 15px; margin-bottom: 8px; }
+.no-print ol { margin-left: 18px; }
+.no-print a { color: #1565a8; }
+
+.page {
+  width: 210mm;
+  height: 297mm;
+  margin: 0 auto 16px;
+  padding: 4mm;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-auto-flow: column;
+  gap: 5mm 2.5mm;
+  page-break-after: always;
+  break-after: page;
+  position: relative;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+.page::before {
+  content: "";
+  position: absolute;
+  top: 4mm; bottom: 4mm;
+  left: 50%;
+  border-left: 0.25mm dashed #bbb;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.card {
+  border: 0.4mm solid #555;
+  border-radius: 1.5mm;
+  padding: 2mm 2.4mm;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+.card-h {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5mm;
+  margin-bottom: 1.4mm;
+  padding-bottom: 1mm;
+  border-bottom: 0.2mm solid #ccc;
+}
+.card-title {
+  font-weight: 700;
+  font-size: 8.5pt;
+  color: #222;
+  flex: 1;
+  line-height: 1.15;
+}
+.tag {
+  flex-shrink: 0;
+  font-size: 6pt;
+  color: #555;
+  background: #eee;
+  padding: 0.3mm 1.2mm;
+  border-radius: 1mm;
+}
+.tag.core { background: #e8e4ff; color: #4438a0; }
+.tag.p1 { background: #e3f2fd; color: #1565a8; }
+.tag.p2 { background: #fce4ec; color: #ad1457; }
+.tag.memo { background: #f5f5f5; color: #888; }
+
+.card-body {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4mm;
+  justify-content: flex-start;
+}
+
+.jp {
+  font-size: 9pt;
+  line-height: 1.38;
+  font-weight: 500;
+  word-break: break-all;
+  flex-shrink: 0;
+}
+.jp.dense { font-size: 8.2pt; line-height: 1.35; }
+.jp.core { font-size: 8.5pt; line-height: 1.36; }
+
+.notes {
+  flex: 1;
+  min-height: 8mm;
+  margin-top: 1mm;
+  border-top: 0.15mm dotted #ccc;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 5.5mm,
+    rgba(180,180,180,0.35) 5.5mm,
+    rgba(180,180,180,0.35) 5.6mm
+  );
+}
+.card.memo .card-body {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 7mm,
+    rgba(180,180,180,0.4) 7mm,
+    rgba(180,180,180,0.4) 7.1mm
+  );
+}
+
+@media print {
+  body { background: #fff; }
+  .no-print { display: none !important; }
+  .page { margin: 0; box-shadow: none; }
+}
+@media screen {
+  .page { box-shadow: 0 4px 20px rgba(0,0,0,.15); }
+}
+</style>
+</head>
+<body>
+<div class="no-print">
+<h2>📄 富士口说 · A4 口袋卡（1页 · 8格）</h2>
+<ol>
+<li>8 格 · 无中文 · 无句内序号 · 字体加大 · 余白可手写笔记</li>
+<li><a href="practice.html">← 返回跟读页（含音频）</a></li>
+</ol>
+<p style="margin-top:10px"><button onclick="window.print()" style="padding:8px 20px;font-size:14px;cursor:pointer;background:#333;color:#fff;border:none;border-radius:6px">🖨 打印</button></p>
+</div>
+
+<section class="page" aria-label="第1页">
+
+<article class="card">
+<header class="card-h"><span class="card-title">核心 5 句</span><span class="tag core">优先</span></header>
+<div class="card-body">
+<p class="jp core">人身事故で電車が止まっちゃって。</p>
+<p class="jp core">タクシー、なかなか来なくて。</p>
+<p class="jp core">「やっぱり…間に合わないね」って言われて。</p>
+<p class="jp core">キャンセル料なしで返金してくれる。</p>
+<p class="jp core">日本に来て2年、人身事故でここまで影響を受けたのは、初めてでした。</p>
+</div>
+</article>
+
+<article class="card">
+<header class="card-h"><span class="card-title">图1 · 上</span><span class="tag p1">4句</span></header>
+<div class="card-body">
+<p class="jp">今日、富士山に登るツアーがあったんですけど…行けませんでした。</p>
+<p class="jp">昨日ね、レインウェアとレッグカバー、トレッキングポール、行動食とか、わくわくしながら買いに行ったばかりなんです。</p>
+<p class="jp">今朝、4時に起きて、新宿西口7時のバスに間に合わせて、八王子駅から電車に乗りました。</p>
+<p class="jp">でも、中央線で人身事故があって、電車が止まっちゃいました。</p>
+</div>
+</article>
+
+<article class="card">
+<header class="card-h"><span class="card-title">图1 · 下</span><span class="tag p1">2句</span></header>
+<div class="card-body">
+<p class="jp">西国分寺っていう、ちょっと小さな駅で降りて、タクシー探したんですけど、なかなか来なくて。</p>
+<p class="jp">目の前で、タクシーから降りた人がいたんです。手を振ったんですけど、待ってくれなくて…。</p>
+<div class="notes" aria-label="メモ"></div>
+</div>
+</article>
+
+<article class="card">
+<header class="card-h"><span class="card-title">图2 · 上</span><span class="tag p2">4句</span></header>
+<div class="card-body">
+<p class="jp dense">電車の中では、旅行社に電話して、「10分くらい遅れるかも」って言ったら、「大丈夫、バス待つよ」って。</p>
+<p class="jp">でも、タクシー捕まらなくて。もう一回電話したら、「30分から1時間は無理。全員を待てない」って。</p>
+<p class="jp dense">「新宿のホテルに泊まってればよかったのに」みたいなことも言われて。でも誰も、今朝の人身事故なんて予想できなかったじゃないですか。</p>
+<p class="jp">「やっぱり…間に合わないね」って言われて。これ、ほんと印象に残りました。</p>
+</div>
+</article>
+
+<article class="card">
+<header class="card-h"><span class="card-title">图2 · 下</span><span class="tag p2">3句</span></header>
+<div class="card-body">
+<p class="jp">人身事故で運休だから、キャンセル料なしで返金してくれるって。キャンセルしました。</p>
+<p class="jp">日本に来て2年、人身事故でここまで影響を受けたのは、初めてでした。</p>
+<p class="jp">準備は全部してたのに、どうにもならなくて…。なんか、止められたような気もしました。</p>
+<div class="notes" aria-label="メモ"></div>
+</div>
+</article>
+
+<article class="card">
+<header class="card-h"><span class="card-title">教室开场</span><span class="tag">2句</span></header>
+<div class="card-body">
+<p class="jp">先生、実は昨日、富士山のツアーがあったんですけど、行けませんでした。</p>
+<p class="jp">うまく説明できないんですけど…準備は全部してたのに、なんか止められたような気もしました。</p>
+<div class="notes" aria-label="メモ"></div>
+</div>
+</article>
+
+<article class="card memo">
+<header class="card-h"><span class="card-title">メモ</span><span class="tag memo">自由</span></header>
+<div class="card-body"></div>
+</article>
+
+<article class="card memo">
+<header class="card-h"><span class="card-title">メモ</span><span class="tag memo">自由</span></header>
+<div class="card-body"></div>
+</article>
+
+</section>
+</body>
+</html>

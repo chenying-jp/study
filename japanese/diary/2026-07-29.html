@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=1080" name="viewport"/>
+<title>日语口说 · 2026年7月29日</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1080px; height: 1440px; overflow: hidden; }
+    body { font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Sans", sans-serif; -webkit-font-smoothing: antialiased; }
+    .canvas {
+      width: 1080px; height: 1440px; position: relative;
+      display: flex; flex-direction: column;
+      background-color: #F3EDE4;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 55px, rgba(180,165,145,0.08) 55px, rgba(180,165,145,0.08) 56px);
+      padding: 288px 72px 88px 84px; overflow: hidden;
+    }
+    .canvas::before {
+      content: ""; position: absolute; left: 0; top: 120px; bottom: 88px; width: 6px;
+      background: linear-gradient(180deg, #D4C4AE 0%, #C9B8A0 50%, #D4C4AE 100%);
+      border-radius: 0 3px 3px 0;
+    }
+    .canvas::after {
+      content: "日"; position: absolute; right: 48px; bottom: 36px;
+      font-family: "Noto Serif JP", serif; font-size: 200px; color: rgba(180,165,145,0.10);
+      line-height: 1; pointer-events: none; user-select: none;
+    }
+    .content { flex: 1; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+    .header { flex-shrink: 0; margin-bottom: 36px; }
+    .main-title { font-size: 79px; font-weight: 700; letter-spacing: 0.22em; color: #3D3832; margin-bottom: 16px; line-height: 1.3; }
+    .sub-title { font-family: "Noto Serif JP", serif; font-size: 38px; font-weight: 400; letter-spacing: 0.10em; color: #8A8278; line-height: 1.4; }
+    .divider { margin-top: 36px; height: 2px; background: linear-gradient(90deg, #C9B8A0 0%, rgba(201,184,160,0.15) 85%); }
+    .body-wrap { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; }
+    .body { font-size: 48px; font-weight: 400; line-height: 1.78; letter-spacing: 0.03em; color: #2A2826; }
+    .body p { margin-bottom: 0.95em; }
+    .body p:last-child { margin-bottom: 0; }
+    .body ruby { ruby-align: center; }
+    .body ruby rt { font-size: 0.40em; font-weight: 400; letter-spacing: 0; color: #7A756E; }
+    .body.fit-sm { font-size: 42px; line-height: 1.72; }
+    .body.fit-md { font-size: 38px; line-height: 1.68; }
+    .body.fit-xs { font-size: 34px; line-height: 1.62; }
+    .body.fit-xxs { font-size: 30px; line-height: 1.58; }
+  </style>
+</head>
+<body>
+<div class="canvas">
+<div class="content">
+<header class="header">
+<h1 class="main-title no-ruby">日语口说</h1>
+<p class="sub-title no-ruby">2026年7月29日</p>
+<div class="divider"></div>
+</header>
+<div class="body-wrap">
+<div class="body" id="body">
+<p>ル・ブール・ノワゼットで、コーヒーかパスタでも<ruby>食べよう<rt>たべよう</rt></ruby>と<ruby>思っ<rt>おもっ</rt></ruby>たんですが、この<ruby>店<rt>みせ</rt></ruby>は4<ruby>時<rt>じ</rt></ruby><ruby>閉店<rt>へいてん</rt></ruby>で、2<ruby>時間<rt>じかん</rt></ruby><ruby>待つ<rt>まつ</rt></ruby>には<ruby>時間<rt>じかん</rt></ruby>が<ruby>足り<rt>たり</rt></ruby>なくて。</p>
+<p>「すみません。<ruby>友達<rt>ともだち</rt></ruby>が<ruby>今<rt>いま</rt></ruby>、2<ruby>階<rt>かい</rt></ruby>で<ruby>会議<rt>かいぎ</rt></ruby><ruby>中<rt>ちゅう</rt></ruby>なんですけど、<ruby>私<rt>わたくし</rt></ruby>、2<ruby>時間<rt>じかん</rt></ruby>くらい<ruby>待た<rt>また</rt></ruby>なきゃいけなくて……。<ruby>近く<rt>ちかく</rt></ruby>にスターバックスってありますか？」</p>
+<p>「スターバックスも4<ruby>時<rt>じ</rt></ruby>で<ruby>閉まっ<rt>しまっ</rt></ruby>ちゃうんですよ。このビルの<ruby>後ろ<rt>うしろ</rt></ruby>にタリーズコーヒーがありますけど。」</p>
+<p>「タリーズ、<ruby>知っ<rt>しっ</rt></ruby>てます。わかりました、ありがとうございます。じゃ、<ruby>失礼<rt>しつれい</rt></ruby>します。」</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+    (function fitBody() {
+      const el = document.getElementById("body");
+      const wrap = el.parentElement;
+      const steps = [
+        { cls: "", fs: 48, lh: 1.78 },
+        { cls: "fit-sm", fs: 42, lh: 1.72 },
+        { cls: "fit-md", fs: 38, lh: 1.68 },
+        { cls: "fit-xs", fs: 34, lh: 1.62 },
+        { cls: "fit-xxs", fs: 30, lh: 1.58 },
+      ];
+      for (const s of steps) {
+        el.className = "body" + (s.cls ? " " + s.cls : "");
+        el.style.fontSize = s.fs + "px";
+        el.style.lineHeight = s.lh;
+        if (el.scrollHeight <= wrap.clientHeight) return;
+      }
+    })();
+  </script>
+</body>
+</html>

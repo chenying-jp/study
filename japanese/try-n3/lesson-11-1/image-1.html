@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<!-- lesson-11-1 image-1 · rubyize 后再出图 -->
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>TryN3 第11課（1）— 文法速记</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Noto+Sans+SC:wght@900&amp;display=block" rel="stylesheet"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 1080px; height: 1440px; overflow: hidden; font-family: "Noto Sans JP", "Noto Sans SC", "Hiragino Sans", "Yu Gothic", sans-serif; background: #FDFDF4; color: #000; }
+    .canvas { width: 1080px; height: 1440px; display: flex; flex-direction: column; background: #FDFDF4; }
+    .top-spacer { height: 188px; flex-shrink: 0; background: #F3D2C2; }
+    .top-line-gap { height: calc(30px * 1.7); flex-shrink: 0; background: #FDFDF4; }
+    .page-inset { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 0 64px; }
+    .title-head { font-size: 72px; font-weight: 900; line-height: 1.1; padding: 24px 8px 24px 0; min-height: 136px; text-indent: 1em; flex-shrink: 0; }
+    .lesson-title { background: color-mix(in srgb, #FFEB3B 50%, #FFF 50%); font-size: 72px; display: flex; align-items: center; min-height: 176px; }
+    .title-wrap { flex-shrink: 0; background: #F3D2C2; }
+    .rule-top, .rule-bottom { border: none; border-top: 4px solid #000; margin: 0; }
+    .title-box { background: #F3D2C2; font-size: 100px; font-weight: 900; font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; display: flex; align-items: center; min-height: 176px; color: #D56332; }
+    .story { flex: 1; min-height: 0; background: #FDFDF4; padding: calc(8px + 1.2em) 8px 24px 0; font-size: 32px; font-weight: 500; line-height: 1.65; overflow: hidden; display: flex; flex-direction: column; }
+    .story-para + .story-para { margin-top: 20px; }
+    ruby rt { font-size: 0.45em; }
+    .hl-yellow { background-color: color-mix(in srgb, #FFEB3B 50%, #FFF 50%); font-weight: 700; padding: 0 2px; box-decoration-break: clone; }
+</style>
+</head>
+<body>
+<div class="canvas">
+<div class="top-spacer"></div><div class="top-line-gap"></div>
+<div class="page-inset">
+<hr class="rule-top"/>
+<div class="title-head lesson-title">TryN3第11課（1）</div>
+<div class="title-wrap"><div class="title-head title-box">文法速记</div><hr class="rule-bottom"/></div>
+<div class="story">
+<div class="story-para"><div class="story-line"><strong>○○さん</strong>は、<ruby>試験<rt>しけん</rt></ruby>まで<ruby>一<rt>いち</rt></ruby><ruby>週間<rt>しゅうかん</rt></ruby>。<ruby>最近<rt>さいきん</rt></ruby>、<span class="hl-yellow"><ruby>寝<rt>ね</rt></ruby><ruby>不足<rt>ふそく</rt></ruby><ruby>気味<rt>きみ</rt></ruby></span>で、<ruby>朝<rt>あさ</rt></ruby>の<ruby>目<rt>め</rt></ruby>が<ruby>重かっ<rt>おもかっ</rt></ruby>た。</div></div>
+<div class="story-para"><div class="story-line">「もう<span class="hl-yellow"><ruby>合格<rt>ごうかく</rt></ruby>なんかできない</span>、と<ruby>決めつける<rt>きめつける</rt></ruby>のは<ruby>早い<rt>はやい</rt></ruby>」とノートに<ruby>書い<rt>かい</rt></ruby>た。</div></div>
+<div class="story-para"><div class="story-line"><ruby>聴解<rt>ちょうかい</rt></ruby>を<span class="hl-yellow"><ruby>一<rt>いち</rt></ruby><ruby>問<rt>もん</rt></ruby>さえ</span><ruby>流さ<rt>ながさ</rt></ruby>ない<ruby>日<rt>ひ</rt></ruby>をつくる。<span class="hl-yellow">それくらい</span>はできる。</div></div>
+<div class="story-para"><div class="story-line">イヤホンを<span class="hl-yellow"><ruby>付け<rt>つけ</rt></ruby>っぱなし</span>で、<ruby>同じ<rt>おなじ</rt></ruby><ruby>音声<rt>おんせい</rt></ruby>を<ruby>二<rt>に</rt></ruby><ruby>回<rt>かい</rt></ruby><ruby>聞い<rt>きい</rt></ruby>た。</div></div>
+<div class="story-para"><div class="story-line"><ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>は<span class="hl-yellow"><ruby>付箋<rt>ふせん</rt></ruby>だらけ</span>。<span class="hl-yellow"><ruby>散らかっ<rt>ちらかっ</rt></ruby>たりして</span>、<ruby>集中<rt>しゅうちゅう</rt></ruby>できない<ruby>時<rt>とき</rt></ruby>もある。</div></div>
+<div class="story-para"><div class="story-line">でも、<span class="hl-yellow"><ruby>試験<rt>しけん</rt></ruby><ruby>前<rt>まえ</rt></ruby>らしく</span>、<ruby>今日<rt>きょう</rt></ruby>も<ruby>題<rt>だい</rt></ruby><ruby>集<rt>しゅう</rt></ruby>を<ruby>開い<rt>ひらい</rt></ruby>た。</div></div>
+</div>
+</div>
+</div>
+<script>
+(function(){var FONT_MIN=22,FONT_PREF=30,LH=[1.65,1.6,1.55,1.5,1.45,1.4],PG=[20,16,12,10,8,6];
+function apply(s,fs,lh,pg){s.style.fontSize=fs+'px';s.style.lineHeight=String(lh);s.querySelectorAll('.story-para + .story-para').forEach(function(p){p.style.marginTop=pg+'px';});}
+function fit(){var s=document.querySelector('.story');if(!s)return;for(var fs=FONT_PREF;fs>=FONT_MIN;fs--)for(var i=0;i<LH.length;i++)for(var j=0;j<PG.length;j++){apply(s,fs,LH[i],PG[j]);if(s.scrollHeight<=s.clientHeight+2)return;}}
+fit();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+</script>
+</body>
+</html>

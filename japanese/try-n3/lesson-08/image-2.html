@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<!-- lesson-08 image-2 · N3 合并版 · 10 行 -->
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>文法拆解 — Lesson 08</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 1080px; height: 1440px; overflow: hidden; font-family: "Noto Sans JP", "PingFang SC", "Microsoft YaHei", sans-serif; background: #FDFDF4; color: #000000; }
+    .canvas { width: 1080px; height: 1440px; display: flex; flex-direction: column; background: #FDFDF4; }
+    .title-bar { background: #F3D2C2; text-align: center; font-size: 38px; font-weight: 700; color: #D56332; padding: 14px 16px 12px; flex-shrink: 0; letter-spacing: 0.02em; }
+    .table-wrap { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 0 10px 8px; }
+    table.grammar-table { width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed; --thead-h: 52px; --grammar-rows: 10; }
+    thead th { background: #5DB1B5; color: #FDFDF4; font-size: 26px; font-weight: 700; padding: 8px 5px; border: 1px solid #B8D8DA; text-align: center; line-height: 1.2; }
+    tbody tr { height: calc((100% - var(--thead-h)) / var(--grammar-rows)); }
+    tbody td { border: 1px solid #E0C8BE; padding: 5px 8px; vertical-align: middle; overflow: hidden; }
+    col.col-no { width: 44px; }
+    col.col-grammar { width: 248px; }
+    col.col-meaning { width: 128px; }
+    col.col-dual { width: auto; }
+    .col-no { text-align: center; }
+    .num { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #F3D2C2; color: #D56332; font-weight: 700; font-size: 22px; }
+    .grammar, .meaning, .story-line, .theater-line {
+      white-space: normal;
+      word-wrap: break-word;
+      overflow-wrap: anywhere;
+    }
+    .grammar { font-weight: 700; font-size: 28px; line-height: 1.28; text-align: left; }
+    .meaning { font-size: 26px; line-height: 1.3; color: #222222; text-align: left; }
+    .dual-cell { display: flex; flex-direction: column; justify-content: center; height: 100%; gap: 4px; min-height: 0; }
+    .story-line { font-size: 28px; line-height: 1.32; text-align: left; }
+    .theater-line { font-size: 26px; line-height: 1.32; text-align: left; color: #444444; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; }
+    ruby rt { font-size: 0.4em; font-weight: 500; }
+    .hl-yellow, .hl-red {
+      background-color: color-mix(in srgb, #FFEB3B 50%, #FFFFFF 50%);
+      color: #000000;
+      font-weight: 700;
+      padding: 0 2px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+  </style>
+</head>
+<body>
+<div class="canvas">
+<div class="title-bar no-ruby">文法拆解（N3）</div>
+<div class="table-wrap">
+<table class="grammar-table">
+<colgroup>
+<col class="col-no"/><col class="col-grammar"/><col class="col-meaning"/><col class="col-dual"/>
+</colgroup>
+<thead>
+<tr><th>No</th><th class="no-ruby">文法</th><th class="no-ruby">意思</th><th class="no-ruby">故事句 · 脑内小剧场</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-no"><span class="num">1</span></td>
+<td class="grammar">～ご～いただきました</td>
+<td class="meaning no-ruby">承蒙……</td>
+<td><div class="dual-cell">
+<div class="story-line"><ruby>先日<rt>せんじつ</rt></ruby>は<span class="hl-yellow">ご<ruby>案内<rt>あんない</rt></ruby>いただき</span>、ありがとうございました。</div>
+<div class="theater-line no-ruby"><span class="hl-yellow">承蒙指引</span>，非常感谢</div>
+</div></td>
+</tr>
+<tr>
+<td class="col-no"><span class="num">2</span></td>
+<td class="grammar">～てました</td>
+<td class="meaning no-ruby">……来着</td>
+<td><div class="dual-cell">
+<div class="story-line"><ruby>配布<rt>はいふ</rt></ruby><ruby>資料<rt>しりょう</rt></ruby>は<span class="hl-yellow"><ruby>拝見<rt>はいけん</rt></ruby>してました</span>。</div>
+<div class="theater-line no-ruby">资料我<span class="hl-yellow">已经拜读过了</span></div>
+</div></td>
+</tr>
+<tr>
+<td class="col-no"><span class="num">3</span></td>
+<td class="grammar">～<ruby>存じ上げ<rt>ぞんじあげ</rt></ruby>て</td>
+<td class="meaning no-ruby">知晓</td>
+<td><div class="dual-cell">
+<div class="story-line"><ruby>田中<rt>たなか</rt></ruby><ruby>様<rt>さま</rt></ruby>のお<ruby>名前<rt>なまえ</rt></ruby>は<span class="hl-yellow"><ruby>存じ上げ<rt>ぞんじあげ</rt></ruby>ております</span>。</div>
+<div class="theater-line no-ruby">田中大名我<span class="hl-yellow">知晓</span></div>
+</div></td>
+</tr>
+<tr>
+<td class="col-no"><span class="num">4</span></td>
+<td class="grammar">～お<ruby>目<rt>め</rt></ruby>にかかる</td>
+<td class="meaning no-ruby">拜见</td>
+<td><div class="dual-cell">
+<div class="story-line"><ruby>本日<rt>ほんじつ</rt></ruby><span class="hl-yellow">お<ruby>目<rt>め</rt></ruby>にかかれる</span>と<ruby>伺い<rt>うかがい</rt></ruby>ました。</div>
+<div class="theater-line no-ruby">听说今天能<span class="hl-yellow">拜见</span>您</div>
+</div></td>
+</tr>
+<tr>
+<td class="col-no"><span class="num">5</span></td>
+<td class="grammar">～お<ruby>目<rt>め</rt></ruby>にかける</td>
+<td class="meaning no-ruby">请过目</td>
+<td><div class="dual-cell">
+<div class="story-line"><ruby>履歴<rt>りれき</rt></ruby><ruby>書<rt>しょ</rt></ruby>を<span class="hl-yellow">お<ruby>目<rt>め</rt></ruby>にかけ</span>ていただけますでしょうか。</div>
+<div class="theater-line no-ruby">能否<span class="hl-yellow">请您过目</span>简历</div>
+</div></td>
+</tr>
+<tr>
+<td class="col-no"><span class="num">6</span></td>
+<td class="grammar">～<ruby>頂戴<rt>ちょうだい</rt></ruby>する</td>
+<td class="meaning no-ruby">承蒙</td>
+<td><div class="dual-cell">
+<div class="story-line">ご<ruby>指導<rt>しどう</rt></ruby>を<span class="hl-yellow"><ruby>頂戴<rt>ちょうだい</rt></ruby>したい</span>のですが。</div>
+<div class="theater-line no-ruby">想<span class="hl-yellow">承蒙</span>您指导</div>
+</div></td>
+</tr>
+<tr>
+<td class="col-no"><span class="num">7</span></td>
+<td class="grammar">～お～です</td>
+<td class="meaning no-ruby">お+……</td>
+<td><div class="dual-cell">
+<div class="story-line"><span class="hl-yellow">お<ruby>忙しい<rt>いそがしい</rt></ruby></span>ところ<ruby>恐れ入り<rt>おそれいり</rt></ruby>ます。</div>
+<div class="theater-line no-ruby"><span class="hl-yellow">您百忙之中</span>，恐打扰了</div>
+</div></td>
+</tr>
+<tr>
+<td class="col-no"><span class="num">8</span></td>
+<td class="grammar">～でしょうか</td>
+<td class="meaning no-ruby">……可以吗</td>
+<td><div class="dual-cell">
+<div class="story-line"><ruby>質問<rt>しつもん</rt></ruby>してもよろしい<span class="hl-yellow">でしょうか</span>。</div>
+<div class="theater-line no-ruby">请问<span class="hl-yellow">可以吗</span></div>
+</div></td>
+</tr>
+<tr>
+<td class="col-no"><span class="num">9</span></td>
+<td class="grammar">～でいらっしゃる</td>
+<td class="meaning no-ruby">在……</td>
+<td><div class="dual-cell">
+<div class="story-line"><ruby>田中<rt>たなか</rt></ruby><ruby>様<rt>さま</rt></ruby>は<ruby>現場<rt>げんば</rt></ruby><span class="hl-yellow">でいらっしゃる</span>そうです。</div>
+<div class="theater-line no-ruby">听说田中<span class="hl-yellow">在</span>现场</div>
+</div></td>
+</tr>
+<tr>
+<td class="col-no"><span class="num">10</span></td>
+<td class="grammar">～させていただきます</td>
+<td class="meaning no-ruby">请允许我……</td>
+<td><div class="dual-cell">
+<div class="story-line"><ruby>自己<rt>じこ</rt></ruby><ruby>紹介<rt>しょうかい</rt></ruby><span class="hl-yellow">させていただきます</span>。</div>
+<div class="theater-line no-ruby"><span class="hl-yellow">请允许我</span>自我介绍</div>
+</div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<script>
+    function fitGrammarRows() {
+      var table = document.querySelector('.grammar-table');
+      var tbody = table && table.querySelector('tbody');
+      if (!table || !tbody) return;
+      var rows = tbody.querySelectorAll('tr').length;
+      if (rows < 1) return;
+      var thead = table.querySelector('thead');
+      table.style.setProperty('--grammar-rows', String(rows));
+      table.style.setProperty('--thead-h', ((thead && thead.offsetHeight) || 52) + 'px');
+    }
+    function rowCellsFit() {
+      var rows = document.querySelectorAll('.grammar-table tbody tr');
+      for (var i = 0; i < rows.length; i++) {
+        var cells = rows[i].querySelectorAll('td');
+        for (var j = 0; j < cells.length; j++) {
+          if (cells[j].scrollHeight > cells[j].clientHeight + 2) return false;
+        }
+      }
+      return true;
+    }
+    function applyGrammarFonts(g, m, s, t, gap) {
+      document.querySelectorAll('.grammar').forEach(function (el) { el.style.fontSize = g + 'px'; });
+      document.querySelectorAll('.meaning').forEach(function (el) { el.style.fontSize = m + 'px'; });
+      document.querySelectorAll('.story-line').forEach(function (el) { el.style.fontSize = s + 'px'; });
+      document.querySelectorAll('.theater-line').forEach(function (el) { el.style.fontSize = t + 'px'; });
+      document.querySelectorAll('.dual-cell').forEach(function (el) { el.style.gap = gap + 'px'; });
+    }
+    function fitGrammarFonts() {
+      var G_PREF = 28, G_MIN = 20;
+      var M_PREF = 26, M_MIN = 18;
+      var S_PREF = 28, S_MIN = 20;
+      var T_PREF = 26, T_MIN = 18;
+      var GAPS = [4, 3, 2, 1];
+      fitGrammarRows();
+      for (var g = G_PREF; g >= G_MIN; g--) {
+        for (var m = Math.min(M_PREF, g - 2); m >= M_MIN; m--) {
+          for (var s = Math.min(S_PREF, g); s >= S_MIN; s--) {
+            for (var t = Math.min(T_PREF, s - 2); t >= T_MIN; t--) {
+              for (var gi = 0; gi < GAPS.length; gi++) {
+                applyGrammarFonts(g, m, s, t, GAPS[gi]);
+                if (rowCellsFit()) return;
+              }
+            }
+          }
+        }
+      }
+      applyGrammarFonts(G_MIN, M_MIN, S_MIN, T_MIN, 1);
+    }
+    fitGrammarFonts();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitGrammarFonts);
+  </script>
+</body>
+</html>

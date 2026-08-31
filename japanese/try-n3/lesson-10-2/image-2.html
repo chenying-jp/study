@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<!-- lesson-10-2 image-2 · 5 行 -->
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>文法拆解 — Lesson 10-2</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 1080px; height: 1440px; overflow: hidden; font-family: "Noto Sans JP", "PingFang SC", "Microsoft YaHei", sans-serif; background: #FDFDF4; color: #000; }
+    .canvas { width: 1080px; height: 1440px; display: flex; flex-direction: column; }
+    .title-bar { background: #F3D2C2; text-align: center; font-size: 40px; font-weight: 700; color: #D56332; padding: 18px 16px 16px; flex-shrink: 0; }
+    .table-wrap { flex: 1; min-height: 0; padding: 0 12px 10px; }
+    table.grammar-table { width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed; --thead-h: 60px; --grammar-rows: 5; }
+    thead th { background: #5DB1B5; color: #FDFDF4; font-size: 28px; font-weight: 700; padding: 10px 6px; border: 1px solid #B8D8DA; text-align: center; }
+    tbody tr { height: calc((100% - var(--thead-h)) / var(--grammar-rows)); }
+    tbody td { border: 1px solid #E0C8BE; padding: 8px 10px; vertical-align: middle; overflow: hidden; }
+    col.col-no { width: 48px; } col.col-grammar { width: 256px; } col.col-meaning { width: 136px; }
+    .num { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #F3D2C2; color: #D56332; font-weight: 700; font-size: 24px; }
+    .grammar { font-weight: 700; font-size: 32px; line-height: 1.32; }
+    .meaning { font-size: 30px; line-height: 1.34; color: #222; }
+    .dual-cell { display: flex; flex-direction: column; justify-content: center; height: 100%; gap: 8px; }
+    .story-line { font-size: 32px; line-height: 1.36; }
+    .theater-line { font-size: 30px; line-height: 1.36; color: #444; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .grammar, .meaning, .story-line, .theater-line { white-space: normal; overflow-wrap: anywhere; }
+    ruby rt { font-size: 0.42em; }
+    .hl-yellow { background-color: color-mix(in srgb, #FFEB3B 50%, #FFF 50%); font-weight: 700; padding: 0 2px; box-decoration-break: clone; }
+</style>
+</head>
+<body>
+<div class="canvas">
+<div class="title-bar no-ruby">文法拆解（N3）</div>
+<div class="table-wrap">
+<table class="grammar-table">
+<colgroup><col class="col-no"/><col class="col-grammar"/><col class="col-meaning"/><col/></colgroup>
+<thead><tr><th>No</th><th class="no-ruby">文法</th><th class="no-ruby">意思</th><th class="no-ruby">故事句 · 脑内小剧场</th></tr></thead>
+<tbody>
+<tr><td class="col-no"><span class="num">1</span></td><td class="grammar">～ことといったら</td><td class="meaning no-ruby">说到……</td><td><div class="dual-cell"><div class="story-line"><span class="hl-yellow"><ruby>遅刻<rt>ちこく</rt></ruby>のことといったら</span>、いつもギリギリだ。</div><div class="theater-line no-ruby"><span class="hl-yellow">说到迟到</span>，总是踩点</div></div></td></tr>
+<tr><td class="col-no"><span class="num">2</span></td><td class="grammar">～くせに</td><td class="meaning no-ruby">明明……却</td><td><div class="dual-cell"><div class="story-line">アラームをかけた<span class="hl-yellow">くせに</span>、<ruby>聞こえ<rt>きこえ</rt></ruby>なかった。</div><div class="theater-line no-ruby"><span class="hl-yellow">明明设了闹钟</span>却没听见</div></div></td></tr>
+<tr><td class="col-no"><span class="num">3</span></td><td class="grammar">～っぽい</td><td class="meaning no-ruby">……似的</td><td><div class="dual-cell"><div class="story-line"><span class="hl-yellow"><ruby>試験<rt>しけん</rt></ruby><ruby>前<rt>まえ</rt></ruby>っぽい</span><ruby>顔<rt>かお</rt></ruby>をしていた。</div><div class="theater-line no-ruby">一副<span class="hl-yellow">考前脸</span></div></div></td></tr>
+<tr><td class="col-no"><span class="num">4</span></td><td class="grammar">～せい</td><td class="meaning no-ruby">都怪……</td><td><div class="dual-cell"><div class="story-line"><ruby>単語<rt>たんご</rt></ruby><ruby>量<rt>りょう</rt></ruby><span class="hl-yellow">のせい</span>だと<ruby>分かっ<rt>わかっ</rt></ruby>ている。</div><div class="theater-line no-ruby">听力差怪<span class="hl-yellow">词汇量</span></div></div></td></tr>
+<tr><td class="col-no"><span class="num">5</span></td><td class="grammar">～のことだから</td><td class="meaning no-ruby">因为是……</td><td><div class="dual-cell"><div class="story-line"><span class="hl-yellow"><ruby>真面目<rt>まじめ</rt></ruby>なことだから</span>、<ruby>例文<rt>れいぶん</rt></ruby>を<ruby>読ん<rt>よん</rt></ruby>でくれた。</div><div class="theater-line no-ruby"><span class="hl-yellow">因为李同学认真</span>，帮忙读例句</div></div></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<script>
+function fitGrammarRows(){var t=document.querySelector('.grammar-table'),tb=t&&t.querySelector('tbody');if(!t||!tb)return;var r=tb.querySelectorAll('tr').length,th=t.querySelector('thead');t.style.setProperty('--grammar-rows',String(r));t.style.setProperty('--thead-h',((th&&th.offsetHeight)||60)+'px');}
+function rowCellsFit(){var rows=document.querySelectorAll('.grammar-table tbody tr');for(var i=0;i<rows.length;i++){var c=rows[i].querySelectorAll('td');for(var j=0;j<c.length;j++)if(c[j].scrollHeight>c[j].clientHeight+2)return false;}return true;}
+function applyGrammarFonts(g,m,s,t,gap){document.querySelectorAll('.grammar').forEach(function(e){e.style.fontSize=g+'px';});document.querySelectorAll('.meaning').forEach(function(e){e.style.fontSize=m+'px';});document.querySelectorAll('.story-line').forEach(function(e){e.style.fontSize=s+'px';});document.querySelectorAll('.theater-line').forEach(function(e){e.style.fontSize=t+'px';});document.querySelectorAll('.dual-cell').forEach(function(e){e.style.gap=gap+'px';});}
+function fitGrammarFonts(){var GAPS=[8,6,4,2];fitGrammarRows();for(var g=32;g>=24;g--)for(var m=Math.min(30,g-2);m>=22;m--)for(var s=Math.min(32,g);s>=24;s--)for(var t=Math.min(30,s-2);t>=22;t--)for(var gi=0;gi<GAPS.length;gi++){applyGrammarFonts(g,m,s,t,GAPS[gi]);if(rowCellsFit())return;}applyGrammarFonts(24,22,24,22,2);}
+fitGrammarFonts();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitGrammarFonts);
+</script>
+</body>
+</html>

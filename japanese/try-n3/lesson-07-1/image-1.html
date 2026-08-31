@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<!-- lesson-07-1 image-1 · N3 NEXTPURE · rubyize 后再出图 -->
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>TryN3 第7課（1）— 文法速记</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Noto+Sans+SC:wght@900&amp;display=block" rel="stylesheet"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 1080px; height: 1440px; overflow: hidden; font-family: "Noto Sans JP", "Noto Sans SC", "Hiragino Sans", "Yu Gothic", sans-serif; background: #FDFDF4; color: #000000; }
+    .canvas { width: 1080px; height: 1440px; display: flex; flex-direction: column; background: #FDFDF4; }
+    .top-spacer { height: 188px; flex-shrink: 0; background: #F3D2C2; }
+    .top-line-gap { height: calc(30px * 1.7); flex-shrink: 0; background: #FDFDF4; }
+    .page-inset { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 0 64px; }
+    .title-head { font-size: 72px; font-weight: 900; line-height: 1.1; padding: 24px 8px 24px 0; min-height: 136px; text-indent: 1em; text-align: left; letter-spacing: 0.04em; flex-shrink: 0; }
+    .lesson-title { background: color-mix(in srgb, #FFEB3B 50%, #FFFFFF 50%); font-size: 72px; display: flex; align-items: center; min-height: 176px; color: #000000; }
+    .title-wrap { flex-shrink: 0; background: #F3D2C2; }
+    .rule-top, .rule-bottom { border: none; border-top: 4px solid #000000; margin: 0; }
+    .title-box { background: #F3D2C2; font-size: 100px; font-weight: 900; font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; display: flex; align-items: center; min-height: 176px; color: #D56332; }
+    .story { flex: 1; min-height: 0; background: #FDFDF4; padding: calc(12px + 1.4em) 8px 28px 0; font-size: 32px; font-weight: 500; line-height: 1.72; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; }
+    .story-para + .story-para { margin-top: 26px; }
+    .story-line { margin: 0; padding: 0; }
+    .story-line + .story-line { margin-top: 10px; }
+    ruby rt { font-size: 0.45em; font-weight: 500; }
+    .hl-yellow, .hl-red {
+      background-color: color-mix(in srgb, #FFEB3B 50%, #FFFFFF 50%);
+      color: #000000;
+      font-weight: 700;
+      padding: 0 2px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+  </style>
+</head>
+<body>
+<div class="canvas">
+<div class="top-spacer"></div>
+<div class="top-line-gap"></div>
+<div class="page-inset">
+<hr class="rule-top"/>
+<div class="title-head lesson-title">TryN3第7課（1）</div>
+<div class="title-wrap">
+<div class="title-head title-box">文法速记</div>
+<hr class="rule-bottom"/>
+</div>
+<div class="story">
+<div class="story-para">
+<div class="story-line"><strong>○○さん</strong>は、<ruby>来月<rt>らいげつ</rt></ruby>のN3<ruby>試験<rt>しけん</rt></ruby>まで<ruby>二<rt>に</rt></ruby><ruby>週間<rt>しゅうかん</rt></ruby>。<ruby>放課<rt>ほうか</rt></ruby><ruby>後<rt>ご</rt></ruby>、<ruby>専門<rt>せんもん</rt></ruby><ruby>学校<rt>がっこう</rt></ruby>の<ruby>空い<rt>あい</rt></ruby>た<ruby>教室<rt>きょうしつ</rt></ruby>で、<ruby>日本<rt>にっぽん</rt></ruby><ruby>語<rt>ご</rt></ruby>チャレンジの<ruby>題<rt>だい</rt></ruby><ruby>集<rt>しゅう</rt></ruby>を<ruby>解く<rt>とく</rt></ruby>。</div>
+</div>
+<div class="story-para">
+<div class="story-line"><ruby>先生<rt>せんせい</rt></ruby>に「<span class="hl-yellow"><ruby>来月<rt>らいげつ</rt></ruby><ruby>試験<rt>しけん</rt></ruby>ですと</span>、<ruby>毎日<rt>まいにち</rt></ruby><ruby>模試<rt>もし</rt></ruby>を<ruby>一<rt>いち</rt></ruby>セットずつ」と<ruby>言わ<rt>いわ</rt></ruby>れた。</div>
+</div>
+<div class="story-para">
+<div class="story-line"><ruby>図書<rt>としょ</rt></ruby><ruby>館<rt>かん</rt></ruby>より、<span class="hl-yellow"><ruby>教室<rt>きょうしつ</rt></ruby>で<ruby>声<rt>こえ</rt></ruby>に<ruby>出す<rt>だす</rt></ruby>ようなら</span>、<ruby>今<rt>いま</rt></ruby>はこちらが<ruby>合う<rt>あう</rt></ruby>と<ruby>決め<rt>きめ</rt></ruby>た。</div>
+</div>
+<div class="story-para">
+<div class="story-line"><ruby>二<rt>に</rt></ruby><ruby>週間<rt>しゅうかん</rt></ruby>、<ruby>間違い<rt>まちがい</rt></ruby>ノートを<ruby>見返す<rt>みかえす</rt></ruby>うちに、<ruby>助詞<rt>じょし</rt></ruby>のミスが<ruby>少し<rt>すこし</rt></ruby>ずつ<span class="hl-yellow"><ruby>減っ<rt>へっ</rt></ruby>てきた</span>。</div>
+</div>
+<div class="story-para">
+<div class="story-line">「<span class="hl-yellow"><ruby>試験<rt>しけん</rt></ruby>が<ruby>近い<rt>ちかい</rt></ruby>ものですから</span>、<ruby>今日<rt>きょう</rt></ruby>は<ruby>文法<rt>ぶんぽう</rt></ruby>の<ruby>復習<rt>ふくしゅう</rt></ruby>まで」と<ruby>自分<rt>じぶん</rt></ruby>に<ruby>言い聞かせ<rt>いいきかせ</rt></ruby>た。</div>
+</div>
+<div class="story-para">
+<div class="story-line">「<span class="hl-yellow"><ruby>読解<rt>どっかい</rt></ruby>なんかより</span>、まず<ruby>聴解<rt>ちょうかい</rt></ruby>の<ruby>点数<rt>てんすう</rt></ruby>を<ruby>上げ<rt>あげ</rt></ruby>たい」とノートに<ruby>書い<rt>かい</rt></ruby>た。</div>
+</div>
+<div class="story-para">
+<div class="story-line"><ruby>帰り<rt>かえり</rt></ruby>のバスで、<ruby>来月<rt>らいげつ</rt></ruby>は<span class="hl-yellow"><ruby>合格<rt>ごうかく</rt></ruby>できるかと<ruby>思い<rt>おもい</rt></ruby>ます</span>、と<ruby>小さく<rt>ちいさく</rt></ruby>つぶやいた。</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    (function () {
+      var FONT_MIN = 24, FONT_PREF = 32;
+      var LINE_HEIGHTS = [1.72, 1.68, 1.64, 1.6, 1.55, 1.5, 1.45];
+      var PARA_GAPS = [26, 22, 18, 14, 10, 8, 6];
+      var INNER_GAPS = [10, 8, 6, 4, 0];
+      function apply(story, fs, lh, pg, ig) {
+        story.style.fontSize = fs + 'px';
+        story.style.lineHeight = String(lh);
+        story.querySelectorAll('.story-para + .story-para').forEach(function (p) { p.style.marginTop = pg + 'px'; });
+        story.querySelectorAll('.story-line + .story-line').forEach(function (l) { l.style.marginTop = ig + 'px'; });
+      }
+      function fits(story, fs, lh, pg, ig) { apply(story, fs, lh, pg, ig); return story.scrollHeight <= story.clientHeight + 2; }
+      function fitStory() {
+        var story = document.querySelector('.story');
+        if (!story) return;
+        for (var fs = FONT_PREF; fs >= FONT_MIN; fs--) {
+          for (var li = 0; li < LINE_HEIGHTS.length; li++) {
+            for (var pi = 0; pi < PARA_GAPS.length; pi++) {
+              for (var ii = 0; ii < INNER_GAPS.length; ii++) {
+                if (fits(story, fs, LINE_HEIGHTS[li], PARA_GAPS[pi], INNER_GAPS[ii])) {
+                  apply(story, fs, LINE_HEIGHTS[li], PARA_GAPS[pi], INNER_GAPS[ii]); return;
+                }
+              }
+            }
+          }
+        }
+        apply(story, FONT_MIN, LINE_HEIGHTS[LINE_HEIGHTS.length - 1], PARA_GAPS[PARA_GAPS.length - 1], 0);
+      }
+      fitStory();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitStory);
+    })();
+  </script>
+</body>
+</html>

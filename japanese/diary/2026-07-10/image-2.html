@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- 07_日记 image-2 · 发表回顾正文 -->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>日语口说 · 2026-07-10 图2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1080px; height: 1440px; overflow: hidden; }
+    body { font-family: "Noto Sans JP", "Yu Gothic", sans-serif; -webkit-font-smoothing: antialiased; }
+    .canvas {
+      width: 1080px; height: 1440px; position: relative;
+      background-color: #F3EDE4;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 55px, rgba(180,165,145,0.08) 55px, rgba(180,165,145,0.08) 56px);
+      padding: 96px 72px 88px 84px; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .canvas::before {
+      content: ""; position: absolute; left: 0; top: 64px; bottom: 88px; width: 6px;
+      background: linear-gradient(180deg, #D4C4AE 0%, #C9B8A0 50%, #D4C4AE 100%);
+      border-radius: 0 3px 3px 0;
+    }
+    .body-wrap { flex: 1; min-height: 0; overflow: hidden; }
+    .body { font-size: 44px; line-height: 1.82; letter-spacing: 0.03em; color: #2A2826; }
+    .body p { margin-bottom: 1.1em; }
+    .body p:last-child { margin-bottom: 0; }
+    .body strong { font-weight: 700; color: #1a2744; }
+    .body ruby rt { font-size: 0.40em; color: #7A756E; }
+    .body.fit-sm { font-size: 40px; line-height: 1.76; }
+    .body.fit-md { font-size: 36px; line-height: 1.72; }
+    .body.fit-xs { font-size: 32px; line-height: 1.66; }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="body-wrap">
+      <div class="body" id="body">
+        <p><ruby>今日<rt>きょう</rt></ruby>はランドスケープ<ruby>概論<rt>がいろん</rt></ruby>の<ruby>授業<rt>じゅぎょう</rt></ruby>で、<ruby>中国<rt>ちゅうごく</rt></ruby>の○○にある<ruby>東湖緑道<rt>とうこりょくどう</rt></ruby>について<ruby>発表<rt>はっぴょう</rt></ruby>しました。</p>
+        <p><ruby>発表<rt>はっぴょう</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>は<ruby>少<rt>すこ</rt></ruby>し<ruby>緊張<rt>きんちょう</rt></ruby>しましたが、<ruby>無事<rt>ぶじ</rt></ruby>に<ruby>終<rt>お</rt></ruby>わりました。</p>
+        <p><strong><ruby>発表<rt>はっぴょう</rt></ruby>が<ruby>終<rt>お</rt></ruby>わって、うれしかったです。</strong></p>
+        <p>クラスメートや<ruby>先生<rt>せんせい</rt></ruby>も<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてくれました。</p>
+        <p>○○の<ruby>東湖緑道<rt>とうこりょくどう</rt></ruby>の<ruby>魅力<rt>みりょく</rt></ruby>を<ruby>紹介<rt>しょうかい</rt></ruby>できて、とてもうれしかったです。</p>
+        <p>これからも<ruby>日本語<rt>にほんご</rt></ruby>をもっと<ruby>勉強<rt>べんきょう</rt></ruby>して、<ruby>自信<rt>じしん</rt></ruby>を<ruby>持<rt>も</rt></ruby>って<ruby>発表<rt>はっぴょう</rt></ruby>できるようになりたいです。</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const el = document.getElementById("body");
+      const wrap = el.parentElement;
+      const steps = ["", "fit-sm", "fit-md", "fit-xs"];
+      for (const cls of steps) {
+        el.className = "body" + (cls ? " " + cls : "");
+        if (el.scrollHeight <= wrap.clientHeight) return;
+      }
+    })();
+  </script>
+</body>
+</html>

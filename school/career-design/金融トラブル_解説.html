@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>金融トラブル授業 — 解説（先生の説明）</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --primary: #2563eb;
+      --primary-light: #dbeafe;
+      --correct: #059669;
+      --correct-bg: #ecfdf5;
+      --warn: #d97706;
+      --warn-bg: #fffbeb;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.85;
+      padding: 24px 16px 64px;
+    }
+
+    ruby { ruby-position: over; }
+    rt { font-size: 0.55em; color: #475569; letter-spacing: 0; }
+
+    .container { max-width: 820px; margin: 0 auto; }
+
+    header {
+      background: linear-gradient(135deg, #1e40af, #2563eb);
+      color: white;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 { font-size: 1.5rem; margin-bottom: 8px; }
+    header p { opacity: 0.92; font-size: 0.95rem; }
+
+    .tip-box {
+      background: var(--warn-bg);
+      border-left: 4px solid var(--warn);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+    }
+
+    .tip-box strong { color: var(--warn); }
+
+    nav {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    nav h2 { font-size: 0.9rem; color: var(--muted); margin-bottom: 10px; }
+    nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+    nav a {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    nav a:hover { background: #bfdbfe; }
+
+    .question-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .q-label {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      font-size: 0.78rem;
+      font-weight: bold;
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .q-text {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 2px dashed var(--border);
+    }
+
+    .answer-box {
+      background: var(--correct-bg);
+      border: 2px solid var(--correct);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 16px;
+    }
+
+    .answer-box .label {
+      font-size: 0.78rem;
+      font-weight: bold;
+      color: var(--correct);
+      margin-bottom: 4px;
+    }
+
+    .answer-box .ans { font-size: 1rem; font-weight: 600; color: #065f46; }
+
+    .section { margin-top: 14px; }
+    .section h3 {
+      font-size: 0.88rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .section h3::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 16px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .simple {
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .logic {
+      background: #eff6ff;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.93rem;
+    }
+
+    .logic ol, .wrong ol { padding-left: 1.4em; }
+    .logic li, .wrong li { margin-bottom: 4px; }
+
+    .wrong {
+      background: #fef2f2;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      color: #7f1d1d;
+    }
+
+    .wrong summary { cursor: pointer; font-weight: 600; color: #b91c1c; }
+
+    .summary-card {
+      background: linear-gradient(135deg, #ecfdf5, #dbeafe);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-top: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .summary-card h2 { font-size: 1.1rem; margin-bottom: 14px; color: #1e3a8a; }
+
+    .summary-card table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .summary-card th {
+      background: #1e40af;
+      color: white;
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .summary-card td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .summary-card tr:last-child td { border-bottom: none; }
+
+    .reflection {
+      background: #fdf4ff;
+      border: 2px solid #c084fc;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-top: 16px;
+      font-size: 0.93rem;
+    }
+
+    .reflection .label { font-weight: bold; color: #7e22ce; margin-bottom: 6px; }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 20px; }
+      .question-card { padding: 18px 16px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>💴 お<ruby>金<rt>かね</rt></ruby>の<ruby>話<rt>はなし</rt></ruby> — <ruby>解説<rt>かいせつ</rt></ruby>レッスン</h1>
+    <p>こんにちは！<ruby>今日<rt>きょう</rt></ruby>は、テストの<ruby>問題<rt>もんだい</rt></ruby>を<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>勉強<rt>べんきょう</rt></ruby>しましょう。<br>
+    <ruby>難<rt>むずか</rt></ruby>しい<ruby>言葉<rt>ことば</rt></ruby>には <strong>ふりがな</strong> を<ruby>付<rt>つ</rt></ruby>けています。<ruby>焦<rt>あせ</rt></ruby>らず、ゆっくり<ruby>読<rt>よ</rt></ruby>んでくださいね。</p>
+  </header>
+
+  <div class="tip-box">
+    <strong>📌 先生からの<ruby>大<rt>だい</rt></ruby><ruby>切<rt>せつ</rt></ruby>な<ruby>話<rt>はなし</rt></ruby></strong><br>
+    この<ruby>授業<rt>じゅぎょう</rt></ruby>の<ruby>目的<rt>もくてき</rt></ruby>は、テストの<ruby>点数<rt>てんすう</rt></ruby>だけではありません。<br>
+    <strong>「<ruby>騙<rt>だま</rt></ruby>されない」「<ruby>困<rt>こま</rt></ruby>ったとき<ruby>相談<rt>そうだん</rt></ruby>できる」</strong> ことを<ruby>覚<rt>おぼ</rt></ruby>えることです。
+  </div>
+
+  <nav>
+    <h2>📑 もくじ（クリックで<ruby>飛<rt>と</rt></ruby>べます）</h2>
+    <ul>
+      <li><a href="#q89">Q1 PDF89</a></li>
+      <li><a href="#q91">Q2 PDF91</a></li>
+      <li><a href="#q92">Q3 PDF92</a></li>
+      <li><a href="#q93">Q4 PDF93</a></li>
+      <li><a href="#q94">Q5 PDF94</a></li>
+      <li><a href="#q97a">Q6 PDF97-①</a></li>
+      <li><a href="#q97b">Q7 PDF97-②</a></li>
+      <li><a href="#q98">Q8 PDF98</a></li>
+      <li><a href="#q99">Q9 PDF99</a></li>
+      <li><a href="#summary">まとめ</a></li>
+    </ul>
+  </nav>
+
+  <!-- Q1 -->
+  <div class="question-card" id="q89">
+    <span class="q-label">PDF 89<ruby>枚目<rt>まいめ</rt></ruby></span>
+    <div class="q-text">
+      <ruby>金融<rt>きんゆう</rt></ruby>トラブルや<ruby>悪質<rt>あくしつ</rt></ruby>な<ruby>詐欺<rt>さぎ</rt></ruby>に<ruby>遭<rt>あ</rt></ruby>わないための、<ruby>最<rt>もっと</rt></ruby>も<ruby>基本<rt>きほん</rt></ruby>的で<ruby>大切<rt>たいせつ</rt></ruby>な<ruby>心構<rt>こころが</rt></ruby>えは？
+    </div>
+
+    <div class="answer-box">
+      <div class="label">✅ <ruby>正解<rt>せいかい</rt></ruby></div>
+      <div class="ans">「ローリスク・ハイリターン（おいしい<ruby>話<rt>はなし</rt></ruby>）」は<ruby>世<rt>よ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<ruby>存在<rt>そんざい</rt></ruby>しないと<ruby>理解<rt>りかい</rt></ruby>しておく</div>
+    </div>
+
+    <div class="section">
+      <h3>📖 <ruby>知識<rt>ちしき</rt></ruby>ポイント（<ruby>簡単<rt>かんたん</rt></ruby>に<ruby>説明<rt>せつめい</rt></ruby>）</h3>
+      <div class="simple">
+        <strong>ローリスク・ハイリターン</strong> = 「<ruby>危<rt>あぶ</rt></ruby>ないことは<ruby>少<rt>すく</rt></ruby>ないのに、<ruby>儲<rt>もう</rt></ruby>けは<ruby>大<rt>おお</rt></ruby>きい」<br>
+        → 日本語で言うと <strong>「おいしい<ruby>話<rt>はなし</rt></ruby>」</strong> です。<br><br>
+        でも、<ruby>現実<rt>げんじつ</rt></ruby>の<ruby>世界<rt>せかい</rt></ruby>では、こんな<ruby>話<rt>はなし</rt></ruby>は <strong>ほとんどありません</strong>。<br>
+        <ruby>儲<rt>もう</rt></ruby>ける<ruby>可能性<rt>かのうせい</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いほど、<ruby>危険<rt>きけん</rt></ruby>も<ruby>大<rt>おお</rt></ruby>きくなります。
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>🔍 <ruby>解<rt>と</rt></ruby>き<ruby>方<rt>かた</rt></ruby>の<ruby>考<rt>かんが</rt></ruby>え<ruby>方<rt>かた</rt></ruby></h3>
+      <div class="logic">
+        <ol>
+          <li>「<ruby>最<rt>もっと</rt></ruby>も<ruby>基本<rt>きほん</rt></ruby>」→ PDFの<ruby>最初<rt>さいしょ</rt></ruby>のポイント①を<ruby>探<rt>さが</rt></ruby>す</li>
+          <li>PDF：<strong>「おいしい<ruby>話<rt>はなし</rt></ruby>には<ruby>気<rt>き</rt></ruby>をつける」</strong></li>
+          <li>「<ruby>友<rt>とも</rt></ruby>だちが<ruby>勧<rt>すす</rt></ruby>めたから<ruby>安全<rt>あんぜん</rt></ruby>」→ ❌ <ruby>友<rt>とも</rt></ruby>だちでも<ruby>騙<rt>だま</rt></ruby>されることがある</li>
+          <li>「<ruby>断<rt>ことわ</rt></ruby>ると<ruby>失礼<rt>しつれい</rt></ruby>」→ ❌ <ruby>怪<rt>あや</rt></ruby>しければ<ruby>断<rt>ことわ</rt></ruby>るべき</li>
+          <li>「<ruby>一人<rt>ひとり</rt></ruby>で<ruby>耐<rt>た</rt></ruby>える」→ ❌ <ruby>相談<rt>そうだん</rt></ruby>することが<ruby>大切<rt>たいせつ</rt></ruby></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="question-card" id="q91">
+    <span class="q-label">PDF 91<ruby>枚目<rt>まいめ</rt></ruby></span>
+    <div class="q-text">
+      「ポンジ・スキーム」で、<ruby>被害者<rt>ひがいしゃ</rt></ruby>が<ruby>詐欺師<rt>さぎし</rt></ruby>を<ruby>信頼<rt>しんらい</rt></ruby>してしまい、さらに<ruby>大金<rt>たいきん</rt></ruby>を<ruby>騙<rt>だま</rt></ruby>し<ruby>取<rt>と</rt></ruby>られやすいのはなぜ？
+    </div>
+
+    <div class="answer-box">
+      <div class="label">✅ <ruby>正解<rt>せいかい</rt></ruby></div>
+      <div class="ans"><ruby>最初<rt>さいしょ</rt></ruby>は<ruby>実際<rt>じっさい</rt></ruby>に<ruby>配当金<rt>はいとうきん</rt></ruby>（お<ruby>金<rt>かね</rt></ruby>）が<ruby>支払<rt>しはら</rt></ruby>われるから</div>
+    </div>
+
+    <div class="section">
+      <h3>📖 <ruby>知識<rt>ちしき</rt></ruby>ポイント</h3>
+      <div class="simple">
+        <strong>ポンジ・スキーム（ポンzi <ruby>詐欺<rt>さぎ</rt></ruby>）</strong> とは：<br>
+        → <ruby>新<rt>あたら</rt></ruby>しい<ruby>人<rt>ひと</rt></ruby>から<ruby>集<rt>あつ</rt></ruby>めたお<ruby>金<rt>かね</rt></ruby>で、<ruby>古<rt>ふる</rt></ruby>い<ruby>人<rt>ひと</rt></ruby>に<ruby>配当<rt>はいとう</rt></ruby>を<ruby>払<rt>はら</rt></ruby>う<ruby>仕組<rt>しく</rt></ruby>み。<br>
+        → <ruby>本当<rt>ほんとう</rt></ruby>は<ruby>儲<rt>もう</rt></ruby>けていないのに、「<ruby>儲<rt>もう</rt></ruby>かっている<ruby>振<rt>ふ</rt></ruby>り」をします。<br><br>
+        <strong><ruby>最初<rt>さいしょ</rt></ruby>の<ruby>数<rt>すう</rt></ruby><ruby>回<rt>かい</rt></ruby>は、<ruby>本当<rt>ほんとう</rt></ruby>にお<ruby>金<rt>かね</rt></ruby>が<ruby>入<rt>はい</rt></ruby>る！</strong><br>
+        → 「<ruby>本物<rt>ほんもの</rt></ruby>だ！」と<ruby>思<rt>おも</rt></ruby>って、もっと<ruby>大<rt>おお</rt></ruby>きな<ruby>金<rt>かね</rt></ruby>を<ruby>投<rt>とう</rt></ruby>ずる。<br>
+        → その<ruby>後<rt>あと</rt></ruby>、<ruby>詐欺師<rt>さぎし</rt></ruby>は<ruby>逃<rt>に</rt></ruby>げてしまう。
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>🔍 <ruby>解<rt>と</rt></ruby>き<ruby>方<rt>かた</rt></ruby></h3>
+      <div class="logic">
+        <ol>
+          <li>ポンzi<ruby>詐欺<rt>さぎ</rt></ruby>の<ruby>特徴<rt>とくちょう</rt></ruby>②を<ruby>覚<rt>おぼ</rt></ruby>える</li>
+          <li>「<ruby>国<rt>くに</rt></ruby>の<ruby>証明書<rt>しょうめいしょ</rt></ruby>」→ ❌ <ruby>偽造<rt>ぎぞう</rt></ruby>もある</li>
+          <li>「<ruby>元本<rt>がんぽん</rt></ruby>100%<ruby>返金<rt>へんきん</rt></ruby>」→ ❌ そんな<ruby>話<rt>はなし</rt></ruby>はない</li>
+          <li>「<ruby>最初<rt>さいしょ</rt></ruby>にお<ruby>金<rt>かね</rt></ruby>が<ruby>入<rt>はい</rt></ruby>る」→ ✅ PDFの<ruby>説明<rt>せつめい</rt></ruby>と<ruby>一致<rt>いっち</rt></ruby></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="question-card" id="q92">
+    <span class="q-label">PDF 92<ruby>枚目<rt>まいめ</rt></ruby></span>
+    <div class="q-text">
+      ポンジ・スキームなどの<ruby>大<rt>おお</rt></ruby>きな<ruby>詐欺<rt>さぎ</rt></ruby>について<ruby>注意<rt>ちゅうい</rt></ruby>すべき<ruby>点<rt>てん</rt></ruby>として<ruby>正<rt>ただ</rt></ruby>しい<ruby>説明<rt>せつめい</rt></ruby>は？
+    </div>
+
+    <div class="answer-box">
+      <div class="label">✅ <ruby>正解<rt>せいかい</rt></ruby></div>
+      <div class="ans">テレビ<ruby>番組<rt>ばんぐみ</rt></ruby>で「<ruby>流行<rt>りゅうこう</rt></ruby>の<ruby>副業<rt>ふくぎょう</rt></ruby>」などと<ruby>取<rt>と</rt></ruby>り<ruby>上<rt>あ</rt></ruby>げられていても、それだけで<ruby>安全<rt>あんぜん</rt></ruby>の<ruby>保証<rt>ほしょう</rt></ruby>にはならない</div>
+    </div>
+
+    <div class="section">
+      <h3>📖 <ruby>知識<rt>ちしき</rt></ruby>ポイント</h3>
+      <div class="simple">
+        <ruby>詐欺<rt>さぎ</rt></ruby>の<ruby>会社<rt>かいしゃ</rt></ruby>も、<ruby>有名人<rt>ゆうめいじん</rt></ruby>やテレビを<ruby>使<rt>つか</rt></ruby>います。<br>
+        でも、<strong>「テレビに<ruby>出<rt>で</rt></ruby>た = <ruby>安全<rt>あんぜん</rt></ruby>」ではありません。</strong><br><br>
+        <ruby>詐欺<rt>さぎ</rt></ruby>の<ruby>形<rt>かたち</rt></ruby>も<ruby>色々<rt>いろいろ</rt></ruby>：<br>
+        ・<ruby>投資<rt>とうし</rt></ruby>（とうし）<br>
+        ・<ruby>和牛<rt>わぎゅう</rt></ruby>のオーナー<ruby>制度<rt>せいど</rt></ruby><br>
+        ・<ruby>金<rt>きん</rt></ruby>の<ruby>製品<rt>せいひん</rt></ruby>を<ruby>買<rt>か</rt></ruby>うだけ、など
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>🔍 <ruby>解<rt>と</rt></ruby>き<ruby>方<rt>かた</rt></ruby></h3>
+      <div class="logic">
+        <ol>
+          <li>「100%<ruby>信頼<rt>しんらい</rt></ruby>できる」→ ❌ <ruby>絶対<rt>ぜったい</rt></ruby>に<ruby>言<rt>い</rt></ruby>わない</li>
+          <li>「テレビ = <ruby>安全<rt>あんぜん</rt></ruby>ではない」→ ✅ PDFと<ruby>同<rt>おな</rt></ruby>じ</li>
+          <li>「<ruby>投資<rt>とうし</rt></ruby><ruby>信託<rt>しんたく</rt></ruby>だけ」→ ❌ <ruby>形<rt>かたち</rt></ruby>は<ruby>色々<rt>いろいろ</rt></ruby></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="question-card" id="q93">
+    <span class="q-label">PDF 93<ruby>枚目<rt>まいめ</rt></ruby></span>
+    <div class="q-text">
+      <ruby>借金<rt>しゃっきん</rt></ruby>の<ruby>返済<rt>へんさい</rt></ruby>に<ruby>困<rt>こま</rt></ruby>り、<ruby>別<rt>べつ</rt></ruby>の<ruby>金融機関<rt>きんゆうきかん</rt></ruby>からさらに<ruby>借金<rt>しゃっきん</rt></ruby>を<ruby>重<rt>かさ</rt></ruby>ねて、<ruby>雪<rt>ゆき</rt></ruby>だるま<ruby>式<rt>しき</rt></ruby>に<ruby>負債<rt>ふさい</rt></ruby>が<ruby>増<rt>ふ</rt></ruby>える<ruby>状態<rt>じょうたい</rt></ruby>を<ruby>何<rt>なん</rt></ruby>と<ruby>呼<rt>よ</rt></ruby>ぶ？
+    </div>
+
+    <div class="answer-box">
+      <div class="label">✅ <ruby>正解<rt>せいかい</rt></ruby></div>
+      <div class="ans"><ruby>多重債務<rt>たじゅうさいむ</rt></ruby></div>
+    </div>
+
+    <div class="section">
+      <h3>📖 <ruby>知識<rt>ちしき</rt></ruby>ポイント</h3>
+      <div class="simple">
+        <strong><ruby>多重<rt>たじゅう</rt></ruby><ruby>債務<rt>さいむ</rt></ruby></strong>（たじゅうさいむ）= <ruby>複数<rt>ふくすう</rt></ruby>の<ruby>場所<rt>ばしょ</rt></ruby>から<ruby>借金<rt>しゃっきん</rt></ruby>をして、<ruby>返<rt>かえ</rt></ruby>せなくなる<ruby>状態<rt>じょうたい</rt></ruby><br><br>
+        <ruby>例<rt>れい</rt></ruby>：<br>
+        A<ruby>社<rt>しゃ</rt></ruby>から<ruby>借<rt>か</rt></ruby>りる → <ruby>返<rt>かえ</rt></ruby>せない → B<ruby>社<rt>しゃ</rt></ruby>から<ruby>借<rt>か</rt></ruby>りる → さらに<ruby>増<rt>ふ</rt></ruby>える…<br>
+        = <ruby>雪<rt>ゆき</rt></ruby>だるまのように<ruby>大<rt>おお</rt></ruby>きくなる ❄️<br><br>
+        <ruby>他<rt>ほか</rt></ruby>の<ruby>選択肢<rt>せんたくし</rt></ruby>：<br>
+        ・カントリーリスク = <ruby>国<rt>くに</rt></ruby>の<ruby>危険<rt>きけん</rt></ruby><br>
+        ・ドルコスト<ruby>平均法<rt>へいきんほう</rt></ruby> = <ruby>投資<rt>とうし</rt></ruby>の<ruby>方法<rt>ほうほう</rt></ruby><br>
+        ・ポータビリティ = <ruby>携帯<rt>けいたい</rt></ruby><ruby>性<rt>せい</rt></ruby>（<ruby>関係<rt>かんけい</rt></ruby>ない）
+      </div>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="question-card" id="q94">
+    <span class="q-label">PDF 94<ruby>枚目<rt>まいめ</rt></ruby></span>
+    <div class="q-text">
+      SNSやネット<ruby>掲示板<rt>けいじばん</rt></ruby>で<ruby>個人<rt>こじん</rt></ruby>を<ruby>装<rt>よそお</rt></ruby>って<ruby>接触<rt>せっしょく</rt></ruby>してくる「ヤミ<ruby>金融<rt>きんゆう</rt></ruby>」について<ruby>正<rt>ただ</rt></ruby>しい<ruby>説明<rt>せつめい</rt></ruby>は？
+    </div>
+
+    <div class="answer-box">
+      <div class="label">✅ <ruby>正解<rt>せいかい</rt></ruby></div>
+      <div class="ans"><ruby>違法<rt>いほう</rt></ruby>な<ruby>高金利<rt>こうきんり</rt></ruby>を<ruby>要求<rt>ようきゅう</rt></ruby>されるだけでなく、<ruby>自分<rt>じぶん</rt></ruby><ruby>自身<rt>じしん</rt></ruby>や<ruby>会社<rt>かいしゃ</rt></ruby>、<ruby>家族<rt>かぞく</rt></ruby>へも<ruby>暴力的<rt>ぼうりょくてき</rt></ruby>・<ruby>脅迫的<rt>きょうはくてき</rt></ruby>な<ruby>取<rt>と</rt></ruby>り<ruby>立<rt>た</rt></ruby>てが<ruby>行<rt>おこな</rt></ruby>われる<ruby>恐<rt>おそれ</rt></ruby>れがある</div>
+    </div>
+
+    <div class="section">
+      <h3>📖 <ruby>知識<rt>ちしき</rt></ruby>ポイント</h3>
+      <div class="simple">
+        <strong>ヤミ<ruby>金融<rt>きんゆう</rt></ruby></strong> = <ruby>法律<rt>ほうりつ</rt></ruby>を<ruby>守<rt>まも</rt></ruby>らない<ruby>違法<rt>いほう</rt></ruby>な<ruby>貸<rt>か</rt></ruby>し<ruby>金<rt>かね</rt></ruby><ruby>業者<rt>ぎょうしゃ</rt></ruby><br><br>
+        ⚠️ <ruby>注意<rt>ちゅうい</rt></ruby>：<br>
+        ・<ruby>金利<rt>きんり</rt></ruby>（<ruby>利息<rt>りそく</rt></ruby>）が<ruby>法律<rt>ほうりつ</rt></ruby>の<ruby>上限<rt>じょうげん</rt></ruby>（20%など）を<ruby>超<rt>こ</rt></ruby>える<br>
+        ・SNSで「#お<ruby>金<rt>かね</rt></ruby><ruby>貸<rt>か</rt></ruby>します」と<ruby>個人<rt>こじん</rt></ruby>を<ruby>装<rt>よそお</rt></ruby>うことも<ruby>多<rt>おお</rt></ruby>い<br>
+        ・<ruby>自分<rt>じぶん</rt></ruby>だけでなく、<ruby>家族<rt>かぞく</rt></ruby>や<ruby>会社<rt>かいしゃ</rt></ruby>にも<ruby>脅<rt>おど</rt></ruby>し<ruby>取<rt>と</rt></ruby>り<ruby>立<rt>た</rt></ruby>てがある<br><br>
+        ✅ <ruby>確認<rt>かくにん</rt></ruby><ruby>方法<rt>ほうほう</rt></ruby>：<ruby>金融庁<rt>きんゆうちょう</rt></ruby>の「<ruby>登録<rt>とうろく</rt></ruby><ruby>貸金<rt>かしきん</rt></ruby><ruby>業者<rt>ぎょうしゃ</rt></ruby><ruby>情報<rt>じょうほう</rt></ruby><ruby>検索<rt>けんさく</rt></ruby>サービス」
+      </div>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="question-card" id="q97a">
+    <span class="q-label">PDF 97<ruby>枚目<rt>まいめ</rt></ruby> ①</span>
+    <div class="q-text">
+      「<ruby>闇<rt>やみ</rt></ruby>バイト」で<ruby>免許証<rt>めんきょしょう</rt></ruby>や<ruby>学生証<rt>がくせいしょう</rt></ruby>、<ruby>家族<rt>かぞく</rt></ruby><ruby>構成<rt>こうせい</rt></ruby>などを<ruby>送<rt>おく</rt></ruby>らせる<ruby>本当<rt>ほんとう</rt></ruby>の<ruby>狙<rt>ねら</rt></ruby>いは？
+    </div>
+
+    <div class="answer-box">
+      <div class="label">✅ <ruby>正解<rt>せいかい</rt></ruby></div>
+      <div class="ans"><ruby>危険<rt>きけん</rt></ruby>な<ruby>犯罪<rt>はんざい</rt></ruby><ruby>行為<rt>こうい</rt></ruby>だと<ruby>気<rt>き</rt></ruby>づいて<ruby>途中<rt>とちゅう</rt></ruby>で「<ruby>辞<rt>や</rt></ruby>めたい」と<ruby>言<rt>い</rt></ruby>い<ruby>出<rt>だ</rt></ruby>したときに、<ruby>脅迫<rt>きょうはく</rt></ruby>して<ruby>逃<rt>に</rt></ruby>げられないようにするため</div>
+    </div>
+
+    <div class="section">
+      <h3>📖 <ruby>知識<rt>ちしき</rt></ruby>ポイント</h3>
+      <div class="simple">
+        <strong><ruby>闇<rt>やみ</rt></ruby>バイト</strong> = <ruby>見<rt>み</rt></ruby>た<ruby>目<rt>め</rt></ruby>は<ruby>簡単<rt>かんたん</rt></ruby>な<ruby>仕事<rt>しごと</rt></ruby>だが、<ruby>実<rt>じつ</rt></ruby>は<ruby>詐欺<rt>さぎ</rt></ruby>や<ruby>強盗<rt>ごうとう</rt></ruby>などの<ruby>犯罪<rt>はんざい</rt></ruby><br><br>
+        「<ruby>日給<rt>にっきゅう</rt></ruby>5<ruby>万円<rt>まんえん</rt></ruby>！<ruby>簡単<rt>かんたん</rt></ruby>！」→ とても<ruby>怪<rt>あや</rt></ruby>しい ⚠️<br><br>
+        <ruby>個人情報<rt>こじんじょうほう</rt></ruby>（<ruby>免許証<rt>めんきょしょう</rt></ruby>・<ruby>住所<rt>じゅうしょ</rt></ruby>・<ruby>家族<rt>かぞく</rt></ruby>）を<ruby>知<rt>し</rt></ruby>られると：<br>
+        → 「<ruby>家族<rt>かぞく</rt></ruby>を<ruby>狙<rt>ねら</rt></ruby>うぞ！」「<ruby>逃<rt>に</rt></ruby>げられないぞ！」と<ruby>脅<rt>おど</rt></ruby>される<br>
+        → <ruby>辞<rt>や</rt></ruby>められなくなる
+      </div>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="question-card" id="q97b">
+    <span class="q-label">PDF 97<ruby>枚目<rt>まいめ</rt></ruby> ②</span>
+    <div class="q-text">
+      「<ruby>闇<rt>やみ</rt></ruby>バイト」に<ruby>加担<rt>かたん</rt></ruby>して<ruby>犯罪<rt>はんざい</rt></ruby>が<ruby>警察<rt>けいさつ</rt></ruby>に<ruby>発覚<rt>はっかく</rt></ruby>したとき、<ruby>実際<rt>じっさい</rt></ruby>にどうなる？
+    </div>
+
+    <div class="answer-box">
+      <div class="label">✅ <ruby>正解<rt>せいかい</rt></ruby></div>
+      <div class="ans"><ruby>犯罪<rt>はんざい</rt></ruby>の<ruby>指示<rt>しじ</rt></ruby>を<ruby>出<rt>だ</rt></ruby>している<ruby>組織<rt>そしき</rt></ruby>の<ruby>上層部<rt>じょうそうぶ</rt></ruby>の<ruby>身代<rt>みが</rt></ruby>わりとして、<ruby>応募<rt>おうぼ</rt></ruby>した<ruby>実行犯<rt>じっこうはん</rt></ruby>だけが<ruby>逮捕<rt>たいほ</rt></ruby>され、<ruby>捨<rt>す</rt></ruby>て<ruby>駒<rt>ごま</rt></ruby>にされる</div>
+    </div>
+
+    <div class="section">
+      <h3>📖 <ruby>知識<rt>ちしき</rt></ruby>ポイント</h3>
+      <div class="simple">
+        <strong><ruby>捨<rt>す</rt></ruby>て<ruby>駒<rt>ごま</rt></ruby></strong>（すてごま）= <ruby>組織<rt>そしき</rt></ruby>が<ruby>自分<rt>じぶん</rt></ruby>を<ruby>守<rt>まも</rt></ruby>るために、<ruby>下<rt>した</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>だけ<ruby>罪<rt>つみ</rt></ruby>にする<br><br>
+        ❌ 「<ruby>脅<rt>おど</rt></ruby>されていたから<ruby>無罪<rt>むざい</rt></ruby>」→ <ruby>必<rt>かなら</rt></ruby>ずしも<ruby>無罪<rt>むざい</rt></ruby>にはならない<br>
+        ❌ 「<ruby>厳重注意<rt>げんじゅうちゅうい</rt></ruby>だけ」→ <ruby>逮捕<rt>たいほ</rt></ruby>されることも<ruby>多<rt>おお</rt></ruby>い<br>
+        ❌ 「<ruby>組織<rt>そしき</rt></ruby>が<ruby>守<rt>まも</rt></ruby>ってくれる」→ <ruby>逆<rt>ぎゃく</rt></ruby>に<ruby>捨<rt>す</rt></ruby>てられる
+      </div>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="question-card" id="q98">
+    <span class="q-label">PDF 98<ruby>枚目<rt>まいめ</rt></ruby></span>
+    <div class="q-text">
+      日本から<ruby>海外<rt>かいがい</rt></ruby>のオンラインカジノサイトにアクセスして<ruby>賭<rt>か</rt></ruby>けをする<ruby>行為<rt>こうい</rt></ruby>について<ruby>正<rt>ただ</rt></ruby>しい<ruby>説明<rt>せつめい</rt></ruby>は？
+    </div>
+
+    <div class="answer-box">
+      <div class="label">✅ <ruby>正解<rt>せいかい</rt></ruby></div>
+      <div class="ans">日本<ruby>国内<rt>こくない</rt></ruby>からアクセスしてオンラインカジノで<ruby>賭<rt>か</rt></ruby>けを<ruby>行<rt>おこな</rt></ruby>うことは「<ruby>賭博罪<rt>とばくざい</rt></ruby>」などの<ruby>犯罪<rt>はんざい</rt></ruby>にあたる</div>
+    </div>
+
+    <div class="section">
+      <h3>📖 <ruby>知識<rt>ちしき</rt></ruby>ポイント</h3>
+      <div class="simple">
+        オンラインカジノ = スマホやPCでカジノ<ruby>遊<rt>あそ</rt></ruby>びをするサイト<br><br>
+        ⚠️ <ruby>重要<rt>じゅうよう</rt></ruby>：<br>
+        ・<ruby>海外<rt>かいがい</rt></ruby>で<ruby>合法<rt>ごうほう</rt></ruby>でも、<strong>日本から<ruby>使<rt>つか</rt></ruby>う = <ruby>犯罪<rt>はんざい</rt></ruby></strong><br>
+        ・「<ruby>無料版<rt>むりょうばん</rt></ruby>」や「<ruby>無料<rt>むりょう</rt></ruby>ボーナス」もダメ<br>
+        ・SNSで<ruby>紹介<rt>しょうかい</rt></ruby>するのも<ruby>犯罪<rt>はんざい</rt></ruby><br><br>
+        <ruby>罰<rt>ばつ</rt></ruby>：<ruby>賭博罪<rt>とばくざい</rt></ruby> → 50<ruby>万円<rt>まんえん</rt></ruby><ruby>以下<rt>いか</rt></ruby>の<ruby>罰金<rt>ばっきん</rt></ruby>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="question-card" id="q99">
+    <span class="q-label">PDF 99<ruby>枚目<rt>まいめ</rt></ruby></span>
+    <div class="q-text">
+      マルチ<ruby>商法<rt>しょうほう</rt></ruby>や<ruby>悪質<rt>あくしつ</rt></ruby>な<ruby>勧誘<rt>かんゆう</rt></ruby>で<ruby>困<rt>こま</rt></ruby>ったとき、<ruby>局番<rt>きょくばん</rt></ruby>なしで<ruby>相談<rt>そうだん</rt></ruby>できる「<ruby>消費者<rt>しょうひしゃ</rt></ruby>ホットライン」の<ruby>電話<rt>でんわ</rt></ruby><ruby>番号<rt>ばんごう</rt></ruby>は？
+    </div>
+
+    <div class="answer-box">
+      <div class="label">✅ <ruby>正解<rt>せいかい</rt></ruby></div>
+      <div class="ans">１８８（いやや）</div>
+    </div>
+
+    <div class="section">
+      <h3>📖 <ruby>知識<rt>ちしき</rt></ruby>ポイント — <ruby>電話<rt>でんわ</rt></ruby><ruby>番号<rt>ばんごう</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えよう！</h3>
+      <div class="simple">
+        <table style="width:100%; border-collapse:collapse; margin-top:8px;">
+          <tr style="background:#1e40af; color:white;">
+            <th style="padding:8px;"><ruby>番号<rt>ばんごう</rt></ruby></th>
+            <th style="padding:8px;"><ruby>用途<rt>ようと</rt></ruby></th>
+          </tr>
+          <tr style="background:#ecfdf5;">
+            <td style="padding:8px; font-weight:bold; font-size:1.1rem;">188（いやや）</td>
+            <td style="padding:8px;"><ruby>消費者<rt>しょうひしゃ</rt></ruby>ホットライン<br>（<ruby>商品<rt>しょうひん</rt></ruby>・<ruby>契約<rt>けいやく</rt></ruby>トラブル）✅</td>
+          </tr>
+          <tr>
+            <td style="padding:8px;">#9110</td>
+            <td style="padding:8px;"><ruby>警察<rt>けいさつ</rt></ruby><ruby>相談<rt>そうだん</rt></ruby><ruby>専用<rt>せんよう</rt></ruby><ruby>電話<rt>でんわ</rt></ruby></td>
+          </tr>
+          <tr>
+            <td style="padding:8px;">110</td>
+            <td style="padding:8px;"><ruby>警察<rt>けいさつ</rt></ruby>（<ruby>緊急<rt>きんきゅう</rt></ruby>）</td>
+          </tr>
+          <tr>
+            <td style="padding:8px;">119</td>
+            <td style="padding:8px;"><ruby>消防<rt>しょうぼう</rt></ruby>・<ruby>救急<rt>きゅうきゅう</rt></ruby></td>
+          </tr>
+        </table>
+        <br>
+        💡 <ruby>覚<rt>おぼ</rt></ruby>え<ruby>方<rt>かた</rt></ruby>：188 = 「いやや」= 「<ruby>嫌<rt>いや</rt></ruby>だ、<ruby>困<rt>こま</rt></ruby>った！」→ <ruby>相談<rt>そうだん</rt></ruby>しよう
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary-card" id="summary">
+    <h2>📝 <ruby>全体<rt>ぜんたい</rt></ruby>まとめ — <ruby>覚<rt>おぼ</rt></ruby>えておく3つのこと</h2>
+    <div class="simple" style="background:white; margin-bottom:14px;">
+      <strong>① 「おいしい<ruby>話<rt>はなし</rt></ruby>」は<ruby>存在<rt>そんざい</rt></ruby>しない</strong><br>
+      ローリスク・ハイリターン、<ruby>簡単<rt>かんたん</rt></ruby>に<ruby>儲<rt>もう</rt></ruby>かる<ruby>話<rt>はなし</rt></ruby> → すべて<ruby>疑<rt>うたが</rt></ruby>おう<br><br>
+      <strong>② <ruby>怪<rt>あや</rt></ruby>しければ、はっきり<ruby>断<rt>ことわ</rt></ruby>る</strong><br>
+      <ruby>遠慮<rt>えんりょ</rt></ruby>しない！「いりません」と<ruby>言<rt>い</rt></ruby>える<ruby>勇気<rt>ゆうき</rt></ruby>が<ruby>大切<rt>たいせつ</rt></ruby><br><br>
+      <strong>③ <ruby>困<rt>こま</rt></ruby>ったら、<ruby>一人<rt>ひとり</rt></ruby>で<ruby>抱<rt>かか</rt></ruby>えない</strong><br>
+      188（いやや）/ #9110 / <ruby>学校<rt>がっこう</rt></ruby>の<ruby>先生<rt>せんせい</rt></ruby> に<ruby>相談<rt>そうだん</rt></ruby>しよう
+    </div>
+
+    <table>
+      <tr>
+        <th><ruby>問題<rt>もんだい</rt></ruby></th>
+        <th><ruby>正解<rt>せいかい</rt></ruby>キーワード</th>
+      </tr>
+      <tr><td>PDF89</td><td>おいしい<ruby>話<rt>はなし</rt></ruby>は<ruby>存在<rt>そんざい</rt></ruby>しない</td></tr>
+      <tr><td>PDF91</td><td><ruby>最初<rt>さいしょ</rt></ruby>は<ruby>配当金<rt>はいとうきん</rt></ruby>が<ruby>入<rt>はい</rt></ruby>る</td></tr>
+      <tr><td>PDF92</td><td>テレビ ≠ <ruby>安全<rt>あんぜん</rt></ruby></td></tr>
+      <tr><td>PDF93</td><td><ruby>多重債務<rt>たじゅうさいむ</rt></ruby></td></tr>
+      <tr><td>PDF94</td><td>ヤミ<ruby>金融<rt>きんゆう</rt></ruby> = <ruby>高金利<rt>こうきんり</rt></ruby> + <ruby>脅迫<rt>きょうはく</rt></ruby></td></tr>
+      <tr><td>PDF97-①</td><td><ruby>個人情報<rt>こじんじょうほう</rt></ruby> = <ruby>脅迫<rt>きょうはく</rt></ruby>のため</td></tr>
+      <tr><td>PDF97-②</td><td><ruby>捨<rt>す</rt></ruby>て<ruby>駒<rt>ごま</rt></ruby>にされる</td></tr>
+      <tr><td>PDF98</td><td>オンラインカジノ = <ruby>賭博罪<rt>とばくざい</rt></ruby></td></tr>
+      <tr><td>PDF99</td><td>188（いやや）</td></tr>
+    </table>
+
+    <div class="reflection">
+      <div class="label">✍️ 【<ruby>最後<rt>さいご</rt></ruby>に】200<ruby>文字<rt>もじ</rt></ruby><ruby>感想<rt>かんそう</rt></ruby> — <ruby>例文<rt>れいぶん</rt></ruby></div>
+      「おいしい<ruby>話<rt>はなし</rt></ruby>」や<ruby>投資<rt>とうし</rt></ruby><ruby>詐欺<rt>さぎ</rt></ruby>、ヤミ<ruby>金融<rt>きんゆう</rt></ruby>、<ruby>闇<rt>やみ</rt></ruby>バイトなど、<ruby>一見<rt>いっけん</rt></ruby><ruby>魅力的<rt>みりょくてき</rt></ruby>な<ruby>話<rt>はなし</rt></ruby>の<ruby>裏<rt>うら</rt></ruby>には<ruby>大<rt>おお</rt></ruby>きなリスクがあると<ruby>学<rt>まな</rt></ruby>びました。<ruby>困<rt>こま</rt></ruby>ったときは<ruby>一人<rt>ひとり</rt></ruby>で<ruby>悩<rt>なや</rt></ruby>まず188や#9110に<ruby>相談<rt>そうだん</rt></ruby>すべきです。<ruby>社会人<rt>しゃかいじん</rt></ruby>になる<ruby>前<rt>まえ</rt></ruby>にこの<ruby>知識<rt>ちしき</rt></ruby>を<ruby>身<rt>み</rt></ruby>につけ、<ruby>自分<rt>じぶん</rt></ruby>や<ruby>家族<rt>かぞく</rt></ruby>を<ruby>守<rt>まも</rt></ruby>りたいと<ruby>思<rt>おも</rt></ruby>います。
+      <br><br>
+      <small style="color:#7e22ce;">（約140<ruby>文字<rt>もじ</rt></ruby> — <ruby>自分<rt>じぶん</rt></ruby>の<ruby>言葉<rt>ことば</rt></ruby>に<ruby>書<rt>か</rt></ruby>き<ruby>換<rt>か</rt></ruby>えて<ruby>使<rt>つか</rt></ruby>ってください）</small>
+    </div>
+  </div>
+
+  <footer>
+    <ruby>作成<rt>さくせい</rt></ruby>：<ruby>社会人<rt>しゃかいじん</rt></ruby>として<ruby>知<rt>し</rt></ruby>っておきたいお<ruby>金<rt>かね</rt></ruby>の<ruby>話<rt>はなし</rt></ruby> オンデマンド<ruby>授業<rt>じゅぎょう</rt></ruby> <ruby>解説<rt>かいせつ</rt></ruby><br>
+    © 2025 J-FLEC — <ruby>学習<rt>がくしゅう</rt></ruby><ruby>用<rt>よう</rt></ruby><ruby>資料<rt>しりょう</rt></ruby>
+  </footer>
+
+</div>
+</body>
+</html>

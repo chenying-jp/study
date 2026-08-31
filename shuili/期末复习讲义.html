@@ -1,0 +1,1089 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>水理学 · 期末复习讲义</title>
+<style>
+:root{--bg:#eef4f8;--card:#fff;--ink:#1a2830;--muted:#5a6a75;--line:#c8d8e4;--accent:#1565a8;--accent2:#0d7a5f;--warn:#b45309;--warn-bg:#fff7ed}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;padding-bottom:88px}
+.topbar{position:sticky;top:0;z-index:100;background:var(--card);border-bottom:1px solid var(--line);padding:10px 14px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.topbar h1{font-size:17px;color:var(--accent)}
+.topbar p{font-size:12px;color:var(--muted);margin-top:2px}
+.bar-btns{display:flex;gap:8px;margin-top:8px}
+.nav-toggle{flex:1;padding:10px;border:none;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer}
+.nav-jump{flex:1;padding:10px;border:1px solid var(--line);background:#f0f7fc;color:var(--accent);border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;text-align:center}
+#toc-panel{display:none;background:var(--card);border-bottom:1px solid var(--line);max-height:55vh;overflow-y:auto;padding:8px 14px 14px}
+#toc-panel.open{display:block}
+.toc-group-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding:10px 6px 4px}
+.toc-item{display:block;padding:9px 10px;font-size:14px;color:var(--accent);text-decoration:none;border-radius:8px;line-height:1.4}
+.toc-item.toc-ch{font-weight:600}
+.toc-item:active,.toc-item:hover{background:#e8f2fa}
+.wrap{max-width:820px;margin:0 auto;padding:16px 14px 40px}
+.chapter-index{background:var(--card);border:2px solid var(--accent);border-radius:14px;padding:14px 14px 10px;margin:0 0 24px;box-shadow:0 2px 12px rgba(21,101,168,.08)}
+.ch-heading{font-size:16px;color:var(--accent);margin:0 0 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ch-count{font-size:12px;font-weight:400;color:var(--muted);background:#e8f2fa;padding:2px 8px;border-radius:999px}
+.ch-front-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--line)}
+.ch-front{flex:1 1 auto;min-width:calc(50% - 6px);font-size:12px!important;padding:8px 10px!important;background:#f0f7fc!important}
+.ch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:480px){.ch-grid{grid-template-columns:repeat(3,1fr)}}
+.ch-link{display:flex;align-items:flex-start;gap:8px;padding:10px 10px;background:#f8fbfd;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);transition:background .15s,border-color .15s}
+.ch-link:active,.ch-link:hover{background:#e8f2fa;border-color:var(--accent)}
+.ch-num{flex-shrink:0;width:26px;height:26px;background:var(--accent);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.ch-title{font-size:12px;line-height:1.45;padding-top:3px}
+h1{font-size:22px;margin:28px 0 12px;color:var(--accent);scroll-margin-top:120px}
+h1.chapter{margin-top:36px;padding:14px 16px;background:linear-gradient(135deg,#e8f2fa,#f0faf5);border-left:5px solid var(--accent);border-radius:0 12px 12px 0;scroll-margin-top:120px}
+h2{font-size:19px;margin:24px 0 10px;color:var(--accent2);scroll-margin-top:120px}
+h3{font-size:17px;margin:18px 0 8px;scroll-margin-top:120px}
+h4{font-size:15px;margin:14px 0 6px;color:var(--muted);scroll-margin-top:120px}
+p{margin:8px 0} ul{margin:8px 0 8px 20px} li{margin:4px 0}
+blockquote{margin:10px 0;padding:10px 14px;background:#f0f7fc;border-left:4px solid var(--accent);font-size:14px;color:var(--muted)}
+pre{background:#1e2a33;color:#e8f0f5;padding:14px;border-radius:10px;overflow-x:auto;font-size:13px;line-height:1.55;margin:12px 0;white-space:pre-wrap}
+code{font-family:Consolas,"Courier New",monospace;font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0;display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+td,th{border:1px solid var(--line);padding:8px;vertical-align:top;min-width:48px}
+hr{border:none;border-top:1px solid var(--line);margin:20px 0}
+.back-top{position:fixed;right:16px;bottom:20px;background:var(--accent);color:#fff;text-decoration:none;padding:10px 14px;border-radius:999px;font-size:13px;box-shadow:0 4px 16px rgba(0,0,0,.15);z-index:50}
+</style>
+</head>
+<body>
+<div class="topbar">
+<h1>水理学 · 期末复习讲义</h1>
+<p>9/4（金）13:30–15:00 · 点击章节跳转</p>
+<div class="bar-btns">
+<button type="button" class="nav-toggle" onclick="document.getElementById('toc-panel').classList.toggle('open')">☰ 章节目录</button>
+<a class="nav-jump" href="#章节目录">↓ 目录卡片</a>
+</div>
+</div>
+<div id="toc-panel"><div class="toc-group-label">前言</div><a class="toc-item" href="#怎么用这份讲义">📖 怎么用</a><a class="toc-item" href="#必背常数-考试直接用-">🔢 必背常数</a><a class="toc-item" href="#基本术语-日语读法-上课翻书用-">🇯🇵 日语术语</a><a class="toc-item" href="#第15章-期末冲刺-公式速查-题型模板">📝 第15章 冲刺</a><a class="toc-item" href="#151-公式总表">📋 公式总表</a><div class="toc-group-label">正文章节</div><a class="toc-item toc-ch" href="#第1章-水的物理性质-424-指导-基础-">第1章 水的物理性质</a><a class="toc-item toc-ch" href="#第2章-静水压力-一--怎么算压力-58-">第2章 静水压力</a><a class="toc-item toc-ch" href="#第3章-静水压力-二--实际应用-515-">第3章 静水压力</a><a class="toc-item toc-ch" href="#第4章-流体种类与连续式-522-">第4章 流体种类与连续式</a><a class="toc-item toc-ch" href="#第5章-伯努利定理-一--能量守恒-529-">第5章 伯努利定理</a><a class="toc-item toc-ch" href="#第6章-伯努利定理-二--孔口与排水-65-">第6章 伯努利定理</a><a class="toc-item toc-ch" href="#第7章-管水路-一--层流与乱流-612-">第7章 管水路</a><a class="toc-item toc-ch" href="#第8章-压力损失--619-缺课补充-">第8章 压力损失 ⚠️</a><a class="toc-item toc-ch" href="#第9章-摩擦系数-626-">第9章 摩擦系数</a><a class="toc-item toc-ch" href="#第10章-开水路-vs-管水路-73-">第10章 开水路 vs 管水路</a><a class="toc-item toc-ch" href="#第11章-明渠均匀流-曼宁公式--710-缺课补充-">第11章 明渠均匀流 · 曼宁公式 ⚠️</a><a class="toc-item toc-ch" href="#第12章-开水路分析--717-无课堂资料补充-">第12章 开水路分析 ⚠️</a><a class="toc-item toc-ch" href="#第13章-实用设计--724-缺课补充-">第13章 实用设计 ⚠️</a><a class="toc-item toc-ch" href="#第14章-设计计算-皮托管-731-">第14章 设计计算 · 皮托管</a><a class="toc-item toc-ch" href="#第15章-期末冲刺-公式速查--题型模板">第15章 期末冲刺 · 公式速查 &amp; 题型模板</a></div>
+<div class="wrap">
+<nav class="chapter-index" id="章节目录">
+<h2 class="ch-heading">📑 章节目录 <span class="ch-count">全 15 章</span></h2>
+<div class="ch-front-row"><a class="ch-link ch-front" href="#怎么用这份讲义">📖 怎么用</a><a class="ch-link ch-front" href="#必背常数-考试直接用-">🔢 必背常数</a><a class="ch-link ch-front" href="#基本术语-日语读法-上课翻书用-">🇯🇵 日语术语</a><a class="ch-link ch-front" href="#第15章-期末冲刺-公式速查-题型模板">📝 第15章 冲刺</a><a class="ch-link ch-front" href="#151-公式总表">📋 公式总表</a></div>
+<div class="ch-grid"><a class="ch-link" href="#第1章-水的物理性质-424-指导-基础-"><span class="ch-num">1</span><span class="ch-title">水的物理性质</span></a><a class="ch-link" href="#第2章-静水压力-一--怎么算压力-58-"><span class="ch-num">2</span><span class="ch-title">静水压力</span></a><a class="ch-link" href="#第3章-静水压力-二--实际应用-515-"><span class="ch-num">3</span><span class="ch-title">静水压力</span></a><a class="ch-link" href="#第4章-流体种类与连续式-522-"><span class="ch-num">4</span><span class="ch-title">流体种类与连续式</span></a><a class="ch-link" href="#第5章-伯努利定理-一--能量守恒-529-"><span class="ch-num">5</span><span class="ch-title">伯努利定理</span></a><a class="ch-link" href="#第6章-伯努利定理-二--孔口与排水-65-"><span class="ch-num">6</span><span class="ch-title">伯努利定理</span></a><a class="ch-link" href="#第7章-管水路-一--层流与乱流-612-"><span class="ch-num">7</span><span class="ch-title">管水路</span></a><a class="ch-link" href="#第8章-压力损失--619-缺课补充-"><span class="ch-num">8</span><span class="ch-title">压力损失</span></a><a class="ch-link" href="#第9章-摩擦系数-626-"><span class="ch-num">9</span><span class="ch-title">摩擦系数</span></a><a class="ch-link" href="#第10章-开水路-vs-管水路-73-"><span class="ch-num">10</span><span class="ch-title">开水路 vs 管水路</span></a><a class="ch-link" href="#第11章-明渠均匀流-曼宁公式--710-缺课补充-"><span class="ch-num">11</span><span class="ch-title">明渠均匀流 · 曼宁公式</span></a><a class="ch-link" href="#第12章-开水路分析--717-无课堂资料补充-"><span class="ch-num">12</span><span class="ch-title">开水路分析</span></a><a class="ch-link" href="#第13章-实用设计--724-缺课补充-"><span class="ch-num">13</span><span class="ch-title">实用设计</span></a><a class="ch-link" href="#第14章-设计计算-皮托管-731-"><span class="ch-num">14</span><span class="ch-title">设计计算 · 皮托管</span></a><a class="ch-link" href="#第15章-期末冲刺-公式速查--题型模板"><span class="ch-num">15</span><span class="ch-title">期末冲刺 · 公式速查 &amp; 题型模板</span></a></div>
+</nav>
+<h1 id="水理学-期末复习讲义-中文通俗版-">水理学 · 期末复习讲义（中文通俗版）</h1>
+
+<blockquote><strong>授课老师视角</strong>：筑波大学水理学</blockquote>
+<blockquote><strong>适合对象</strong>：数学基础一般的同学（用初二能懂的话来讲）</blockquote>
+<blockquote><strong>考试日期</strong>：2026年9月4日（金）</blockquote>
+<blockquote><strong>教材</strong>：《解いてわかる水理学》（オーム社）</blockquote>
+<blockquote><strong>资料来源</strong>：<code>teacher-materials/</code> 扫描笔记 + 缺课章节补充</blockquote>
+
+<hr/>
+
+<h2 id="怎么用这份讲义">怎么用这份讲义</h2>
+
+<ul>
+<li>1. <strong>按章节顺序看</strong>，不要跳着学——后面章节的公式都建立在前面之上。</li>
+<li>2. 每章先读「知识点」，再做「例题」——例题优先用你课堂笔记里的原题。</li>
+<li>3. 标了 ⚠️ 的章节是你缺课/没资料的，我补了内容和例题，请多练两遍。</li>
+<li>4. 期末最常考：<strong>静水压力、连续式、伯努利、孔口、曼宁公式</strong>。</li>
+</ul>
+
+<h3 id="必背常数-考试直接用-">必背常数（考试直接用）</h3>
+
+<table><tr><td>名称</td><td>符号</td><td>数值</td></tr><tr><td>水的密度</td><td>ρ</td><td>1000 kg/m³</td></tr><tr><td>重力加速度</td><td>g</td><td>9.8 m/s²</td></tr><tr><td>水的单位重量</td><td>w = ρg</td><td>9.8 kN/m³</td></tr><tr><td>海水密度</td><td>ρ</td><td>1025 kg/m³</td></tr><tr><td>水银密度</td><td>ρ</td><td>13600 kg/m³</td></tr></table>
+
+<h3 id="基本术语-日语读法-上课翻书用-">基本术语 · 日语读法（上课/翻书用）</h3>
+
+<blockquote>格式：<strong>中文</strong>｜日语汉字｜<strong>平假名读法</strong>｜符号/公式</blockquote>
+<blockquote>上课听到日语时，先找平假名列；翻教材时，对照汉字列。</blockquote>
+
+<hr/>
+
+<h4 id="科目--希腊字母">科目 &amp; 希腊字母</h4>
+
+<table><tr><td>中文</td><td>日语</td><td>读法</td><td>备注</td></tr><tr><td>水理学</td><td>水理学</td><td>すいりがく</td><td>科目名</td></tr><tr><td>密度</td><td>密度</td><td>みつど</td><td><strong>ρ</strong>（<strong>ロー</strong> / rho）</td></tr><tr><td>重力加速度</td><td>重力加速度</td><td>じゅうりょくかそどく</td><td><strong>g</strong></td></tr><tr><td>单位重量</td><td>単位体積重量</td><td>たんいたいせきじゅうりょう</td><td><strong>w = ρg</strong></td></tr><tr><td>面积</td><td>面積</td><td>めんせき</td><td><strong>A</strong></td></tr><tr><td>体积</td><td>体積</td><td>たいせき</td><td><strong>V</strong></td></tr><tr><td>水深</td><td>水深</td><td>すいしん</td><td><strong>h</strong> / <strong>H</strong></td></tr><tr><td>直径</td><td>直径</td><td>ちょっけい</td><td><strong>D</strong> / <strong>d</strong></td></tr><tr><td>半径</td><td>半径</td><td>はんけい</td><td><strong>r</strong></td></tr><tr><td>宽度</td><td>幅</td><td>はば</td><td><strong>B</strong> / <strong>b</strong></td></tr></table>
+
+<hr/>
+
+<h4 id="第1章-水的物理性质">第1章 · 水的物理性质</h4>
+
+<table><tr><td>中文</td><td>日语</td><td>读法</td></tr><tr><td>水的物理性质</td><td>水の物理的性質</td><td>みずのぶつりてきせいしつ</td></tr><tr><td>非压缩性流体</td><td>非圧縮性流体</td><td>ひあっしゅくせいりゅうたい</td></tr><tr><td>重量</td><td>重量</td><td>じゅうりょう</td></tr><tr><td>重量公式</td><td>重量＝密度×重力×体積</td><td>W＝ρgV</td></tr><tr><td>粘性</td><td>粘性</td><td>ねんせい</td></tr><tr><td>粘度</td><td>粘度</td><td>ねんど</td></tr><tr><td>粘性系数</td><td>粘性係数</td><td>ねんせいけいすう（<strong>μ</strong> <strong>ミュー</strong> / mu）</td></tr><tr><td>动粘性系数</td><td>動粘性係数</td><td>どうねんせいけいすう（<strong>ν</strong> <strong>ニュー</strong> / nu）</td></tr><tr><td>剪应力</td><td>せん断応力</td><td>せんだんおうりょく（<strong>τ</strong> <strong>タウ</strong> / tau）</td></tr><tr><td>速度梯度</td><td>速度勾配</td><td>そくどこうばい</td></tr><tr><td>表面张力</td><td>表面張力</td><td>ひょうめんちょうりょく</td></tr><tr><td>毛细现象</td><td>毛管現象</td><td>もうかんげんしょう</td></tr><tr><td>附着力</td><td>付着力</td><td>ふちゃくりょく</td></tr><tr><td>比重</td><td>比重</td><td>ひじゅう</td></tr></table>
+
+<p><strong>公式说法</strong></p>
+
+<table><tr><td>公式</td><td>日语念法</td></tr><tr><td>W = ρgV</td><td>「重量イコール、ロー・ジー・ブイ」</td></tr><tr><td>ν = μ/ρ</td><td>「ニュー イコール、ミュー ワール ロー」</td></tr><tr><td>τ = μ(Δu/Δy)</td><td>「タウ イコール、ミュー カケル、デルタユー ワール デルタワイ」</td></tr></table>
+
+<hr/>
+
+<h4 id="单位-必会-">单位（必会）</h4>
+
+<table><tr><td>中文</td><td>日语</td><td>读法</td><td>符号</td></tr><tr><td>立方米</td><td>立方メートル</td><td>りっぽうメートル</td><td><strong>m³</strong></td></tr><tr><td>1 立方米</td><td>1 立方メートル</td><td>いちりっぽうメートル</td><td>1 <strong>m³</strong></td></tr><tr><td>平方米</td><td>平方メートル</td><td>へいほうメートル</td><td><strong>m²</strong></td></tr><tr><td>厘米</td><td>センチメートル</td><td>せんちめーとる</td><td><strong>cm</strong></td></tr><tr><td>毫米</td><td>ミリメートル</td><td>みりめーとる</td><td><strong>mm</strong></td></tr><tr><td>升 / 公升</td><td>リットル</td><td>りっとる</td><td><strong>L</strong></td></tr><tr><td>牛顿</td><td>ニュートン</td><td>にゅーとん</td><td><strong>N</strong></td></tr><tr><td>千牛顿</td><td>キロニュートン</td><td>きろにゅーとん</td><td><strong>kN</strong></td></tr><tr><td>兆牛顿</td><td>メガニュートン</td><td>めがにゅーとん</td><td><strong>MN</strong></td></tr><tr><td>帕斯卡</td><td>パスカル</td><td>ぱすかる</td><td><strong>Pa</strong></td></tr><tr><td>千帕</td><td>キロパスカル</td><td>きろぱすかる</td><td><strong>kPa</strong></td></tr><tr><td>兆帕</td><td>メガパスカル</td><td>めがぱすかる</td><td><strong>MPa</strong></td></tr><tr><td>每平方厘米</td><td>ニュートン毎平方センチ</td><td>N/cm²</td><td>—</td></tr><tr><td>每秒立方米</td><td>立方メートル毎秒</td><td>りゅうべきメートルまいびょう</td><td><strong>m³/s</strong></td></tr></table>
+
+<hr/>
+
+<h4 id="第23章-静水压力">第2~3章 · 静水压力</h4>
+
+<table><tr><td>中文</td><td>日语</td><td>读法</td></tr><tr><td>静水压力</td><td>静水圧</td><td>せいすいあつ</td></tr><tr><td>静止的水</td><td>静止している水</td><td>せいししているみず</td></tr><tr><td>压力（强度）</td><td>圧力</td><td>あつりょく（<strong>p</strong>）</td></tr><tr><td>总水压力</td><td>全水圧</td><td>ぜんすいあつ（<strong>P</strong>）</td></tr><tr><td>垂直于面</td><td>面に対して垂直</td><td>めんにたいしてすいちょく</td></tr><tr><td>同一深度压力相等</td><td>同一水面上の水圧は等しい</td><td>どういつすいめんじょうのすいあつはひとしい</td></tr><tr><td>水深与压力成正比</td><td>水圧は水深に比例する</td><td>すいあつはすいしんにひれいする</td></tr><tr><td>表压</td><td>ゲージ圧</td><td>げーじあつ</td></tr><tr><td>绝对压</td><td>絶対圧</td><td>ぜったいあつ</td></tr><tr><td>大气压</td><td>大気圧</td><td>たいきあつ（<strong>p₀</strong>）</td></tr><tr><td>压力水头</td><td>圧力水頭</td><td>あつりょくすいとう</td></tr><tr><td>自由水面</td><td>自由水面</td><td>じゆうすいめん</td></tr><tr><td>水平面</td><td>水平面</td><td>すいへいめん</td></tr><tr><td>铅直面 / 垂直面</td><td>鉛直面</td><td>えんちょくめん</td></tr><tr><td>均匀分布荷载</td><td>等分布荷重</td><td>とうぶんぷかじゅう</td></tr><tr><td>线性变化荷载</td><td>等変分布荷重</td><td>とうへんぶんぷかじゅう</td></tr><tr><td>梯形分布荷载</td><td>台形分布荷重</td><td>だいけいぶんぷかじゅう</td></tr><tr><td>形心</td><td>図心</td><td>ずしん（<strong>G</strong>）</td></tr><tr><td>作用点</td><td>作用点</td><td>さようてん（<strong>C</strong>）</td></tr><tr><td>侧壁</td><td>側壁</td><td>そくへき</td></tr><tr><td>底面</td><td>底面</td><td>ていめん</td></tr><tr><td>挡水板 / 堰</td><td>せき板 / 堰</td><td>せきいた / せき</td></tr><tr><td>门扉 / 水门</td><td>門扉 / 水門</td><td>もんび / すいもん</td></tr><tr><td>帕斯卡原理</td><td>パスカルの原理</td><td>ぱすかるのげんり</td></tr><tr><td>活塞</td><td>ピストン</td><td>ぴすとん</td></tr><tr><td>荷重</td><td>荷重</td><td>かじゅう</td></tr><tr><td>阿基米德原理</td><td>アルキメデスの原理</td><td>あるきめですのげんり</td></tr><tr><td>浮力</td><td>浮力</td><td>ふりょく（<strong>B</strong>）</td></tr><tr><td>吃水</td><td>喫水</td><td>きっすい</td></tr><tr><td>排水量</td><td>排水量</td><td>はいすいりょう</td></tr><tr><td>沉箱</td><td>ケーソン</td><td>けーそん</td></tr><tr><td>重心</td><td>重心</td><td>じゅうしん（<strong>G</strong>）</td></tr><tr><td>浮心</td><td>浮心</td><td>ふしん（<strong>C</strong>）</td></tr><tr><td>稳心 /  metacentre</td><td>メタセンター</td><td>めたせんたー</td></tr><tr><td>稳心高</td><td>メタセンタ高</td><td>めたせんたこう（<strong>GM</strong>）</td></tr><tr><td>稳定</td><td>安定</td><td>あんてい</td></tr><tr><td>不稳定</td><td>不安定</td><td>ふあんてい</td></tr><tr><td>中立</td><td>中立</td><td>ちゅうりつ</td></tr></table>
+
+<p><strong>公式说法</strong></p>
+
+<table><tr><td>公式</td><td>日语念法</td></tr><tr><td>p = ρgh</td><td>「ピー イコール、ロー・ジー・エイチ」／「圧力は密度×重力加速度×水深」</td></tr><tr><td>P = p × A</td><td>「全水圧 イコール、圧力 カケル 面積」</td></tr><tr><td>P = ρgH × A（水平底面）</td><td>「全水圧 イコール、ロー・ジー・エイチ カケル エー」</td></tr><tr><td>P = ½ρgHA（垂直矩形墙）</td><td>「全水圧 イコール、ニブンのイチ ロー・ジー・エイチ・エー」</td></tr><tr><td>P = ρgH_G × A</td><td>「全水圧 イコール、ロー・ジー・エイチジー カケル エー」</td></tr><tr><td>H = p/(ρg)</td><td>「圧力水頭 イコール、圧力 ワール ロー・ジー」</td></tr><tr><td>F₁/A₁ = F₂/A₂</td><td>「パスカルの原理：圧力は面積に反比例」</td></tr><tr><td>B = ρgV</td><td>「浮力 イコール、ロー・ジー・ブイ」</td></tr><tr><td>GM = I/V − CG</td><td>「ジーエム イコール、アイ ワール ブイ マイナス シージー」</td></tr></table>
+
+<p><strong>口诀</strong>：<strong>みつど</strong> × <strong>じゅうりょくかそどく</strong> × <strong>すいしん</strong> = <strong>あつりょく</strong>（<strong>パスカル</strong>）</p>
+
+<hr/>
+
+<h4 id="第4章-连续式">第4章 · 连续式</h4>
+
+<table><tr><td>中文</td><td>日语</td><td>读法</td></tr><tr><td>流的基础</td><td>流れの基礎</td><td>ながれのきそ</td></tr><tr><td>连续式</td><td>連続の式</td><td>れんぞくのしき</td></tr><tr><td>管水路</td><td>管水路</td><td>かんすいろ</td></tr><tr><td>开水路</td><td>開水路</td><td>かいすいろ</td></tr><tr><td>流量</td><td>流量</td><td>りゅうりょう（<strong>Q</strong>）</td></tr><tr><td>流速</td><td>流速</td><td>りゅうそく（<strong>v</strong>）</td></tr><tr><td>断面积 / 流积</td><td>流積</td><td>りゅうせき（<strong>A</strong>）</td></tr><tr><td>断面</td><td>断面</td><td>だんめん</td></tr><tr><td>定常流</td><td>定常流</td><td>ていじょうりゅう</td></tr><tr><td>不可压缩</td><td>非圧縮性</td><td>ひあっしゅくせい</td></tr><tr><td>无泄漏</td><td>漏れなし</td><td>もれなし</td></tr><tr><td>润边 / 湿周</td><td>潤辺</td><td>じゅんぺん（<strong>S</strong>）</td></tr><tr><td>水力半径</td><td>径深 / 水力半径</td><td>けいしん（<strong>R</strong> = A/S）</td></tr><tr><td>底宽</td><td>底幅</td><td>そこはば</td></tr><tr><td>水面宽</td><td>水面幅</td><td>すいめんはば</td></tr></table>
+
+<p><strong>公式说法</strong></p>
+
+<table><tr><td>公式</td><td>日语念法</td></tr><tr><td>Q = Av</td><td>「流量 イコール、流積 カケル 流速」</td></tr><tr><td>A₁v₁ = A₂v₂</td><td>「連続の式：エーワン・ブイワン イコール、エーツー・ブイツー」</td></tr><tr><td>A = πD²/4</td><td>「流積 イコール、パイ・ディー二乗 ワール ヨン」</td></tr><tr><td>A = 2πrh（径向流）</td><td>「流積 イコール、ニ・パイ・アール・エイチ」</td></tr><tr><td>v₂ = v₁(D₁/D₂)²</td><td>「流速は直径の二乗に反比例」</td></tr></table>
+
+<p><strong>课堂比喻</strong>：「細い管は<strong>速く</strong>、太い管は<strong>遅く</strong>」（せまいほどはやい、ふといほどおそい）</p>
+
+<hr/>
+
+<h4 id="第56章-伯努利定理--孔口">第5~6章 · 伯努利定理 &amp; 孔口</h4>
+
+<table><tr><td>中文</td><td>日语</td><td>读法</td></tr><tr><td>伯努利定理</td><td>ベルヌーイの定理</td><td>べるぬいのていり</td></tr><tr><td>理想流体 / 完全流体</td><td>完全流体</td><td>かんぜんりゅうたい</td></tr><tr><td>粘性流体</td><td>粘性流体</td><td>ねんせいりゅうたい</td></tr><tr><td>能量守恒</td><td>エネルギー保存</td><td>えねるぎーほぞん</td></tr><tr><td>位置水头</td><td>位置水頭</td><td>いちすいとう（<strong>z</strong>）</td></tr><tr><td>压力水头</td><td>圧力水頭</td><td>あつりょくすいとう（<strong>p/ρg</strong>）</td></tr><tr><td>速度水头</td><td>速度水頭</td><td>そくどすいとう（<strong>v²/2g</strong>）</td></tr><tr><td>总水头</td><td>全水頭</td><td>ぜんすいとう（<strong>H_e</strong>）</td></tr><tr><td>基准面</td><td>基準面</td><td>きじゅんめん</td></tr><tr><td>动能</td><td>運動エネルギー</td><td>うんどうえねるぎー</td></tr><tr><td>位能</td><td>位置エネルギー</td><td>いちえねるぎー</td></tr><tr><td>压力能</td><td>圧力エネルギー</td><td>あつりょくえねるぎー</td></tr><tr><td>孔口</td><td>オリフィス</td><td>おりふぃす</td></tr><tr><td>托里拆利定理</td><td>トリチェリの定理</td><td>とりちぇりのていり</td></tr><tr><td>收缩断面</td><td>ベナ・コントラクタ</td><td>べな・こんとらくた</td></tr><tr><td>小孔</td><td>小オリフィス</td><td>しょうおりふぃす</td></tr><tr><td>大孔</td><td>大オリフィス</td><td>だいおりふぃす</td></tr><tr><td>水头损失</td><td>損失水頭</td><td>そんしつすいとう</td></tr><tr><td>忽略损失</td><td>損失を無視する</td><td>そんしつをむしする</td></tr></table>
+
+<p><strong>公式说法</strong></p>
+
+<table><tr><td>公式</td><td>日语念法</td></tr><tr><td>v²/(2g)+z+p/(ρg)=定数</td><td>「ベルヌーイ：速度水頭＋位置水頭＋圧力水頭＝全水頭」</td></tr><tr><td>细管：v↑ p↓</td><td>「細い管は流速↑、圧力↓」</td></tr><tr><td>水平变径管</td><td>「管の直径が変化、水平に置いた場合」</td></tr><tr><td>斜管等径</td><td>「管を斜めに置き、直径一定の場合」</td></tr><tr><td>v = √(2gH)</td><td>「流速 イコール、ルート ニ・ジー・エイチ」（トリチェリ）</td></tr><tr><td>v = √(2gh)</td><td>「ピトー管・せき上げも同じ形：ルート ニ・ジー・エイチ」</td></tr></table>
+
+<p><strong>断面读法</strong>：断面① <strong>だんめんいち</strong>、断面② <strong>だんめんに</strong></p>
+
+<hr/>
+
+<h4 id="第79章-管流摩擦压力损失">第7~9章 · 管流、摩擦、压力损失</h4>
+
+<table><tr><td>中文</td><td>日语</td><td>读法</td></tr><tr><td>管水路的流</td><td>管水路の流れ</td><td>かんすいろのながれ</td></tr><tr><td>层流</td><td>層流</td><td>そうりゅう</td></tr><tr><td>乱流</td><td>乱流</td><td>らんりゅう</td></tr><tr><td>雷诺数</td><td>レイノルズ数</td><td>れいのるずすう（<strong>Re</strong>）</td></tr><tr><td>摩擦</td><td>摩擦</td><td>まっさつ</td></tr><tr><td>摩擦系数</td><td>摩擦係数</td><td>まっさつけいすう（<strong>λ</strong> <strong>ラムダ</strong>）</td></tr><tr><td>摩擦损失水头</td><td>摩擦損失水頭</td><td>まっさつそんしつすいとう（<strong>h_f</strong>）</td></tr><tr><td>达西-魏斯巴赫式</td><td>ダルシー・ワイスバッハの式</td><td>だるしー・わいすばっはのしき</td></tr><tr><td>能量坡度</td><td>エネルギー勾配</td><td>えねるぎーこうばい（<strong>I_e</strong>）</td></tr><tr><td>水力坡度</td><td>水力勾配</td><td>すいりこうばい（<strong>I</strong>）</td></tr><tr><td>测压管水头</td><td>測管水頭 / ポイエゾメータ水頭</td><td>ピエゾメータすいとう</td></tr><tr><td>沿程损失</td><td>沿程損失</td><td>えんていそんしつ</td></tr><tr><td>局部损失</td><td>局部損失</td><td>きょくぶそんしつ</td></tr><tr><td>管长</td><td>管長</td><td>かんちょう（<strong>l</strong>）</td></tr><tr><td>管径</td><td>管径</td><td>かんけい</td></tr><tr><td>送水管</td><td>送水管</td><td>そうすいかん</td></tr><tr><td>配水管</td><td>配水管</td><td>はいすいかん</td></tr><tr><td>给水管</td><td>給水管</td><td>きゅうすいかん</td></tr></table>
+
+<p><strong>公式说法</strong></p>
+
+<table><tr><td>公式</td><td>日语念法</td></tr><tr><td>Re = vD/ν</td><td>「レイノルズ数 イコール、ブイ・ディー ワール ニュー」</td></tr><tr><td>Re &gt; 4000 乱流</td><td>「レイノルズ数が四千より大きいと乱流」</td></tr><tr><td>Re &lt; 2000 层流</td><td>「二千より小さいと層流」</td></tr><tr><td>h_f = λ(l/D)(v²/2g)</td><td>「摩擦損失水頭 イコール、ラムダ カケル エル ワール ディー カケル ブイ二乗 ワール ニ・ジー」</td></tr><tr><td>I_e = (H_e1−H_e2)/L</td><td>「エネルギー勾配 イコール、全水頭差 ワール 距離」</td></tr><tr><td>I = (H_p1−H_p2)/L</td><td>「水力勾配 イコール、測管水頭差 ワール 距離」</td></tr><tr><td>λ = 64/Re（层流）</td><td>「層流：ラムダ イコール、ロクジュウヨン ワール レイノルズ数」</td></tr></table>
+
+<hr/>
+
+<h4 id="第1012章-开水路--曼宁公式">第10~12章 · 开水路 &amp; 曼宁公式</h4>
+
+<table><tr><td>中文</td><td>日语</td><td>读法</td></tr><tr><td>开水路的流</td><td>開水路の流れ</td><td>かいすいろのながれ</td></tr><tr><td>自由水面流</td><td>自由表面流 / 明渠流</td><td>じゆうひょうめんりゅう</td></tr><tr><td>均匀流</td><td>等流 / 均一流</td><td>とうりゅう / きんいつりゅう</td></tr><tr><td>平均流速</td><td>平均流速</td><td>へいきんりゅうそく</td></tr><tr><td>平均流速公式</td><td>平均流速公式</td><td>へいきんりゅうそくこうしき</td></tr><tr><td>曼宁公式</td><td>マニングの公式</td><td>まにんぐのこうしき</td></tr><tr><td>谢才公式</td><td>シェジーの公式</td><td>しぇじーのこうしき</td></tr><tr><td>海曾-威廉斯公式</td><td>ヘーゼン・ウィリアムスの公式</td><td>へーぜん・うぃりあむすのこうしき</td></tr><tr><td>粗糙系数</td><td>粗度係数</td><td>そどけいすう（<strong>n</strong>）</td></tr><tr><td>坡度</td><td>勾配 / 水面勾配</td><td>こうばい（<strong>I</strong>）</td></tr><tr><td>底坡</td><td>河床勾配</td><td>かわどこうばい</td></tr><tr><td>梯形水路</td><td>台形水路</td><td>だいけいすいろ</td></tr><tr><td>矩形水路</td><td>矩形水路</td><td>くけいすいろ</td></tr><tr><td>满管流</td><td>満管流</td><td>まんかんりゅう</td></tr><tr><td>水深</td><td>水深</td><td>すいしん（<strong>h</strong>）</td></tr><tr><td>超高 / 余裕高</td><td>余裕高 / フリーボード</td><td>よゆうこう / ふりーぼーど</td></tr></table>
+
+<p><strong>公式说法</strong></p>
+
+<table><tr><td>公式</td><td>日语念法</td></tr><tr><td>v = (1/n)R^(2/3)I^(1/2)</td><td>「マニング：流速 イコール、エヌ分のイチ カケル 径深の三分の二乗 カケル 勾配の二分の一乗」</td></tr><tr><td>Q = Av</td><td>「流量 イコール、流積 カケル 流速」</td></tr><tr><td>R = A/S</td><td>「径深 イコール、流積 ワール 潤辺」</td></tr><tr><td>满管 R = D/4</td><td>「満管の径深 イコール、直径 ワール ヨン」</td></tr><tr><td>I = h_f/l</td><td>「勾配 イコール、損失水頭 ワール 管長」</td></tr><tr><td>矩形 A=bh, S=b+2h</td><td>「流積 イコール 底幅×水深、潤辺 イコール 底幅＋二×水深」</td></tr><tr><td>梯形 A=(b+B)h/2</td><td>「台形の流積 イコール、底幅＋水面幅 カケル 水深 ワール ニ」</td></tr></table>
+
+<p><strong>曼宁口诀</strong>：「<strong>エヌ</strong> が大きいほど粗い（遅い）、<strong>径深</strong> が大きいほど速い、<strong>勾配</strong> が急ほど速い」</p>
+
+<hr/>
+
+<h4 id="第14章-皮托管--设计">第14章 · 皮托管 &amp; 设计</h4>
+
+<table><tr><td>中文</td><td>日语</td><td>读法</td></tr><tr><td>皮托管</td><td>ピトー管</td><td>ぴとーかん</td></tr><tr><td>静压管</td><td>静圧管 / 静水管</td><td>せいあつかん</td></tr><tr><td>动压</td><td>動圧</td><td>どうあつ</td></tr><tr><td>静压</td><td>静圧</td><td>せいあつ</td></tr><tr><td>桥墩壅水</td><td>橋脚のせき上げ</td><td>きょうきゃくのせきあげ</td></tr><tr><td>校正系数</td><td>補正係数</td><td>ほせいけいすう（<strong>C</strong>）</td></tr><tr><td>最大流速</td><td>最大流速</td><td>さいだいりゅうそく</td></tr><tr><td>设计计算</td><td>設計計算</td><td>せっけいけいさん</td></tr><tr><td>演習問題</td><td>演習問題</td><td>えんしゅうもんだい</td></tr><tr><td>基本問題</td><td>基本問題</td><td>きほんもんだい</td></tr><tr><td>応用問題</td><td>応用問題</td><td>おうようもんだい</td></tr></table>
+
+<p><strong>公式说法</strong></p>
+
+<table><tr><td>公式</td><td>日语念法</td></tr><tr><td>v_max = C√(2gh)</td><td>「最大流速 イコール、シー カケル ルート ニ・ジー・エイチ」</td></tr><tr><td>v_avg = 0.8 × v_max</td><td>「平均流速は最大流速の〇・八倍」</td></tr><tr><td>壅水 v = √(2gΔh)</td><td>「せき上げ高さから流速を求める：ルート ニ・ジー・デルタエイチ」</td></tr></table>
+
+<hr/>
+
+<h4 id="公式总表-日语速查-期末默写用-">公式总表 · 日语速查（期末默写用）</h4>
+
+<pre><code>【静水圧 せいすいあつ】
+  p = ρgh          … ピー イコール ロー・ジー・エイチ
+  P = pA           … 全水圧 イコール 圧力×面積
+  垂直壁 P = ½ρgHA … ニブンのイチ ロー・ジー・エイチ・エー
+  作用点：底から H/3 … さようてんは底から三分の一
+
+【パスカル ぱすかる】
+  F₁/A₁ = F₂/A₂    … 圧力は面積に反比例
+
+【浮力 ふりょく】
+  B = ρgV          … 浮力 イコール ロー・ジー・ブイ
+
+【連続の式 れんぞくのしき】
+  Q = Av           … 流量 イコール 流積×流速
+  A₁v₁ = A₂v₂
+
+【ベルヌーイ べるぬい】
+  v²/(2g)+z+p/(ρg) = H_e … 速度＋位置＋圧力＝全水頭
+
+【オリフィス おりふぃす】
+  v = √(2gH)       … トリチェリの定理
+
+【マニング まにんぐ】
+  v = (1/n) R^(2/3) I^(1/2)
+  R = A/S          … 径深 イコール 流積/潤辺
+
+【摩擦 まっさつ】
+  h_f = λ (l/D) (v²/2g)
+  Re = vD/ν</code></pre>
+
+<p><strong>考试常用日语指令</strong></p>
+
+<table><tr><td>中文（题目要求）</td><td>日语</td></tr><tr><td>求…</td><td>…を求めよ（…をもとめよ）</td></tr><tr><td>求压力</td><td>圧力を求めよ</td></tr><tr><td>求总水压力</td><td>全水圧を求めよ</td></tr><tr><td>求作用点</td><td>作用点を求めよ</td></tr><tr><td>求流量</td><td>流量を求めよ</td></tr><tr><td>求流速</td><td>流速を求めよ</td></tr><tr><td>求水深 / 坡度</td><td>水深 / 勾配 を求めよ</td></tr><tr><td>试论稳定性</td><td>安定性を検討せよ</td></tr><tr><td>忽略损失</td><td>損失を無視する</td></tr><tr><td>参考课本 p.21</td><td>教科書 p21 参照</td></tr></table>
+
+<hr/>
+
+<pre><code>1 m³ = 1000 L = 1,000,000 cm³
+1 L = 1000 cm³
+1 kPa = 1000 Pa = 1000 N/m²
+1 kN = 1000 N
+1 MPa = 1000 kPa</code></pre>
+
+<p><strong>口诀</strong>：大单位换小单位 ×1000，小换大 ÷1000。</p>
+
+<hr/>
+
+<h1 class="chapter" id="第1章-水的物理性质-424-指导-基础-">第1章 水的物理性质（4/24 指导·基础）</h1>
+
+<h2 id="11-水是什么">1.1 水是什么？</h2>
+
+<p>水是一种<strong>液体</strong>，有三个重要特点：</p>
+
+<ul>
+<li>1. <strong>没有固定形状</strong>——装什么容器就是什么形</li>
+<li>2. <strong>几乎不可压缩</strong>——挤它，体积几乎不变（考试当「不会变」处理）</li>
+<li>3. <strong>从高处往低处流</strong>——因为重力</li>
+</ul>
+
+<h2 id="12-密度与重量">1.2 密度与重量</h2>
+
+<p><strong>密度 ρ</strong>：1 m³ 的水有多重（质量意义上）  </p>
+<p>→ 水 ≈ <strong>1000 kg/m³</strong>（也可以记 1 g/cm³）</p>
+
+<p><strong>重量 W</strong>：水受到的重力  </p>
+<p>→ <strong>W = ρ × g × V</strong>（V 是体积）</p>
+
+<p><strong>单位重量 w</strong>：1 m³ 的水重多少牛顿  </p>
+<p>→ <strong>w = ρg ≈ 9.8 kN/m³</strong></p>
+
+<p><strong>比重</strong>：某物质重量 ÷ 同体积水在 4°C 时的重量。水自己的比重 = 1。</p>
+
+<h3 id="例题1-1-m³-的水有多重">例题1 · 1 m³ 的水有多重？</h3>
+
+<pre><code>W = ρ × g × V
+  = 1000 × 9.8 × 1
+  = 9800 N = 9.8 kN</code></pre>
+
+<p><strong>一句话</strong>：1 立方米水 ≈ 9800 牛顿 ≈ 1 吨重。</p>
+
+<hr/>
+
+<h2 id="13-表面张力">1.3 表面张力</h2>
+
+<p>想象水面有一层<strong>看不见的薄膜</strong>，想把自己缩起来——这就是表面张力。</p>
+
+<ul>
+<li>温度越高，表面张力越小（水越「散」）</li>
+<li>水银的表面张力比水大得多</li>
+</ul>
+
+<h2 id="14-毛细现象">1.4 毛细现象</h2>
+
+<p>细管插进液体里，液面会<strong>上升或下降</strong>（水上升，水银下降）。  </p>
+<p>原因：管壁的<strong>附着力</strong> + 表面张力。</p>
+
+<hr/>
+
+<h2 id="15-粘性-水的黏糊程度-">1.5 粘性（水的「黏糊程度」）</h2>
+
+<table><tr><td>液体</td><td>感觉</td><td>粘性</td></tr><tr><td>水</td><td>稀、好流</td><td>小</td></tr><tr><td>蜂蜜/油</td><td>稠、难流</td><td>大</td></tr></table>
+
+<p><strong>牛顿粘性定律</strong>（了解即可）：</p>
+
+<pre><code>τ = μ × (速度差 / 距离差)</code></pre>
+
+<ul>
+<li>τ（tao）：单位面积上的摩擦力</li>
+<li>μ（mu）：粘性系数——液体有多「黏」</li>
+<li><strong>温度↑ → 粘性↓</strong>（热水比冷水好流）</li>
+</ul>
+
+<p><strong>动粘性系数</strong> ν = μ/ρ（考试查表或给值）</p>
+
+<table><tr><td>温度 °C</td><td>0</td><td>10</td><td>20</td><td>30</td></tr><tr><td>μ (×10⁻³ Pa·s)</td><td>1.792</td><td>1.307</td><td>1.002</td><td>0.797</td></tr><tr><td>ν (×10⁻⁶ m²/s)</td><td>1.792</td><td>1.307</td><td>1.004</td><td>0.801</td></tr></table>
+
+<p><strong>生活例子</strong>：河水流速中间快、岸边慢——因为水和河床之间有摩擦（粘性）。</p>
+
+<hr/>
+
+<h1 class="chapter" id="第2章-静水压力-一--怎么算压力-58-">第2章 静水压力（一）—— 怎么算压力（5/8）</h1>
+
+<h2 id="21-什么是静水压力">2.1 什么是静水压力？</h2>
+
+<p><strong>静止的水</strong>对接触面产生的推力。</p>
+
+<h2 id="22-三条铁律-必背-">2.2 三条铁律（必背）</h2>
+
+<table><tr><td>#</td><td>性质</td><td>通俗解释</td></tr><tr><td>1</td><td>垂直作用</td><td>水永远「垂直」推墙/推底，不斜着推</td></tr><tr><td>2</td><td>各向相等</td><td>同一点，从哪个方向量压力都一样</td></tr><tr><td>3</td><td>随深度增加</td><td>越深压力越大；同一水平深度，压力相同</td></tr></table>
+
+<h2 id="23-核心公式">2.3 核心公式</h2>
+
+<p><strong>点压力（单位面积上的力）</strong>：</p>
+
+<pre><code>p = ρ × g × h    [Pa = N/m²]</code></pre>
+
+<ul>
+<li>h = 该点到<strong>自由水面</strong>的垂直深度（米）</li>
+<li>也叫<strong>gauge pressure（表压）</strong>——不考虑大气压</li>
+</ul>
+
+<p><strong>总水压力（整块面上的力）</strong>：</p>
+
+<pre><code>P = p × A = ρ × g × h × A    [N]</code></pre>
+
+<ul>
+<li>A = 受力面积 (m²)</li>
+<li>P = 总推力 (N)</li>
+</ul>
+
+<h2 id="24-表压-vs-绝对压">2.4 表压 vs 绝对压</h2>
+
+<table><tr><td>类型</td><td>意思</td><td>公式</td></tr><tr><td><strong>表压</strong>（水理学常用）</td><td>只算水的压力</td><td>p = ρgh</td></tr><tr><td><strong>绝对压</strong></td><td>从真空算起</td><td>p = p₀ + ρgh</td></tr><tr><td>大气压 p₀</td><td>空气压我们</td><td>≈ 101325 Pa</td></tr></table>
+
+<p><strong>记住</strong>：水理学默认用<strong>表压</strong>，除非题目特别说「绝对压」。</p>
+
+<h2 id="25-压力水头">2.5 压力水头</h2>
+
+<p>把压力换算成「等效水柱高度」：</p>
+
+<pre><code>H（压力水头）= p / (ρg) = p / w    [m]</code></pre>
+
+<p><strong>意思</strong>：这么大的压力，相当于多少米高的水柱压下来。</p>
+
+<hr/>
+
+<h3 id="例题2-水面下-10-m-处压力多大-课堂例-">例题2 · 水面下 10 m 处压力多大？（课堂例）</h3>
+
+<pre><code>p = ρ × g × H
+  = 1000 × 9.8 × 10
+  = 98,000 Pa = 98 kPa</code></pre>
+
+<hr/>
+
+<h1 class="chapter" id="第3章-静水压力-二--实际应用-515-">第3章 静水压力（二）—— 实际应用（5/15）</h1>
+
+<h2 id="31-水平面-vs-铅直面">3.1 水平面 vs 铅直面</h2>
+
+<table><tr><td>面</td><td>压力分布</td><td>形状</td></tr><tr><td><strong>底面（水平）</strong></td><td>均匀</td><td>长方形</td></tr><tr><td><strong>侧壁（垂直）</strong></td><td>上小下大</td><td>三角形</td></tr></table>
+
+<p><strong>水平底面</strong>——最简单：</p>
+
+<pre><code>P = ρ × g × H × A
+  = 水的重量（底面上方那部分水的重）</code></pre>
+
+<p><strong>垂直侧壁</strong>——压力从 0 线性增到 ρgH：</p>
+
+<pre><code>P = ½ × ρ × g × H × A
+  = ρ × g × H_G × A</code></pre>
+
+<p>其中 <strong>H_G = H/2</strong>（矩形墙，形心在水面下 H/2 处）</p>
+
+<p><strong>作用点</strong>（力推在哪）：比形心更靠下，距底面 <strong>H/3</strong> 处。</p>
+
+<hr/>
+
+<h2 id="32-台形分布-墙顶也在水面下-">3.2 台形分布（墙顶也在水面下）</h2>
+
+<p>墙完全浸没时，上面也有压力：</p>
+
+<pre><code>P₁ = ρgH₁（墙顶处压力）
+P₂ = ρgH₂（墙底处压力）
+H = H₂ - H₁（墙高）
+
+总压力：P = (P₁ + P₂)/2 × A = ρg × H_G × A
+H_G = (H₁ + H₂)/2
+
+作用点距底面：H&#x27;c = H/3 × (2H₁ + H₂)/(H₁ + H₂)
+作用点深度：H_C = H₂ - H&#x27;c</code></pre>
+
+<hr/>
+
+<h2 id="33-帕斯卡原理-液压千斤顶-">3.3 帕斯卡原理（液压千斤顶）</h2>
+
+<p><strong>封闭液体里，加在一处的压强，处处相等传递。</strong></p>
+
+<pre><code>P₁/A₁ = P₂/A₂    →    F₁/A₁ = F₂/A₂</code></pre>
+
+<p><strong>小活塞用小力 → 大活塞大力</strong>（面积比决定倍数）</p>
+
+<hr/>
+
+<h3 id="例题3-水水银分层压力-515-课堂例-">例题3 · 水+水银分层压力（5/15 课堂例）</h3>
+
+<p><strong>条件</strong>：水面到水银界面深 3 m；界面到 P₂ 再深 2 m（水银层）</p>
+
+<pre><code>P₁ = ρ_水 × g × 3 = 1000 × 9.8 × 3 = 29.4 kPa
+
+P₂ = P₁ + ρ_水银 × g × 2
+   = 29.4 + 13600 × 9.8 × 2 / 1000
+   = 29.4 + 266.6 = 296 kPa
+
+压力水头 H₂ = P₂/(ρ_水×g) = 296000/(9800) ≈ 30.2 m</code></pre>
+
+<hr/>
+
+<h3 id="例题4-液压千斤顶-515-课堂例-">例题4 · 液压千斤顶（5/15 课堂例）</h3>
+
+<p><strong>条件</strong>：活塞 A 直径 5 cm，活塞 B 直径 15 cm，B 上荷重 40 kN，求 A 上需要的力。</p>
+
+<pre><code>P₁ = P₂ × (D₁/D₂)²
+   = 40 × (5/15)²
+   = 40 × (1/3)²
+   = 40/9 ≈ 4.44 kN</code></pre>
+
+<p><strong>理解</strong>：直径变成 3 倍 → 面积变成 9 倍 → 力只需 1/9。</p>
+
+<hr/>
+
+<h3 id="例题5-海水各点压力-522-练习-问1-">例题5 · 海水各点压力（5/22 练习 问1）</h3>
+
+<p><strong>条件</strong>：海水 ρ=1025 kg/m³，各点深度：A=5cm, D=10cm, C=15cm, B=20cm</p>
+
+<pre><code>p = ρgh（h 换成米！）
+
+P_A = 1025 × 9.8 × 0.05 = 502 Pa
+P_D = 1025 × 9.8 × 0.10 = 1005 Pa ≈ 1.0 kPa
+P_C = 1025 × 9.8 × 0.15 = 1507 Pa ≈ 1.51 kPa
+P_B = 1025 × 9.8 × 0.20 = 2009 Pa ≈ 2.01 kPa</code></pre>
+
+<p><strong>要点</strong>：容器形状不影响压力，只看<strong>垂直深度</strong>。</p>
+
+<hr/>
+
+<h3 id="例题6-液压试验机-522-练习-问2-">例题6 · 液压试验机（5/22 练习 问2）</h3>
+
+<p><strong>条件</strong>：要产生 20 MPa 压力，试件直径 20 cm；活塞 A 直径 5 cm，B 直径 30 cm。</p>
+
+<p><strong>Step 1</strong> 求 B 上需要的力：</p>
+<pre><code>F_B = P × A_试件 = 20×10⁶ × π×0.2²/4 = 628.3 kN</code></pre>
+
+<p><strong>Step 2</strong> 帕斯卡原理求 A 上力：</p>
+<pre><code>F_A = F_B × (D_A/D_B)² = 628.3 × (5/30)² = 628.3/36 ≈ 17.45 kN</code></pre>
+
+<hr/>
+
+<h3 id="例题7-挡水板净压力-522-练习-问3-">例题7 · 挡水板净压力（5/22 练习 问3）</h3>
+
+<p><strong>条件</strong>：宽 5 m 挡板，左侧水深 2.1 m，右侧 0.9 m</p>
+
+<pre><code>P₁ = ρg × (H/2) × B × H = 1000×9.8×(2.1/2)×2.1×5 = 108.0 kN
+P₂ = 1000×9.8×(0.9/2)×0.9×5 = 19.8 kN
+
+净推力 P = P₁ - P₂ = 88.2 kN（向左）
+
+作用点（对底面取矩）：
+H&#x27;₁c = 2.1/3 = 0.70 m
+H&#x27;₂c = 0.9/3 = 0.30 m
+H&#x27;c = (P₁×0.70 - P₂×0.30)/88.2 ≈ 0.79 m（距底面）</code></pre>
+
+<hr/>
+
+<h3 id="例题8-取水口门扉-522-练习-问4-">例题8 · 取水口门扉（5/22 练习 问4）</h3>
+
+<p><strong>条件</strong>：正方形门 1.3 m × 1.3 m，顶边在水面下 3 m</p>
+
+<pre><code>H₁ = 3 m（顶）
+H₂ = 3 + 1.3 = 4.3 m（底）
+H_G = (3 + 4.3)/2 = 3.65 m
+A = 1.3² = 1.69 m²
+
+P = ρg × H_G × A = 1000×9.8×3.65×1.69 ≈ 60.5 kN
+
+H&#x27;c = 1.3/3 × (2×3 + 4.3)/(3 + 4.3) = 0.61 m（距底面）
+H_C = 4.3 - 0.61 = 3.69 m（作用点深度）</code></pre>
+
+<hr/>
+
+<h3 id="例题9-圆形水门-522-练习-问5-">例题9 · 圆形水门（5/22 练习 问5）</h3>
+
+<p><strong>条件</strong>：直径 0.8 m 圆门，顶边在水面下 3 m</p>
+
+<pre><code>A = π × 0.8²/4 = 0.5027 m²
+H_G = 3 + 0.8/2 = 3.4 m
+
+P = 1000 × 9.8 × 3.4 × 0.5027 ≈ 16.75 kN</code></pre>
+
+<hr/>
+
+<h2 id="34-阿基米德原理-浮力-">3.4 阿基米德原理（浮力）</h2>
+
+<p><strong>浸在液体里的物体会受到向上的浮力，大小 = 排开液体的重量</strong></p>
+
+<pre><code>B（浮力）= ρ × g × V_浸没</code></pre>
+
+<p><strong>漂浮时</strong>：浮力 = 物体重量 → 可以求吃水深度</p>
+
+<hr/>
+
+<h3 id="例题10-沉箱稳定性-课堂应用题-">例题10 · 沉箱稳定性（课堂应用题）</h3>
+
+<p><strong>条件</strong>：14×12×10 m 空心沉箱，壁厚 0.4 m，混凝土 ρ=2500，海水 ρ=1025</p>
+
+<p><strong>Step 1</strong> 重量 W ≈ 7.44 MN  </p>
+<p><strong>Step 2</strong> 浮力 B = 1025×9.8×14×12×d = 1.69d MN  </p>
+<p><strong>Step 3</strong> 吃水 d = W/B = 7.44/1.69 = <strong>4.40 m</strong>  </p>
+<p><strong>Step 4</strong> 重心 BG = 4.10 m，浮心 BC = d/2 = 2.20 m  </p>
+<p><strong>Step 5</strong> CG = 4.10 - 2.20 = 1.90 m  </p>
+<p><strong>Step 6</strong> GM = I/V - CG = 2016/739.2 - 1.90 = <strong>0.83 m &gt; 0 → 稳定</strong></p>
+
+<table><tr><td>GM</td><td>含义</td></tr><tr><td>&gt; 0</td><td>稳定（会回正）</td></tr><tr><td>= 0</td><td>中立</td></tr><tr><td>&lt; 0</td><td>不稳定（会翻）</td></tr></table>
+
+<hr/>
+
+<h1 class="chapter" id="第4章-流体种类与连续式-522-">第4章 流体种类与连续式（5/22）</h1>
+
+<h2 id="41-管水路-vs-开水路">4.1 管水路 vs 开水路</h2>
+
+<table><tr><td></td><td>管水路</td><td>开水路</td></tr><tr><td>特点</td><td>管子封死，满管流</td><td>上面有自由水面（空气）</td></tr><tr><td>例子</td><td>自来水管</td><td>排水沟、河流</td></tr><tr><td>关键量</td><td>断面积 A、流速 v</td><td>流积 A、润边 S、水深</td></tr></table>
+
+<h2 id="42-三个假设-简化计算-">4.2 三个假设（简化计算）</h2>
+
+<ul>
+<li>1. <strong>不可压缩</strong>——体积不变</li>
+<li>2. <strong>定常流</strong>——流量不随时间变</li>
+<li>3. <strong>无泄漏</strong>——中间不漏水</li>
+</ul>
+
+<h2 id="43-连续式-最重要公式之一-">4.3 连续式（最重要公式之一）</h2>
+
+<pre><code>Q = A × v = 常数
+
+A₁ × v₁ = A₂ × v₂</code></pre>
+
+<ul>
+<li>Q = 流量 (m³/s)</li>
+<li>A = 断面积 (m²)</li>
+<li>v = 流速 (m/s)</li>
+</ul>
+
+<p><strong>口诀</strong>：管子细 → 流得快；管子粗 → 流得慢。</p>
+
+<p><strong>圆管面积</strong>：A = πD²/4</p>
+
+<hr/>
+
+<h3 id="例题11-管径变化-65-课堂例-">例题11 · 管径变化（6/5 课堂例）</h3>
+
+<p><strong>条件</strong>：v₁=2.5 m/s，D₁=15 cm → D₂=30 cm，求 v₂</p>
+
+<pre><code>v₂ = v₁ × (D₁/D₂)² = 2.5 × (15/30)² = 2.5/4 = 0.625 m/s</code></pre>
+
+<p><strong>理解</strong>：直径变 2 倍 → 面积变 4 倍 → 速度变 1/4。</p>
+
+<hr/>
+
+<h3 id="例题12-连续式练习-619-问1-问2-">例题12 · 连续式练习（6/19 问1·问2）</h3>
+
+<p><strong>问1</strong>：Q=30 L/s，D₁=4 cm，D₂=2 cm</p>
+
+<pre><code>Q = 30,000 cm³/s
+v₁ = Q/(π×4²/4) = 30000/(4π) ≈ 2387 cm/s ≈ 23.9 m/s
+v₂ = Q/(π×2²/4) = 30000/π ≈ 9550 cm/s ≈ 95.5 m/s</code></pre>
+
+<p><strong>问2</strong>：D₁=20 cm，D₂=60 cm，v₂=4.0 m/s，求 v₁</p>
+
+<pre><code>v₁ = v₂ × (D₂/D₁)² = 4 × (60/20)² = 4 × 9 = 36 m/s</code></pre>
+
+<p><strong>快捷</strong>：不用算 π，直接用 <strong>D₁² × v₁ = D₂² × v₂</strong></p>
+
+<hr/>
+
+<h3 id="例题13-圆盘径向流-619-问3-">例题13 · 圆盘径向流（6/19 问3）</h3>
+
+<p><strong>条件</strong>：Q=10 L/s，两圆盘间距 4 cm，求半径 20 cm 处流速</p>
+
+<pre><code>A = 2π × r × h = 2π × 0.2 × 0.04 = 0.0503 m²
+v = Q/A = 0.01/0.0503 ≈ 0.20 m/s = 20 cm/s</code></pre>
+
+<p><strong>关键</strong>：径向流出时，面积 = 圆周长 × 间隙高度。</p>
+
+<hr/>
+
+<h1 class="chapter" id="第5章-伯努利定理-一--能量守恒-529-">第5章 伯努利定理（一）—— 能量守恒（5/29）</h1>
+
+<h2 id="51-水有三种能量">5.1 水有三种「能量」</h2>
+
+<table><tr><td>类型</td><td>意思</td><td>水头形式</td></tr><tr><td>位置能量</td><td>水有多高</td><td>位置水头 z</td></tr><tr><td>压力能量</td><td>水压多大</td><td>压力水头 p/(ρg)</td></tr><tr><td>运动能量</td><td>水流多快</td><td>速度水头 v²/(2g)</td></tr></table>
+
+<h2 id="52-伯努利公式-理想流体-">5.2 伯努利公式（理想流体）</h2>
+
+<pre><code>v₁²/(2g) + z₁ + p₁/(ρg) = v₂²/(2g) + z₂ + p₂/(ρg) = H_e（全水头）</code></pre>
+
+<p><strong>核心思想</strong>：三种能量可以互相转换，但<strong>总和不变</strong>（理想情况下）。</p>
+
+<h2 id="53-三种典型情况">5.3 三种典型情况</h2>
+
+<h3 id="情况A水平管--管径变化">情况A：水平管 + 管径变化</h3>
+
+<ul>
+<li>z₁ = z₂（高度不变）</li>
+<li>管细 → v 大 → <strong>压力 p 小</strong></li>
+<li>管粗 → v 小 → <strong>压力 p 大</strong></li>
+</ul>
+
+<p><strong>口诀</strong>：<strong>快的地方压力低，慢的地方压力高。</strong></p>
+
+<h3 id="情况B斜管--管径不变">情况B：斜管 + 管径不变</h3>
+
+<ul>
+<li>v₁ = v₂（速度不变）</li>
+<li>往下流 → z 减小 → <strong>p 增大</strong>（像「刹车」）</li>
+<li>往上流 → z 增大 → <strong>p 减小</strong></li>
+</ul>
+
+<h3 id="情况C综合-管径也变--高度也变-">情况C：综合（管径也变 + 高度也变）</h3>
+
+<p>→ 三项都要算，先连续式求 v，再伯努利求 p。</p>
+
+<hr/>
+
+<h3 id="例题14-水平变径管-612-追加1-">例题14 · 水平变径管（6/12 追加1）</h3>
+
+<p><strong>条件</strong>：A₁ &gt; A₂</p>
+
+<pre><code>v₁ &lt; v₂
+→ v₁²/(2g) + p₁/(ρg) = v₂²/(2g) + p₂/(ρg)
+→ p₁ &gt; p₂（粗管压力高，细管压力低）</code></pre>
+
+<hr/>
+
+<h3 id="例题15-斜管等径-619-追加2-">例题15 · 斜管等径（6/19 追加2）</h3>
+
+<p><strong>条件</strong>：z₁ &gt; z₂，v₁ = v₂</p>
+
+<pre><code>z₁ + p₁/(ρg) = z₂ + p₂/(ρg)
+→ p₂ &gt; p₁（低处压力高）</code></pre>
+
+<hr/>
+
+<h3 id="例题16-综合题-619-追加3-">例题16 · 综合题（6/19 追加3）</h3>
+
+<p><strong>条件</strong>：d₁=0.2m, z₁=5m, P₁=30kPa, v₁=1m/s → d₂=0.1m, z₂=2m, 求 P₂</p>
+
+<p><strong>Step 1</strong> 连续式：</p>
+<pre><code>v₂ = v₁ × (d₁/d₂)² = 1 × (0.2/0.1)² = 4 m/s</code></pre>
+
+<p><strong>Step 2</strong> 算断面①全水头：</p>
+<pre><code>H_e = 1²/(2×9.8) + 5 + 30000/(1000×9.8)
+    = 0.051 + 5 + 3.061 = 8.112 m</code></pre>
+
+<p><strong>Step 3</strong> 断面②（求 P₂）：</p>
+<pre><code>8.112 = 4²/(2×9.8) + 2 + P₂/(1000×9.8)
+8.112 = 0.816 + 2 + P₂/9800
+P₂/9800 = 5.296
+P₂ = 51,900 Pa ≈ 52 kPa</code></pre>
+
+<hr/>
+
+<h1 class="chapter" id="第6章-伯努利定理-二--孔口与排水-65-">第6章 伯努利定理（二）—— 孔口与排水（6/5）</h1>
+
+<h2 id="61-孔口-Orifice-">6.1 孔口（Orifice）</h2>
+
+<p>水箱壁上的出水孔。水流会先<strong>收缩</strong>（vena contracta），在孔下游约半个孔径处最细。</p>
+
+<h2 id="62-托里拆利定理-小孔出流-">6.2 托里拆利定理（小孔出流）</h2>
+
+<p>从伯努利推导，忽略损失时：</p>
+
+<pre><code>v = √(2gH)</code></pre>
+
+<ul>
+<li>H = 孔中心到水面的深度</li>
+<li><strong>意思</strong>：水从 H 高处「自由落下」的速度</li>
+</ul>
+
+<h2 id="63-孔口分类">6.3 孔口分类</h2>
+
+<ul>
+<li>1. <strong>按位置</strong>：侧壁孔 / 底孔</li>
+<li>2. <strong>按大小</strong>：小孔口（H &gt;&gt; 孔径）/ 大孔口</li>
+</ul>
+
+<hr/>
+
+<h3 id="例题17-水箱排水-619-问4-">例题17 · 水箱排水（6/19 问4）</h3>
+
+<p><strong>条件</strong>：水面比出口 C 高 8 m（3 m + 5 m 竖管），管径 0.1 m，忽略损失</p>
+
+<p><strong>Step 1</strong> 伯努利（水面 → 出口 C）：</p>
+<pre><code>0 + 8 + 0 = v²/(2g) + 0 + 0
+v = √(2×9.8×8) = √156.8 ≈ 12.5 m/s</code></pre>
+
+<p><strong>Step 2</strong> 流量：</p>
+<pre><code>Q = A × v = π×0.1²/4 × 12.5 ≈ 0.098 m³/s ≈ 98 L/s</code></pre>
+
+<hr/>
+
+<h3 id="例题18-径向流--伯努利-619-问5-">例题18 · 径向流 + 伯努利（6/19 问5）</h3>
+
+<p><strong>条件</strong>：Q=100 L/s，间隙 4 cm，r₁=10 cm 处 p₁=10 kPa，求 r₂=20 cm 处 p₂</p>
+
+<pre><code>v₁ = Q/(2π×0.1×0.04) = 0.1/0.0251 = 3.98 m/s
+v₂ = Q/(2π×0.2×0.04) = 0.1/0.0503 = 1.99 m/s
+
+p₂ = p₁ + ½ρ(v₁² - v₂²)
+   = 10000 + 500×(15.84 - 3.96)
+   = 10000 + 5940 = 15,940 Pa ≈ 15.9 kPa</code></pre>
+
+<p><strong>理解</strong>：往外流，面积变大，速度减小，压力回升。</p>
+
+<hr/>
+
+<h1 class="chapter" id="第7章-管水路-一--层流与乱流-612-">第7章 管水路（一）—— 层流与乱流（6/12）</h1>
+
+<h2 id="71-两种流态">7.1 两种流态</h2>
+
+<table><tr><td></td><td>层流</td><td>乱流</td></tr><tr><td>样子</td><td>一层一层 orderly</td><td>漩涡、混乱</td></tr><tr><td>例子</td><td>很细管、慢流</td><td>粗管、快流</td></tr><tr><td>判断</td><td>Re &lt; 2000</td><td>Re &gt; 4000</td></tr></table>
+
+<h2 id="72-雷诺数">7.2 雷诺数</h2>
+
+<pre><code>Re = v × D / ν</code></pre>
+
+<ul>
+<li>v = 流速，D = 管径，ν = 动粘性系数</li>
+<li>Re 大 → 更容易乱流</li>
+</ul>
+
+<h2 id="73-管内流速分布">7.3 管内流速分布</h2>
+
+<ul>
+<li>中间最快，靠管壁最慢（抛物线分布）</li>
+<li>管壁有摩擦应力 τ₀</li>
+</ul>
+
+<hr/>
+
+<h1 class="chapter" id="第8章-压力损失--619-缺课补充-">第8章 压力损失 ⚠️（6/19 缺课补充）</h1>
+
+<h2 id="81-为什么要有损失">8.1 为什么要有「损失」？</h2>
+
+<p>真实管道有<strong>摩擦</strong>，水流动会消耗能量 → 伯努利公式要加「损失项」。</p>
+
+<h2 id="82-达西-魏斯巴赫公式">8.2 达西-魏斯巴赫公式</h2>
+
+<pre><code>h_f = λ × (l/D) × v²/(2g)</code></pre>
+
+<ul>
+<li>h_f = 摩擦损失水头 (m)</li>
+<li>λ = 摩擦系数（由 Re 和管壁粗糙度决定）</li>
+<li>l = 管长，D = 管径</li>
+</ul>
+
+<h2 id="83-能量坡度-vs-水力坡度">8.3 能量坡度 vs 水力坡度</h2>
+
+<table><tr><td>名称</td><td>含义</td><td>公式</td></tr><tr><td><strong>能量坡度 I_e</strong></td><td>全水头沿程下降率</td><td>I_e = (H_e1 - H_e2)/L</td></tr><tr><td><strong>水力坡度 I</strong></td><td>测压管水头下降率</td><td>I = (H_p1 - H_p2)/L</td></tr></table>
+
+<p>测压管水头 H_p = z + p/(ρg)（不含速度项）</p>
+
+<hr/>
+
+<h3 id="例题19-能量坡度-731-练习-">例题19 · 能量坡度（7/31 练习）</h3>
+
+<p><strong>条件</strong>：D₁=200mm, v₁=4m/s, z₁=30m, P₁=350kPa → D₂=100mm, z₂=20m, P₂=300kPa，水平距 20m</p>
+
+<p><strong>Step 1</strong> v₂ = 4×(0.2/0.1)² = 16 m/s</p>
+
+<p><strong>Step 2</strong> 全水头：</p>
+<pre><code>H_e1 = 16/19.6 + 30 + 350000/9800 = 0.816 + 30 + 35.71 = 66.53 m
+H_e2 = 256/19.6 + 20 + 300000/9800 = 13.06 + 20 + 30.61 = 63.67 m</code></pre>
+
+<p><strong>Step 3</strong> 能量坡度：</p>
+<pre><code>I_e = (66.53 - 63.67)/20 = 0.143</code></pre>
+
+<p><strong>Step 4</strong> 水力坡度：</p>
+<pre><code>H_p1 = 30 + 35.71 = 65.71 m
+H_p2 = 20 + 30.61 = 50.61 m
+I = (65.71 - 50.61)/20 = 0.755</code></pre>
+
+<hr/>
+
+<h1 class="chapter" id="第9章-摩擦系数-626-">第9章 摩擦系数（6/26）</h1>
+
+<h2 id="91-摩擦损失水头-h_f">9.1 摩擦损失水头 h_f</h2>
+
+<p>水在管里流，管壁「拖后腿」，能量变成热 → 压力/水头下降。</p>
+
+<h2 id="92-常用公式">9.2 常用公式</h2>
+
+<p><strong>达西-魏斯巴赫</strong>（上面已写）</p>
+
+<p><strong>海曾-威廉斯</strong>（给水管用，了解）：</p>
+<pre><code>v = 0.849 × C × R^0.63 × I^0.54</code></pre>
+
+<h2 id="93-摩擦系数-λ-怎么定">9.3 摩擦系数 λ 怎么定？</h2>
+
+<ul>
+<li>层流：λ = 64/Re</li>
+<li>乱流：查 Moody 图或用公式（考试一般给 λ 或 n）</li>
+</ul>
+
+<hr/>
+
+<h1 class="chapter" id="第10章-开水路-vs-管水路-73-">第10章 开水路 vs 管水路（7/3）</h1>
+
+<h2 id="101-开水路的特点">10.1 开水路的特点</h2>
+
+<ul>
+<li>上面有<strong>自由水面</strong>（和大气接触）</li>
+<li>表面压力 = 0（表压）</li>
+<li>靠<strong>重力坡度</strong>流动</li>
+</ul>
+
+<h2 id="102-三个几何量-必会-">10.2 三个几何量（必会）</h2>
+
+<table><tr><td>符号</td><td>名称</td><td>算法</td></tr><tr><td>A</td><td>流积（过水面积）</td><td>水面以下横截面面积</td></tr><tr><td>S（或 P）</td><td>润边（湿周）</td><td>水接触的边界总长度</td></tr><tr><td>R</td><td>水力半径</td><td>R = A/S</td></tr></table>
+
+<p><strong>口诀</strong>：R 越大 → 水「又宽又深相对润边少」→ 流得省力。</p>
+
+<hr/>
+
+<h3 id="例题20-梯形水路-710-基本问题-p40-">例题20 · 梯形水路（7/10 基本问题 p.40）</h3>
+
+<p><strong>条件</strong>：Q=30 m³/s，底宽 3.0 m，水面宽 4.6 m，水深 2.0 m</p>
+
+<pre><code>A = (3.0 + 4.6)/2 × 2.0 = 7.6 m²
+
+斜边长 = √(0.8² + 2.0²) = √4.64 = 2.15 m
+S = 3.0 + 2×2.15 = 7.30 m
+
+R = A/S = 7.6/7.30 = 1.04 m
+
+v = Q/A = 30/7.6 = 3.95 m/s</code></pre>
+
+<hr/>
+
+<h1 class="chapter" id="第11章-明渠均匀流-曼宁公式--710-缺课补充-">第11章 明渠均匀流 · 曼宁公式 ⚠️（7/10 缺课补充）</h1>
+
+<h2 id="111-曼宁公式-考试重点-">11.1 曼宁公式（考试重点！）</h2>
+
+<pre><code>v = (1/n) × R^(2/3) × I^(1/2)
+
+Q = A × v = A × (1/n) × R^(2/3) × I^(1/2)</code></pre>
+
+<table><tr><td>符号</td><td>含义</td></tr><tr><td>n</td><td>粗糙系数（题目给，混凝土约 0.012~0.015）</td></tr><tr><td>R</td><td>水力半径 A/S (m)</td></tr><tr><td>I</td><td>坡度（能量线或水面坡度，无量纲）</td></tr><tr><td>v</td><td>平均流速 (m/s)</td></tr></table>
+
+<p><strong>满管圆管</strong>：R = D/4</p>
+
+<h2 id="112-其他公式-了解名称即可-">11.2 其他公式（了解名称即可）</h2>
+
+<ul>
+<li><strong>谢才公式</strong>：v = C√(RI)</li>
+<li><strong>海曾-威廉斯</strong>：主要用于有压管道</li>
+</ul>
+
+<hr/>
+
+<h3 id="例题21-圆管曼宁-710-基本问题-p63-">例题21 · 圆管曼宁（7/10 基本问题 p.63）</h3>
+
+<p><strong>条件</strong>：D=600mm，管长 3000 m，摩擦损失 hf=30 m，n=0.012，求 Q</p>
+
+<pre><code>R = D/4 = 0.15 m
+I = hf/l = 30/3000 = 0.01
+
+v = (1/0.012) × 0.15^(2/3) × 0.01^0.5
+  = 83.33 × 0.284 × 0.1
+  ≈ 2.37 m/s
+
+Q = π×0.3² × 2.37 ≈ 0.67 m³/s</code></pre>
+
+<hr/>
+
+<h3 id="例题22-矩形明渠求坡度-710-基本问题-p63-">例题22 · 矩形明渠求坡度（7/10 基本问题 p.63）</h3>
+
+<p><strong>条件</strong>：Q=15 m³/s，宽 30 m，水深 2.5 m，n=0.012，求水面坡度 I</p>
+
+<pre><code>A = 30 × 2.5 = 75 m²
+S = 30 + 2×2.5 = 35 m
+R = 75/35 = 2.14 m
+v = Q/A = 15/75 = 0.20 m/s
+
+I = (v × n / R^(2/3))²
+  = (0.20 × 0.012 / 2.14^0.667)²
+  = (0.0024 / 1.67)²
+  ≈ 0.00000207</code></pre>
+
+<hr/>
+
+<h1 class="chapter" id="第12章-开水路分析--717-无课堂资料补充-">第12章 开水路分析 ⚠️（7/17 无课堂资料，补充）</h1>
+
+<h2 id="121-均匀流条件">12.1 均匀流条件</h2>
+
+<ul>
+<li>水深、流速、坡度沿程不变</li>
+<li>重力下降 = 摩擦损失</li>
+</ul>
+
+<h2 id="122-解题套路">12.2 解题套路</h2>
+
+<ul>
+<li>1. 画断面 → 求 A、S、R</li>
+<li>2. 已知 Q 和 n → 用曼宁公式求 v 或 I 或水深</li>
+<li>3. 已知 I 和尺寸 → 求 Q</li>
+</ul>
+
+<h2 id="123-补充例题-矩形渠求水深">12.3 补充例题 · 矩形渠求水深</h2>
+
+<p><strong>条件</strong>：宽 2 m 混凝土渠，Q=4 m³/s，坡度 I=0.001，n=0.013，求水深 h</p>
+
+<p><strong>解法</strong>（试算或逐次逼近）：</p>
+
+<pre><code>设 h=1.0 m：A=2, S=4, R=0.5
+v = (1/0.013)×0.5^0.667×0.001^0.5 = 76.9×0.63×0.0316 = 1.53 m/s
+Q = 2×1.53 = 3.06 m³/s（偏小）
+
+设 h=1.2 m：A=2.4, S=4.4, R=0.545
+v = 76.9×0.545^0.667×0.0316 = 76.9×0.65×0.0316 = 1.58 m/s
+Q = 2.4×1.58 = 3.79 m³/s
+
+设 h=1.5 m：A=3, S=5, R=0.6
+v = 76.9×0.669×0.0316 = 1.63 m/s
+Q = 4.89 m³/s（偏大）
+
+→ h ≈ 1.3~1.4 m</code></pre>
+
+<hr/>
+
+<h1 class="chapter" id="第13章-实用设计--724-缺课补充-">第13章 实用设计 ⚠️（7/24 缺课补充）</h1>
+
+<h2 id="131-工程设计思路">13.1 工程设计思路</h2>
+
+<ul>
+<li>1. <strong>定流量 Q</strong>（用水需求/排水标准）</li>
+<li>2. <strong>选管径/渠宽</strong>（流速一般 0.6~3 m/s 为宜，太快冲蚀，太慢淤积）</li>
+<li>3. <strong>算压力/水头损失</strong>（选泵扬程）</li>
+<li>4. <strong>验算</strong>（曼宁公式反算）</li>
+</ul>
+
+<h2 id="132-补充例题-选管径">13.2 补充例题 · 选管径</h2>
+
+<p><strong>条件</strong>：需输送 Q=0.05 m³/s，允许流速 v=2 m/s，求圆管直径</p>
+
+<pre><code>A = Q/v = 0.05/2 = 0.025 m²
+D = √(4A/π) = √(0.1/π) = 0.178 m ≈ 180 mm
+→ 选标准管径 200 mm</code></pre>
+
+<hr/>
+
+<h1 class="chapter" id="第14章-设计计算-皮托管-731-">第14章 设计计算 · 皮托管（7/31）</h1>
+
+<h2 id="141-皮托管-Pitot-Tube-">14.1 皮托管（Pitot Tube）</h2>
+
+<p>测量流速的装置：</p>
+<ul>
+<li>静压管：测压力</li>
+<li>皮托管：管口对水流，测「全压」</li>
+<li>两管水位差 h → 中心最大流速</li>
+</ul>
+
+<pre><code>v_max = C × √(2gh)</code></pre>
+
+<h2 id="142-桥墩壅水">14.2 桥墩壅水</h2>
+
+<p>水流撞桥墩 → 动能变势能 → 水面升高</p>
+
+<pre><code>v = √(2g × Δh)</code></pre>
+
+<p>Δh = 水面上升高度（动能全部换成位能时，v=0 处）</p>
+
+<hr/>
+
+<h3 id="例题23-桥墩壅水-731-练习-图2-">例题23 · 桥墩壅水（7/31 练习 图2）</h3>
+
+<p><strong>条件</strong>：洪水撞桥墩，水面上升 0.5 m</p>
+
+<pre><code>v_A = √(2 × 9.8 × 0.5) = √9.8 ≈ 3.13 m/s</code></pre>
+
+<hr/>
+
+<h3 id="例题24-皮托管测流量-731-练习-图34-">例题24 · 皮托管测流量（7/31 练习 图3/4）</h3>
+
+<p><strong>条件</strong>：D=30 cm，水位差 20 cm，v_avg/v_max=0.8，C=1</p>
+
+<pre><code>v_max = √(2×9.8×0.2) = √3.92 = 1.98 m/s
+v_avg = 0.8 × 1.98 = 1.58 m/s
+Q = π×0.15² × 1.58 = 0.112 m³/s = 112 L/s</code></pre>
+
+<hr/>
+
+<h1 class="chapter" id="第15章-期末冲刺-公式速查--题型模板">第15章 期末冲刺 · 公式速查 &amp; 题型模板</h1>
+
+<h2 id="151-公式总表">15.1 公式总表</h2>
+
+<pre><code>【静水压力】
+  p = ρgh
+  P = p × A
+  垂直矩形墙：P = ½ρgHA = ρgH_G×A，H_G=H/2
+  作用点（三角）：距底 H/3
+  台形：H&#x27;c = H/3 × (2H₁+H₂)/(H₁+H₂)
+
+【帕斯卡】
+  F₁/A₁ = F₂/A₂
+
+【浮力】
+  B = ρgV
+
+【连续式】
+  Q = Av = 常数
+  A₁v₁ = A₂v₂
+  径向：A = 2πrh
+
+【伯努利】
+  v²/(2g) + z + p/(ρg) = H_e
+
+【孔口】
+  v = √(2gH)
+
+【曼宁】
+  v = (1/n) × R^(2/3) × I^(1/2)
+  Q = Av
+  R = A/S
+
+【开水路】
+  矩形：A=bh, S=b+2h
+  梯形：A=(b+B)h/2
+  满管：R=D/4
+
+【皮托管/壅水】
+  v = √(2gh)</code></pre>
+
+<h2 id="152-考试解题步骤">15.2 考试解题步骤</h2>
+
+<table><tr><td>题型</td><td>第一步</td><td>第二步</td><td>第三步</td></tr><tr><td>静水压力</td><td>画水深 H</td><td>判断水平/垂直/台形</td><td>选公式算 P 和作用点</td></tr><tr><td>连续式</td><td>统一单位</td><td>算面积 A</td><td>A₁v₁=A₂v₂</td></tr><tr><td>伯努利</td><td>连续式求 v</td><td>算各断面三项水头</td><td>列等式求未知量</td></tr><tr><td>曼宁</td><td>算 A、S、R</td><td>确定 I 或 hf</td><td>代入求 Q 或 v</td></tr><tr><td>孔口/皮托</td><td>找水深 H 或 h</td><td>v=√(2gH)</td><td>Q=Av</td></tr></table>
+
+<h2 id="153-易错点清单">15.3 易错点清单</h2>
+
+<ul>
+<li>1. ❌ 深度 h 忘记从 m 换算（cm → m 要 ÷100）</li>
+<li>2. ❌ 直径和半径搞混（A = πD²/4，不是 πr² 写错 D）</li>
+<li>3. ❌ 流量单位（L/s → m³/s 要 ÷1000）</li>
+<li>4. ❌ 垂直墙用 p=ρgh 算总力（应该用 ½ 或 H_G）</li>
+<li>5. ❌ 伯努利忘记先求 v₂</li>
+<li>6. ❌ 曼宁公式中 R 的指数是 2/3，I 的指数是 1/2</li>
+<li>7. ❌ 作用点方向：永远垂直于面</li>
+</ul>
+
+<h2 id="154-32天复习建议-83--94-">15.4 32天复习建议（8/3 → 9/4）</h2>
+
+<table><tr><td>周</td><td>内容</td><td>天数</td></tr><tr><td>第1周</td><td>第1~3章 物理性质+静水压力</td><td>7天</td></tr><tr><td>第2周</td><td>第4~6章 连续式+伯努利+孔口</td><td>7天</td></tr><tr><td>第3周</td><td>第7~11章 管流+曼宁+开水路</td><td>7天</td></tr><tr><td>第4周</td><td>第12~15章 缺课补+模拟题</td><td>7天</td></tr><tr><td>考前3天</td><td>公式表默写 + 错题重做</td><td>3天</td></tr></table>
+
+<hr/>
+
+<h2 id="附录你的课堂出勤--资料对应">附录：你的课堂出勤 &amp; 资料对应</h2>
+
+<table><tr><td>回</td><td>日期</td><td>内容</td><td>资料页</td><td>出勤</td></tr><tr><td>1</td><td>4/24</td><td>物理性质</td><td>0001~0002</td><td>✓</td></tr><tr><td>2</td><td>5/8</td><td>静水压力1</td><td>0003~0004</td><td>✓</td></tr><tr><td>3</td><td>5/15</td><td>静水压力2</td><td>0005~0008</td><td>✓</td></tr><tr><td>4</td><td>5/22</td><td>连续式</td><td>0010~0012</td><td>✓</td></tr><tr><td>5</td><td>5/29</td><td>伯努利1</td><td>0016</td><td>✓</td></tr><tr><td>6</td><td>6/5</td><td>伯努利2</td><td>0015,0017</td><td>✓</td></tr><tr><td>7</td><td>6/12</td><td>管水路1</td><td>0025</td><td>✓</td></tr><tr><td>8</td><td>6/19</td><td>压力损失</td><td>—</td><td>⚠️ 上午缺</td></tr><tr><td>9</td><td>6/26</td><td>摩擦</td><td>0023</td><td>✓</td></tr><tr><td>10</td><td>7/3</td><td>开水路</td><td>0025~0028</td><td>✓</td></tr><tr><td>11</td><td>7/10</td><td>自由水面流</td><td>0027,0029</td><td>⚠️ 上午缺</td></tr><tr><td>12</td><td>7/17</td><td>开水路分析</td><td>—</td><td>⚠️ 无资料</td></tr><tr><td>13</td><td>7/24</td><td>实用设计</td><td>—</td><td>⚠️ 缺课</td></tr><tr><td>14</td><td>7/31</td><td>设计计算</td><td>0030~0031</td><td>✓</td></tr><tr><td>15</td><td>9/4</td><td><strong>期末考</strong></td><td>—</td><td>—</td></tr></table>
+
+<hr/>
+
+<p>*讲义完。祝 9/4 期末顺利！有问题随时问。*</p>
+</div>
+<a class="back-top" href="#">顶部</a>
+<script>
+document.querySelectorAll('#toc-panel a, .chapter-index a').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('toc-panel').classList.remove('open'));
+});
+if(location.hash){
+  const el=document.querySelector(location.hash);
+  if(el) setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),100);
+}
+</script>
+</body>
+</html>
