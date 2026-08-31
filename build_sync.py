@@ -26,7 +26,25 @@ SYNC_RULES: list[tuple[Path, Path]] = [
         WORKSPACE / "apps/school/キャリアデザイン",
         ROOT / "school/career-design",
     ),
+    (
+        WORKSPACE / "apps/school/施工管理計画２",
+        ROOT / "school/sekou-plan-2",
+    ),
 ]
+
+SCHOOL_SECTIONS: list[tuple[str, str, str, str]] = [
+    ("career-design", "キャリアデザイン", "career-design/index.html", "金融トラブル等"),
+    ("sekou-plan-2", "施工管理計画２", "sekou-plan-2/index.html", "経験記述 · 施工管理"),
+]
+
+HTML_LABELS: dict[str, tuple[str, str]] = {
+    "期末复习讲义.html": ("期末复习讲义", "9/4（金）13:30 考试 · 全15章 · 手机可跳转"),
+    "金融トラブル_解説.html": ("金融トラブル授業 — 解説", "8/31 キャリアデザイン · 先生の説明"),
+    "経験記述_外壁塗装_高温吊りボケット.html": (
+        "経験記述 — 外壁塗装（35℃・吊りボケット）",
+        "40階超 · 三方確認 · 防暑 · 假名标注",
+    ),
+}
 
 HTML_GLOBS = ("*.html",)
 
@@ -83,7 +101,7 @@ def write_section_index(
         f'<a href="{prefix}index.html">首页</a>',
         f'<a href="{prefix}japanese/index.html">日语</a>',
         f'<a href="{prefix}shuili/index.html"{" class=\"active\"" if nav_active == "shuili" else ""}>水利</a>',
-        f'<a href="{prefix}school/career-design/index.html"{" class=\"active\"" if nav_active == "career" else ""}>キャリアデザイン</a>',
+        f'<a href="{prefix}school/index.html"{" class=\"active\"" if nav_active == "school" else ""}>学校</a>',
         "</div></nav>",
         "<main>",
         '<section class="block">',
@@ -107,19 +125,108 @@ def write_section_index(
 
 def collect_top_html(dest: Path) -> list[tuple[str, str, str]]:
     """Return (href, label, sub) for each top-level *.html except index.html."""
-    labels = {
-        "期末复习讲义.html": ("期末复习讲义", "9/4（金）13:30 考试 · 全15章 · 手机可跳转"),
-        "金融トラブル_解説.html": ("金融トラブル授業 — 解説", "8/31 キャリアデザイン · 先生の説明"),
-    }
     items: list[tuple[str, str, str]] = []
     if not dest.exists():
         return items
     for html in sorted(dest.glob("*.html")):
         if html.name == "index.html":
             continue
-        label, sub = labels.get(html.name, (html.stem, ""))
+        label, sub = HTML_LABELS.get(html.name, (html.stem, ""))
         items.append((html.name, label, sub))
     return items
+
+
+def write_school_hub_index() -> None:
+    """Top-level school/ index linking each course subsection."""
+    lines = [
+        "<!DOCTYPE html>",
+        '<html lang="zh-CN">',
+        "<head>",
+        '<meta charset="UTF-8">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
+        '<meta name="robots" content="noindex, nofollow">',
+        "<title>学校课程 · Study</title>",
+        '<link rel="stylesheet" href="../assets/site.css">',
+        "</head>",
+        "<body>",
+        '<nav class="site-nav"><div class="site-nav-inner">',
+        '<a class="brand" href="../index.html">Study</a>',
+        '<a href="../index.html">首页</a>',
+        '<a href="../japanese/index.html">日语</a>',
+        '<a href="../shuili/index.html">水利</a>',
+        '<a href="index.html" class="active">学校</a>',
+        "</div></nav>",
+        "<main>",
+        '<section class="block">',
+        "<h2>学校课程</h2>",
+        '<div class="card-grid">',
+    ]
+    for _slug, title, href, sub in SCHOOL_SECTIONS:
+        lines.append(f'      <a class="summary-card" href="{href}">')
+        lines.append(f'        <div class="title">{title}</div>')
+        lines.append(f'        <div class="sub">{sub}</div>')
+        lines.append("      </a>")
+    lines.extend([
+        "    </div>",
+        "</section>",
+        "</main>",
+        "</body>",
+        "</html>",
+    ])
+    out = ROOT / "school/index.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(f"wrote {out.relative_to(ROOT)}")
+
+
+def write_subsection_index(
+    dest: Path,
+    *,
+    page_title: str,
+    heading: str,
+    nav_active_sub: str,
+    items: list[tuple[str, str, str]],
+    note: str = "",
+) -> None:
+    """Index for school/career-design, school/sekou-plan-2, etc."""
+    subdir = dest.name
+    lines = [
+        "<!DOCTYPE html>",
+        '<html lang="zh-CN">',
+        "<head>",
+        '<meta charset="UTF-8">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
+        '<meta name="robots" content="noindex, nofollow">',
+        f"<title>{page_title} · Study</title>",
+        '<link rel="stylesheet" href="../../assets/site.css">',
+        "</head>",
+        "<body>",
+        '<nav class="site-nav"><div class="site-nav-inner">',
+        '<a class="brand" href="../../index.html">Study</a>',
+        '<a href="../../index.html">首页</a>',
+        '<a href="../../japanese/index.html">日语</a>',
+        '<a href="../../shuili/index.html">水利</a>',
+        '<a href="../index.html" class="active">学校</a>',
+        "</div></nav>",
+        "<main>",
+        '<section class="block">',
+        f"<h2>{heading}</h2>",
+        f'<p style="font-size:.78rem;margin-bottom:.6rem"><a href="../index.html">← 学校课程</a></p>',
+    ]
+    if note:
+        lines.append(f'<p style="font-size:.85rem;color:var(--sub);margin-bottom:.75rem">{note}</p>')
+    lines.append('<ul class="link-list">')
+    if items:
+        for href, label, sub in items:
+            sub_html = f'<br><span style="font-size:.78rem;color:var(--sub)">{sub}</span>' if sub else ""
+            lines.append(f'  <li><a href="{href}">{label}</a>{sub_html}</li>')
+    else:
+        lines.append("  <li>（暂无内容）</li>")
+    lines.extend(["</ul>", "</section>", "</main>", "</body>", "</html>"])
+    out = dest / "index.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(f"wrote {out.relative_to(ROOT)} ({len(items)} items)")
 
 
 def write_japanese_index(try_n3_dest: Path) -> None:
@@ -194,13 +301,21 @@ def main() -> None:
         items=collect_top_html(ROOT / "shuili"),
         note="考试：2026年9月4日（金）13:30–15:00",
     )
-    write_section_index(
+    write_school_hub_index()
+    write_subsection_index(
         ROOT / "school/career-design",
         page_title="キャリアデザイン",
         heading="キャリアデザイン",
-        nav_depth=2,
-        nav_active="career",
+        nav_active_sub="career-design",
         items=collect_top_html(ROOT / "school/career-design"),
+    )
+    write_subsection_index(
+        ROOT / "school/sekou-plan-2",
+        page_title="施工管理計画２",
+        heading="施工管理計画２",
+        nav_active_sub="sekou-plan-2",
+        items=collect_top_html(ROOT / "school/sekou-plan-2"),
+        note="経験記述練習 · 汉字标注假名读音",
     )
     print(f"total html files: {total}")
 
