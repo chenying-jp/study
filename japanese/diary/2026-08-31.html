@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>日语口说 · 2026年8月31日</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1080px; height: 1440px; overflow: hidden; }
+    body { font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Sans", sans-serif; -webkit-font-smoothing: antialiased; }
+    .canvas {
+      width: 1080px; height: 1440px; position: relative;
+      display: flex; flex-direction: column;
+      background-color: #F3EDE4;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 55px, rgba(180,165,145,0.08) 55px, rgba(180,165,145,0.08) 56px);
+      padding: 288px 72px 88px 84px; overflow: hidden;
+    }
+    .canvas::before {
+      content: ""; position: absolute; left: 0; top: 120px; bottom: 88px; width: 6px;
+      background: linear-gradient(180deg, #D4C4AE 0%, #C9B8A0 50%, #D4C4AE 100%);
+      border-radius: 0 3px 3px 0;
+    }
+    .canvas::after {
+      content: "日"; position: absolute; right: 48px; bottom: 36px;
+      font-family: "Noto Serif JP", serif; font-size: 200px; color: rgba(180,165,145,0.10);
+      line-height: 1; pointer-events: none; user-select: none;
+    }
+    .content { flex: 1; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+    .header { flex-shrink: 0; margin-bottom: 40px; }
+    .main-title { font-size: 79px; font-weight: 700; letter-spacing: 0.22em; color: #3D3832; margin-bottom: 16px; line-height: 1.3; }
+    .sub-title { font-family: "Noto Serif JP", serif; font-size: 38px; font-weight: 400; letter-spacing: 0.10em; color: #8A8278; line-height: 1.4; }
+    .divider { margin-top: 36px; height: 2px; background: linear-gradient(90deg, #C9B8A0 0%, rgba(201,184,160,0.15) 85%); }
+    .body-wrap { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; }
+    .body { font-size: 36px; font-weight: 400; line-height: 1.66; letter-spacing: 0.03em; color: #2A2826; }
+    .body p { margin-bottom: 0.88em; }
+    .body p:last-child { margin-bottom: 0; }
+    .body p.key { font-weight: 500; }
+    .body ruby { ruby-align: center; }
+    .body ruby rt { font-size: 0.40em; font-weight: 400; letter-spacing: 0; color: #7A756E; }
+    .body.fit-sm { font-size: 34px; line-height: 1.62; }
+    .body.fit-xs { font-size: 32px; line-height: 1.58; }
+    .body.fit-xxs { font-size: 30px; line-height: 1.55; }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="content">
+      <header class="header">
+        <h1 class="main-title">日语口说</h1>
+        <p class="sub-title">2026年8月31日</p>
+        <div class="divider"></div>
+      </header>
+      <div class="body-wrap">
+        <div class="body fit-sm" id="body">
+          <p class="key"><ruby>昨<rt>きの</rt></ruby><ruby>日<rt>う</rt></ruby>さ、バドミントンやったんだけど、<ruby>十<rt>じゅう</rt></ruby><ruby>何<rt>なん</rt></ruby><ruby>年<rt>ねん</rt></ruby>ぶりだったから、<ruby>全<rt>ぜん</rt></ruby><ruby>身<rt>しん</rt></ruby><ruby>筋<rt>きん</rt></ruby><ruby>肉<rt>にく</rt></ruby><ruby>痛<rt>つう</rt></ruby>だよ。</p>
+          <p><ruby>友<rt>とも</rt></ruby><ruby>達<rt>だち</rt></ruby>に<ruby>誘<rt>さそ</rt></ruby>われて、<ruby>久<rt>ひさ</rt></ruby>しぶりにラケットを<ruby>持<rt>も</rt></ruby>ったんです。</p>
+          <p><ruby>最<rt>さい</rt></ruby><ruby>初<rt>しょ</rt></ruby>は「まだ<ruby>動<rt>うご</rt></ruby>けるかな」って<ruby>思<rt>おも</rt></ruby>ってたんですけど、<ruby>意<rt>い</rt></ruby><ruby>外<rt>がい</rt></ruby>と<ruby>楽<rt>たの</rt></ruby>しくて、つい<ruby>熱<rt>あつ</rt></ruby>くなっちゃいました。</p>
+          <p>でも<ruby>今日<rt>きょう</rt></ruby>、<ruby>朝<rt>あさ</rt></ruby><ruby>起<rt>お</rt></ruby>きたら…<ruby>全<rt>ぜん</rt></ruby><ruby>身<rt>しん</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>くて。<ruby>階<rt>かい</rt></ruby><ruby>段<rt>だん</rt></ruby>を<ruby>降<rt>お</rt></ruby>りるのも、ちょっと<ruby>大<rt>たい</rt></ruby><ruby>変<rt>へん</rt></ruby>です。</p>
+          <p>シャトル、<ruby>全<rt>ぜん</rt></ruby><ruby>然<rt>ぜん</rt></ruby><ruby>取<rt>と</rt></ruby>れなくて。でも、またやりたいかも。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function fitBody() {
+      function run() {
+        const el = document.getElementById("body");
+        const wrap = el.parentElement;
+        const steps = [
+          { cls: "", fs: 36, lh: 1.66 },
+          { cls: "fit-sm", fs: 34, lh: 1.62 },
+          { cls: "fit-xs", fs: 32, lh: 1.58 },
+          { cls: "fit-xxs", fs: 30, lh: 1.55 },
+        ];
+        for (const s of steps) {
+          el.className = "body" + (s.cls ? " " + s.cls : "");
+          el.style.fontSize = s.fs + "px";
+          el.style.lineHeight = s.lh;
+          if (el.scrollHeight <= wrap.clientHeight) return;
+        }
+        el.className = "body fit-xxs";
+        el.style.fontSize = "30px";
+        el.style.lineHeight = "1.55";
+      }
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(run);
+      } else {
+        run();
+      }
+    })();
+  </script>
+</body>
+</html>

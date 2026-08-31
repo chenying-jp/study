@@ -55,6 +55,73 @@ def copy_html_tree(src: Path, dest: Path) -> int:
     return count
 
 
+def write_section_index(
+    dest: Path,
+    *,
+    page_title: str,
+    heading: str,
+    nav_depth: int,
+    nav_active: str,
+    items: list[tuple[str, str, str]],
+    note: str = "",
+) -> None:
+    """Write index.html listing top-level HTML pages in dest (GitHub Pages needs this)."""
+    prefix = "../" * nav_depth
+    lines = [
+        "<!DOCTYPE html>",
+        '<html lang="zh-CN">',
+        "<head>",
+        '<meta charset="UTF-8">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
+        '<meta name="robots" content="noindex, nofollow">',
+        f"<title>{page_title} · Study</title>",
+        f'<link rel="stylesheet" href="{prefix}assets/site.css">',
+        "</head>",
+        "<body>",
+        '<nav class="site-nav"><div class="site-nav-inner">',
+        f'<a class="brand" href="{prefix}index.html">Study</a>',
+        f'<a href="{prefix}index.html">首页</a>',
+        f'<a href="{prefix}japanese/index.html">日语</a>',
+        f'<a href="{prefix}shuili/index.html"{" class=\"active\"" if nav_active == "shuili" else ""}>水利</a>',
+        f'<a href="{prefix}school/career-design/index.html"{" class=\"active\"" if nav_active == "career" else ""}>キャリアデザイン</a>',
+        "</div></nav>",
+        "<main>",
+        '<section class="block">',
+        f"<h2>{heading}</h2>",
+    ]
+    if note:
+        lines.append(f'<p style="font-size:.85rem;color:var(--sub);margin-bottom:.75rem">{note}</p>')
+    lines.append('<ul class="link-list">')
+    if items:
+        for href, label, sub in items:
+            sub_html = f'<br><span style="font-size:.78rem;color:var(--sub)">{sub}</span>' if sub else ""
+            lines.append(f'  <li><a href="{href}">{label}</a>{sub_html}</li>')
+    else:
+        lines.append("  <li>（暂无内容 — 运行 build_sync.py）</li>")
+    lines.extend(["</ul>", "</section>", "</main>", "</body>", "</html>"])
+    out = dest / "index.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(f"wrote {out.relative_to(ROOT)} ({len(items)} items)")
+
+
+def collect_top_html(dest: Path) -> list[tuple[str, str, str]]:
+    """Return (href, label, sub) for each top-level *.html except index.html."""
+    labels = {
+        "期末复习讲义.html": ("期末复习讲义", "9/4（金）13:30 考试 · 全15章 · 手机可跳转"),
+        "金融トラブル_解説.html": ("金融トラブル授業 — 解説", "8/31 キャリアデザイン · 先生の説明"),
+    }
+    items: list[tuple[str, str, str]] = []
+    if not dest.exists():
+        return items
+    for html in sorted(dest.glob("*.html")):
+        if html.name == "index.html":
+            continue
+        label, sub = labels.get(html.name, (html.stem, ""))
+        items.append((html.name, label, sub))
+    return items
+
+
 def write_japanese_index(try_n3_dest: Path) -> None:
     lessons: list[tuple[str, str]] = []
     if try_n3_dest.exists():
@@ -118,6 +185,23 @@ def main() -> None:
             total += copy_html_tree(src, dest)
         print(f"synced {src.name} → {dest.relative_to(ROOT)}")
     write_japanese_index(ROOT / "japanese/try-n3")
+    write_section_index(
+        ROOT / "shuili",
+        page_title="水理学",
+        heading="水理学 · 期末复习",
+        nav_depth=1,
+        nav_active="shuili",
+        items=collect_top_html(ROOT / "shuili"),
+        note="考试：2026年9月4日（金）13:30–15:00",
+    )
+    write_section_index(
+        ROOT / "school/career-design",
+        page_title="キャリアデザイン",
+        heading="キャリアデザイン",
+        nav_depth=2,
+        nav_active="career",
+        items=collect_top_html(ROOT / "school/career-design"),
+    )
     print(f"total html files: {total}")
 
 
