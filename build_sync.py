@@ -19,6 +19,10 @@ SYNC_RULES: list[tuple[Path, Path]] = [
         ROOT / "japanese/diary",
     ),
     (
+        WORKSPACE / "apps/learning/japanese/08_教室作文",
+        ROOT / "japanese/classroom",
+    ),
+    (
         WORKSPACE / "apps/learning/shuili",
         ROOT / "shuili",
     ),
@@ -30,11 +34,16 @@ SYNC_RULES: list[tuple[Path, Path]] = [
         WORKSPACE / "apps/school/施工管理計画２",
         ROOT / "school/sekou-plan-2",
     ),
+    (
+        WORKSPACE / "apps/school/卒業制作",
+        ROOT / "school/sotsugyou",
+    ),
 ]
 
 SCHOOL_SECTIONS: list[tuple[str, str, str, str]] = [
     ("career-design", "キャリアデザイン", "career-design/index.html", "金融トラブル等"),
     ("sekou-plan-2", "施工管理計画２", "sekou-plan-2/index.html", "経験記述 · 施工管理"),
+    ("sotsugyou", "卒業制作", "sotsugyou/index.html", "ラジコン道路 · 打合せ"),
 ]
 
 HTML_LABELS: dict[str, tuple[str, str]] = {
@@ -55,6 +64,14 @@ HTML_LABELS: dict[str, tuple[str, str]] = {
     "提出用_経験記述_外壁塗装.html": (
         "提出用 — 外壁塗装（旧·不適）",
         "参考のみ",
+    ),
+    "卒業制作_下周二打合せ資料.html": (
+        "下周二打合せ資料（假名）",
+        "A4 · 役割分担 · 先生確認 · 2026-09",
+    ),
+    "kono-natsu-omotta-koto.html": (
+        "この夏思ったこと（朗读）",
+        "N2合格 · 口语版 · 教室发表",
     ),
 }
 
@@ -81,6 +98,24 @@ def copy_html_tree(src: Path, dest: Path) -> int:
             target = dest / html.name
             dest.mkdir(parents=True, exist_ok=True)
         shutil.copy2(html, target)
+        count += 1
+    return count
+
+
+def copy_sotsugyou(src: Path, dest: Path) -> int:
+    """Sync 卒業制作: flat copy from 10_Export/ and course root *.html."""
+    if not src.exists():
+        print(f"skip (missing): {src}")
+        return 0
+    count = 0
+    dest.mkdir(parents=True, exist_ok=True)
+    export = src / "10_Export"
+    if export.exists():
+        for html in sorted(export.glob("*.html")):
+            shutil.copy2(html, dest / html.name)
+            count += 1
+    for html in sorted(src.glob("*.html")):
+        shutil.copy2(html, dest / html.name)
         count += 1
     return count
 
@@ -254,6 +289,8 @@ def write_japanese_index(try_n3_dest: Path) -> None:
             if imgs:
                 lessons.append((m.group(1), f"{d.name}/{imgs[0].name}"))
 
+    classroom = collect_top_html(ROOT / "japanese/classroom")
+
     lines = [
         "<!DOCTYPE html>",
         '<html lang="zh-CN">',
@@ -261,7 +298,7 @@ def write_japanese_index(try_n3_dest: Path) -> None:
         '<meta charset="UTF-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
         '<meta name="robots" content="noindex, nofollow">',
-        "<title>日语 · Try N3</title>",
+        "<title>日语 · Study</title>",
         '<link rel="stylesheet" href="../assets/site.css">',
         "</head>",
         "<body>",
@@ -269,12 +306,27 @@ def write_japanese_index(try_n3_dest: Path) -> None:
         '<a class="brand" href="../index.html">Study</a>',
         '<a href="../index.html">首页</a>',
         '<a href="index.html" class="active">日语</a>',
+        '<a href="../shuili/index.html">水利</a>',
+        '<a href="../school/index.html">学校</a>',
         "</div></nav>",
         "<main>",
         '<section class="block">',
-        "<h2>Try N3 文法卡片</h2>",
-        "<ul class=\"link-list\">",
+        "<h2>教室作文 · 朗读</h2>",
+        '<ul class="link-list">',
     ]
+    if classroom:
+        for href, label, sub in classroom:
+            sub_html = f'<br><span style="font-size:.78rem;color:var(--sub)">{sub}</span>' if sub else ""
+            lines.append(f'  <li><a href="classroom/{href}">{label}</a>{sub_html}</li>')
+    else:
+        lines.append("  <li>（暂无 — 放入 apps/learning/japanese/08_教室作文/）</li>")
+    lines.extend([
+        "</ul>",
+        "</section>",
+        '<section class="block">',
+        "<h2>Try N3 文法卡片</h2>",
+        '<ul class="link-list">',
+    ])
     for num, href in lessons:
         lines.append(f'  <li><a href="try-n3/{href}">第 {num} 课</a></li>')
     if not lessons:
@@ -300,6 +352,8 @@ def main() -> None:
                     for html in lesson_dir.glob("*.html"):
                         shutil.copy2(html, target_dir / html.name)
                         total += 1
+        elif dest.name == "sotsugyou":
+            total += copy_sotsugyou(src, dest)
         else:
             total += copy_html_tree(src, dest)
         print(f"synced {src.name} → {dest.relative_to(ROOT)}")
@@ -328,6 +382,14 @@ def main() -> None:
         nav_active_sub="sekou-plan-2",
         items=collect_top_html(ROOT / "school/sekou-plan-2"),
         note="経験記述練習 · 汉字标注假名读音",
+    )
+    write_subsection_index(
+        ROOT / "school/sotsugyou",
+        page_title="卒業制作",
+        heading="卒業制作",
+        nav_active_sub="sotsugyou",
+        items=collect_top_html(ROOT / "school/sotsugyou"),
+        note="①ラジコンカー道路 · 新资料放入 apps/school/卒業制作/10_Export/ 后运行 build_sync.py",
     )
     print(f"total html files: {total}")
 
